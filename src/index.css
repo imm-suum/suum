@@ -1,49 +1,12 @@
-
-.checkItem {
-    height: 48px;
-    width: 388px;
-    /* border: 1px solid; */
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0px 3px 6px #00000029;
-
-    display: flex;
-    justify-content: left;
-    align-items: center;
-
-    font-size: 18px;
-    padding-left: 20px;
-}
-
-.checkItemText {
-
-    margin-left: 20px;
-}
-
-
-.checkItem > input {
-
-    
-    -webkit-appearance: none;
-    height: 25px;
-    width: 25px;
-    border: 2px solid #33C5BC;
-    border-radius: 12.5px;
-
-}
-
-.checkItem > input:checked {
-
-    background-color: #33C5BC;
-
-
-}
-
-
-.checkItem > input:active {
-
-
-
-}
-
-
+body {
+    margin: 0;
+    font-family: -apple-system, 'Montserrat'
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
