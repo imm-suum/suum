@@ -1,14 +1,20 @@
 import React from 'react';
 import './ListItem.css';
 
-const listItem = ()=>{
+
+
+const ListItem = (props)=>{
+    
+
     return (
         <div className="ListItem">
+            <p className="list-item-label">{props.name}</p>
+            <button className="button">
 
-            <p>ListItem Label</p>
+            </button>
             
         </div>
     )
 }
 
-export default listItem;
+export default ListItem;
