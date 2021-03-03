@@ -19,10 +19,10 @@ class Nav extends Component{
 
   render (){
     return (
-        <ul>
-          <li><ListItem name={this.state.navigation[0].name} /></li> 
-          <li><ListItem name={this.state.navigation[1].name} /></li>  
-          <li><ListItem name={this.state.navigation[2].name} /></li>   
+        <ul className="nav-right">
+          <li className="nav-li"><ListItem name={this.state.navigation[0].name} /></li> 
+          <li className="nav-li"><ListItem name={this.state.navigation[1].name} /></li>  
+          <li className="nav-li"><ListItem name={this.state.navigation[2].name} /></li>   
         </ul>
 
     )

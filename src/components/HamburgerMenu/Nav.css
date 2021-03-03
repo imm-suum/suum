@@ -1,0 +1,9 @@
+.nav-right {
+    width: fit-content;
+    
+}
+.nav-li {
+    float: right;
+    clear:both;
+    list-style-type: none;
+}

@@ -8,6 +8,8 @@
    align-items: center;
    width: fit-content;
    height:48px;
+   margin-right: 0;
+   margin-bottom: 30px;
    padding-right: 4px;
    padding-left:25px;
    border-radius: 10px 24px 24px 10px;
@@ -16,7 +18,7 @@
 }
 
 .list-item-label {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight:600;
     margin-right: 10px;
