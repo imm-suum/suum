@@ -12,8 +12,7 @@ const ListItem = (props)=>{
     return (
         <div className="ListItem">
             <p className="list-item-label">{props.name}</p>
-            <a className="button" href={`${props.link}`} target="_blank" onClick={sayHello}></a>
-            
+            <button className="button" onClick={sayHello}></button>
         </div>
     )
 }

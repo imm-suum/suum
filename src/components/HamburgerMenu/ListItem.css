@@ -37,3 +37,6 @@
 .button:hover {
     background-color:#44B2A5;
 }
+button:focus {
+    outline: none;
+}
