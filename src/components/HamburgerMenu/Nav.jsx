@@ -6,9 +6,9 @@ class Nav extends Component{
 
   state = {
     navigation: [
-        {name: 'Habit Nursery',link: "#"},
-        {name: 'History',link: "#"},
-        {name: 'Settings',link: "#"}
+        {name: 'Habit Nursery', link: "https://www.google.com"},
+        {name: 'History', link: "#"},
+        {name: 'Settings', link: "#"}
     ],
     otherState: 'someothervalue'
   }

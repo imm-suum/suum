@@ -33,3 +33,7 @@
     border:none;
 
 }
+
+.button:hover {
+    background-color:#44B2A5;
+}

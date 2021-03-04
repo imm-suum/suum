@@ -1,32 +1,24 @@
-import React, { useState } from 'react';
-//import ReactDOM from 'react-dom';
-import './HamburgerMenu.css';
+import React, { Component } from 'react';
+import Nav from './Nav.jsx';
+import Burger from './Burger.jsx';
 
-class HamburgerMenu extends useState {
-    constructor() {
-      super();
-      this.state = {
-        collapsed: false
-      };
-    }
-  
-    //need method to expand the menu nav.
+class HamburgerMenu extends Component {
+  render(){
 
- 
-  
-    render() {
-      return (
-        <div>
-            {/* where the components elements should show */}
-        </div>
-      );
-    }
+
+
+
+
+
+    return (
+      <div>
+        <Burger className="bottom"/>
+          <Nav/>
+      </div>
+
+    )
+
   }
+}
   
-//to self-render for testing
-//  ReactDOM.render(
-//     <HabitCheckItem />,
-//     document.getElementById('root')
-//   );
-
 export default HamburgerMenu;
