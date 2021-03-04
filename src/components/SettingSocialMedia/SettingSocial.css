@@ -2,10 +2,24 @@ html,body{
 	font-family: 'Montserrat', sans-serif;
 }
 
-h1{
-	font-size: 26px;
-	margin-left: 18px;
+
+.SocialMediaCard{
+	margin-top: 196px;
+	height: 275px;
 }
+
+h1,h2,h3{
+	font-size: 16px;
+	font-weight: normal;
+	color: #44B2A5;
+	padding-top: 20px;
+}
+
+h4{
+	font-size:24px;
+	margin-bottom: 12px;
+}
+
 
 svg{
 	margin: 18px;
