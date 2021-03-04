@@ -17,9 +17,9 @@ const Nav = (props) => {
 
   
 
-    //define the classes that style the nav compoenent
+    //define the classes that style the nav component
     let navClasses = 'nav-right';
-    
+    //change classes when the nav is opened.
     if (props.show) {
       navClasses = 'nav-right open';
     }

@@ -26,17 +26,20 @@ class HamburgerMenu extends Component {
   }
 
   render(){
+    let nav;
     let backdrop;
 
     // if this.state.nav is OPEN (or true)->
     if (this.state.navOpen) {
+      //nav = <Nav show={this.state.navOpen} />
       backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
 
     return (
-      <div className="flexbox HBMenu outline">
-        <Burger click={this.burgerClickHandler} className="outline burger-button"/>
+      <div className="flexbox HBMenu">
+        <Burger click={this.burgerClickHandler} className="burger-button"/>
         <Nav show={this.state.navOpen} />
+        {/* {nav} */}
         {backdrop}
       </div>
 
