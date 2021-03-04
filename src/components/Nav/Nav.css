@@ -1,5 +1,9 @@
 .nav-right {
+    float: right;
     width: fit-content;
+    right: 0;
+    padding-right: 26px;
+    z-index: 200;
     
 }
 .nav-li {

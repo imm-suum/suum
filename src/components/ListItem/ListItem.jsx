@@ -10,9 +10,9 @@ const ListItem = (props)=>{
     }
 
     return (
-        <div className="ListItem">
+        <div className="ListItem" onClick={sayHello}>
             <p className="list-item-label">{props.name}</p>
-            <button className="button" onClick={sayHello}></button>
+            <a href={`${props.link}`} className="button"></a>
         </div>
     )
 }

@@ -3,10 +3,11 @@ import './Burger.css';
 
 
 
-const Burger = (props)=>{
+const Burger = props => {
 
     return (
-        <button className="burger-toggle">
+
+        <button onClick={props.click} className="flexbox burger-toggle">
             <div className="burger-toggle-line" />
             <div className="burger-toggle-line" />
             <div className="burger-toggle-line" />

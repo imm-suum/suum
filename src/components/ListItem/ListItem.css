@@ -6,6 +6,7 @@
    flex-direction: row;
    justify-content: flex-end;
    align-items: center;
+   background: white;
    width: fit-content;
    height:48px;
    margin-right: 0;
@@ -13,8 +14,9 @@
    padding-right: 4px;
    padding-left:25px;
    border-radius: 10px 24px 24px 10px;
-   box-shadow: 0 2px 3px #ccc;
+   box-shadow: 0 3px 6px #00000029;
    text-align: center;
+   cursor: pointer;
 }
 
 .list-item-label {
