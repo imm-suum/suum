@@ -14,18 +14,18 @@ class HabitCheckItem extends Component {
       //Binding method to be accesicble via the 'this' property of the HabitCheckItem class.
       this.onChangeValue = this.onChangeValue.bind(this);
     }
-  
+
     onChangeValue(event) {
     //this method captures the event of the checkitem being checked and logs the value at the time it was checked and then filps the react state to the opposit of what it was
     console.log(event.target.value);
-      
+
     //check current state and then flip value to the opposit
     if (this.state.checked === true){
         this.setState({checked: false}); //update component state
       } else {
         this.setState({checked: true}); //update component state
-      } 
-      
+      }
+
     }
 
 
@@ -38,18 +38,18 @@ class HabitCheckItem extends Component {
         // return classes;
     }
 
- 
-  
+
+
     render() {
       return (
         <div className= "checkItem">
-          <input type="checkbox" value={this.state.checked} name="checkItem" onChange={this.onChangeValue}/> 
+          <input type="checkbox" value={this.state.checked} name="checkItem" onChange={this.onChangeValue}/>
             <p className= "checkItemText">Meditate for 30mins</p>
         </div>
       );
     }
   }
-  
+
 
 //  ReactDOM.render(
 //     <HabitCheckItem />,

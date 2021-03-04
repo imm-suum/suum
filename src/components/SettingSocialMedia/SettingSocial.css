@@ -1,0 +1,12 @@
+html,body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+	font-size: 26px;
+	margin-left: 18px;
+}
+
+svg{
+	margin: 18px;
+}
