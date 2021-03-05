@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './app.css';
-//import HabitCheckItem from './components/HabitCheckList/HabitCheckItem.js';
-import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu.js';
+import HabitCheckItem from './components/HabitCheckList/HabitCheckItem.js';
+
 
 
 //A class that shows all the components that we imported abve ^ 
 
 class App extends Component {
-
-
 
 
     render() {
@@ -18,12 +16,12 @@ class App extends Component {
             //add imported classes here
             //always have div to place component notes
             <div>
-
-                <HamburgerMenu />
+                <HabitCheckItem/>
+                <HabitCheckItem/>
             
             </div>
             
-
+            
             
           );
     }
