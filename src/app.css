@@ -4,17 +4,16 @@
 
 
 .extra{
-
     margin-top: 50px;
 }
 
-.text, .text2{
+.text{
 	display: flex;
 	justify-content: flex-start;
 	width: 80%;
 }
 
-.SettingCard, .SettingCard2{
+.primary-setting-card{
 	display: flex;
 	margin-bottom: 20px;
 	align-items: center;

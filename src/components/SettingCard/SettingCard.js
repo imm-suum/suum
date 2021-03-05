@@ -4,7 +4,7 @@ import './SettingCard.css';
 
 function SettingCard(){
 	return(
-		<div className="settings-card">
+		<div>
 			<h1 className="settings-card-title">Notifications</h1>
 		</div>
 	);
