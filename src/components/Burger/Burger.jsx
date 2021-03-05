@@ -2,7 +2,6 @@ import React from 'react';
 import './Burger.css';
 
 
-
 const Burger = props => {
 
     return (
@@ -16,5 +15,5 @@ const Burger = props => {
     )
 }
 
-
-export default Burger;
+ 
+export default Burger; 
