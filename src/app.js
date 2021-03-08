@@ -2,29 +2,52 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './app.css';
 import HabitCheckItem from './components/HabitCheckList/HabitCheckItem.js';
+import MainSettingCard from './components/MainSettingCard/MainSettingCard.js';
+import SettingCardToggle from './components/SettingCardToggle/SettingCardToggle.js';
+import SettingCard from './components/SettingCard/SettingCard.js';
+import SettingSocialMedia from './components/SettingSocialMedia/SettingSocial.js';
+import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu.js';
 
-
-
-//A class that shows all the components that we imported abve ^ 
+//A class that shows all the components that we imported abve ^
 
 class App extends Component {
 
 
-    render() {
-        return (
+  render() {
+	  return (
 
-            //add imported classes here
-            //always have div to place component notes
-            <div>
-                <HabitCheckItem/>
-                <HabitCheckItem/>
-            
-            </div>
-            
-            
-            
-          );
-    }
+		  //add imported classes here
+		  //always have div to place component notes
+
+		  <div>
+
+			<HabitCheckItem/>
+
+		  <div className="primary-setting-card">
+		      <div className="text">
+			  	<SettingCard/>
+			  </div>
+			  	<SettingCardToggle/>
+		   </div>
+
+		   <div className="primary-setting-card">
+			 <div className="text">
+			   <SettingCard/>
+			 </div>
+			   <SettingCardToggle/>
+		  </div>
+
+		  <HamburgerMenu/>
+
+		 </div>
+
+
+		  //<div>
+		  	//<SettingSocialMedia/>
+		  //</div>
+
+		);
+  }
 
 }
 
