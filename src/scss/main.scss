@@ -30,6 +30,8 @@ $subheading-font: 20px;
     height: 48px;
     width: 328px;
     padding: 15px 64px;
+    border: none;
+    margin: auto;
 }
 
 .sm-button {
@@ -37,4 +39,12 @@ $subheading-font: 20px;
     height: 36px;
     width: 105px;
     padding: 9px 32px;
+    border: none;
+}
+
+
+/*COLOR CLASS*/ 
+
+.main-green {
+    background-color: $main-green;
 }

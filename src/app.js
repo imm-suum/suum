@@ -39,7 +39,7 @@ class App extends Component {
 
 		  <HamburgerMenu/>
 
-          <button className="long-button"></button>
+          <button className="long-button main-green"></button>
           <button className="sm-button"></button>  
 
 		 </div>
