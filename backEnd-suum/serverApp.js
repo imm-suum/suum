@@ -4,9 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
+const mongoose = require("mongoose");
+require("dotenv/config");
+const bodyParser= require('body-parser'); //handles reading data from forms
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var testAPIRouter = require('./routes/testAPI')
+var testAPIRouter = require('./routes/testAPI');
+var postsRoute = require("./routes/posts");
 var app = express();
 
 // view engine setup
@@ -18,10 +22,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json()); 
+app.listen(3000);
+
+
+mongoose.connect(process.env.DB_CONNECTION, { usenewURLParser: true }, () => {
+  console.log("connected to DB");
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/testAPI", testAPIRouter);
+app.use("/posts", postsRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
