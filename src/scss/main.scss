@@ -21,3 +21,20 @@ $heading-font: 24px;
 
 //look at weekly review completed task title
 $subheading-font: 20px;
+
+
+/*GLOBAL CLASSES FOR BUTTONS*/
+.long-button {
+    border-radius: 15px;
+    box-shadow: 0 3px 6px #00000029;
+    height: 48px;
+    width: 328px;
+    padding: 15px 64px;
+}
+
+.sm-button {
+    border-radius: 15px;
+    height: 36px;
+    width: 105px;
+    padding: 9px 32px;
+}
