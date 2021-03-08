@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Test = require("../models/Post");
+const Test = require("../json-schema/Post");
 
 
 //gets back all the tests 
