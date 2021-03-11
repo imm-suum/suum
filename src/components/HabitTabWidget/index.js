@@ -25,20 +25,20 @@ class App extends React.Component {
              <HabitCheckItem/>
             <h1>HI WE'RE TESTING THE HabitTabWidget</h1>
 
-            <div className='bg-green'>
+            <div>
             <HabitTabWidget 
                 //active prop for whichever Tab is Active
                 active= {this.state.active}
                 onChange= {active => this.setState({active})}
                 //delcare onChange event for each HabitTab when tab is clicked
             >
-              <div key='Habit1' >Habit 1</div>
-              <div key='Habit2' >SAMPLE Habit 2</div>
-              <div key='Habit3' >Habit 3</div>
+              <div key='Habit1' className='circle-btn'>Habit 1</div>
+              <div key='Habit2' className='circle-btn'>Habit 2</div>
+              <div key='Habit3' className='circle-btn'>Habit 3</div>
 
             </HabitTabWidget>
 
-            <p className='HabitTabWidget'>{content[this.state.active]}</p>
+            <p className='HabitTabWidget bg-green'>{content[this.state.active]}</p>
             {/* content object to render when tab is active */}
             </div>
          </div> 

@@ -71,6 +71,8 @@ class HabitTabWidget extends Component {
         );
     }
 
+
+    //use below function to animate the tab as per active state 
     getAnimateStyle () {
         if (this.props.active === null || Object.keys(this.state.sizes).length === 0) {
             return {left: '0', right: '100%'};

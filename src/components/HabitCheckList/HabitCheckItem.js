@@ -36,7 +36,7 @@ class HabitCheckItem extends Component {
       return (
         <div className= "checkItem">
           <input type="checkbox" checked={this.state.isChecked} name="checkItem" onChange={this.onChangeValue}/> 
-            <p className= "checkItemText">Meditate for 30mins</p>
+            <p className= "checkItemText">Meditate for 30 minutes</p>
         </div>
       );
     }

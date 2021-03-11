@@ -40,6 +40,16 @@ $subheading-font: 20px;
     width: 105px;
     padding: 9px 32px;
     border: none;
+    margin: 1rem;
+}
+
+.circle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: calc(40px/2);
+    border: none;
+    margin: 1rem;
+    background-color: white;
 }
 
 

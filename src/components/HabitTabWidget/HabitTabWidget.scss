@@ -2,26 +2,31 @@
 /*Import main scss for global stylings*/
 
 .bg-green {
-  background-color: $light-green;
-  margin: 3rem;
+  background-color: $main-green;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 0px;
 }
 
 .HabitTabWidget {
-  background-color: $light-green;
   width:100%;
-
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3px;
 }
+
 
 .Tabs__Tab {
     display: inline-block;
     padding: 1em;
     color: $black;
+    width: fit-content;
     cursor: pointer;
   }
 
   .Tabs__Tab:hover, .Tabs__Tab--active {
-    background: $bg-yellow;
-    color: $main-green;
+    background: $main-green;
+    color: $black;
   }
 
   .Tabs__animate {
@@ -30,4 +35,6 @@
     left: 0;
     right: 0;
     border-bottom: 3px solid orange;
+    z-index: -1;
+
   }
