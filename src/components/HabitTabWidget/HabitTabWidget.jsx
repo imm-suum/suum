@@ -11,9 +11,10 @@ class HabitTabWidget extends Component {
         this.els = {};
     }
     componentDidMount() {
-        const sizes = this.getSizes();
+        this.getSizes();
     }
 
+    //give width for later animation on tab onChange to active state.
     getSizes() {
         const rootBounds = this.root.getBoundingClientRect();
     
@@ -69,13 +70,13 @@ class HabitTabWidget extends Component {
             </div>
         );
     }
-    
+
     getAnimateStyle () {
         if (this.props.active === null || Object.keys(this.state.sizes).length === 0) {
             return {left: '0', right: '100%'};
         }
 
-        const size = this.state.sizes [this.props.active];
+        const size = this.state.sizes[this.props.active];
         return {left: `${size.left}px`, right:`${size.right}px`}
     }
 }
