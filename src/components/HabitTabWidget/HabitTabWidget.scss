@@ -21,5 +21,13 @@
 
   .Tabs__Tab:hover, .Tabs__Tab--active {
     background: $bg-yellow;
-    color: white;
+    color: $main-green;
+  }
+
+  .Tabs__animate {
+    position:absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-bottom: 3px solid orange;
   }

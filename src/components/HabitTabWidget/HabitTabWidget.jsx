@@ -62,10 +62,21 @@ class HabitTabWidget extends Component {
                         </div>   
                     );
                 })}
+                <div 
+                  className='Tabs__animate'
+                  style={this.getAnimateStyle()}
+                />
             </div>
-
         );
     }
+    
+    getAnimateStyle () {
+        if (this.props.active === null || Object.keys(this.state.sizes).length === 0) {
+            return {left: '0', right: '100%'};
+        }
 
+        const size = this.state.sizes [this.props.active];
+        return {left: `${size.left}px`, right:`${size.right}px`}
+    }
 }
 export default HabitTabWidget;

@@ -32,9 +32,9 @@ class App extends React.Component {
                 onChange= {active => this.setState({active})}
                 //delcare onChange event for each HabitTab when tab is clicked
             >
-              <div key='Habit1' className='circle-btn main-green'>Habit 1</div>
-              <div key='Habit2' className='circle-btn main-green'>Habit 2</div>
-              <div key='Habit3' className='circle-btn main-green'>Habit 3</div>
+              <div key='Habit1' >Habit 1</div>
+              <div key='Habit2' >SAMPLE Habit 2</div>
+              <div key='Habit3' >Habit 3</div>
 
             </HabitTabWidget>
 
