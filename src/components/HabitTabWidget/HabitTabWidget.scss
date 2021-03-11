@@ -1,0 +1,25 @@
+@import '../../scss/main.scss';
+/*Import main scss for global stylings*/
+
+.bg-green {
+  background-color: $light-green;
+  margin: 3rem;
+}
+
+.HabitTabWidget {
+  background-color: $light-green;
+  width:100%;
+
+}
+
+.Tabs__Tab {
+    display: inline-block;
+    padding: 1em;
+    color: $black;
+    cursor: pointer;
+  }
+
+  .Tabs__Tab:hover, .Tabs__Tab--active {
+    background: $bg-yellow;
+    color: white;
+  }
