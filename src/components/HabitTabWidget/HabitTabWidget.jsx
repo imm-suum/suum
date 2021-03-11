@@ -43,7 +43,7 @@ class HabitTabWidget extends Component {
                 
                 {/* transform each child via map function. */}
                 {React.Children.map (this.props.children, (child, i) => {
-                    //if tab is active, add active class so it sbg color is yellow 
+                    //if tab is active, add active class so it bg color is yellow 
                     let classname = `Tabs__Tab`; 
                     if (child.key ===this.props.active) {
                         classname = `${classname} Tabs__Tab--active`;
