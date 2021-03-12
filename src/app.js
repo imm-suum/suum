@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './app.css';
-import HabitCheckItem from './components/HabitCheckList/HabitCheckItem.js';
+//import HabitCheckItem from './components/HabitCheckList/HabitCheckItem.js';
 import MainSettingCard from './components/MainSettingCard/MainSettingCard.js';
+import MainSettingCardInfo from './components/MainSettingCardInfo/MainSettingCardInfo.js';
 import SettingCardToggle from './components/SettingCardToggle/SettingCardToggle.js';
 import SettingCard from './components/SettingCard/SettingCard.js';
 import SettingSocialMedia from './components/SettingSocialMedia/SettingSocial.js';
@@ -23,30 +24,32 @@ class App extends Component {
 			  //<HabitCheckItem/>
 		  //</div>,
 
-		  //<div>
-		  	  //<MainSettingCard/>
-		  //</div>,
-
-		  //<div>
-		  //</div>,
-
-		  <div>
-
-		  <div className="primary-setting-card">
-		      <div className="text">
-			  	<SettingCard/>
-			  </div>
-			  	<SettingCardToggle/>
-		   </div>
-
-		   <div className="primary-setting-card">
-			 <div className="text">
-			   <SettingCard/>
-			 </div>
-			   <SettingCardToggle/>
+		  <div className="main-setting-card">
+			  <MainSettingCard/>
+		  <div className="text">
+			  	<MainSettingCardInfo/>
+					<MainSettingCardInfo/>
+		  </div>
 		  </div>
 
-		 </div>
+		  //<div>
+		  //</div>,
+
+		  //<div>
+		  //<div className="primary-setting-card">
+		      //<div className="text">
+			  	//<SettingCard/>
+			  //</div>
+			  	//<SettingCardToggle/>
+		   //</div>
+
+		   //<div className="primary-setting-card">
+			 //<div className="text">
+			   //<SettingCard/>
+			 //</div>
+			   //<SettingCardToggle/>
+		  //</div>
+		 //</div>
 
 
 		  //<div>
