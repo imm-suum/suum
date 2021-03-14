@@ -24,10 +24,7 @@ router.get("/", async (req, res) => {
   try {
     // let stashValue = req.params.stashed;
     // let stashValue=Habit.stashed; 
-    const stash = await Habit.filter(function(stashValue){
-        return stashValue==true; 
-
-    });
+    const stash = await Habit.find({stashed: true});
     res.json(stash);
   } catch (err) {
     res.json({ message: err });
