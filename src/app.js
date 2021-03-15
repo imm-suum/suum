@@ -7,6 +7,7 @@ import SettingCardToggle from './components/SettingCardToggle/SettingCardToggle.
 import SettingCard from './components/SettingCard/SettingCard.js';
 import SettingSocialMedia from './components/SettingSocialMedia/SettingSocial.js';
 import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu.js';
+import NoHabitsWidget from './components/NoHabitsWidget/NoHabitsWidget.js';
 
 //A class that shows all the components that we imported abve ^
 
@@ -39,12 +40,12 @@ class App extends Component {
 
 		  <HamburgerMenu/>
 
-		 </div>
+		 </div>,
 
 
-		  //<div>
-		  	//<SettingSocialMedia/>
-		  //</div>
+		  <div>
+		  	<NoHabitsWidget/>
+		  </div>
 
 		);
   }

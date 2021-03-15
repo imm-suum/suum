@@ -1,53 +1,79 @@
-
-.accordion-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #44B2A5;
-  width: 428px;
-  height: 607px;
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.accordion-title {
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  border: none;
-  outline: none;
-  transition: background-color 0.6s ease;
-  width: 388px;
-  height: 48px;
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 10px;
+body{
+	height: 100vh;
+	width: 100%;
+	margin: 0 auto;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #FFF7E8;
 }
 
-.accordion-title:hover,
-
-.active {
-  background-color: #ccc;
+.container{
+	width: 428px;
+	height: 104px;
+	background-color: #44B2A5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.accordion-icon {
-  margin-left: auto;
-  transition: transform 0.6s ease;
+.accordion{
+	width: 388px;
+	height: 48px;
+	margin: 0 auto;
+	border-radius: 10px;
+	background-color: white;
 }
 
-.rotate {
-  transform: rotate(90deg);
+.tab{
+	height: 48px;
+	width: 388px;
+	background-color: white;
+	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 10px;
+	align-items: center;
 }
 
-.accordion-content {
-  background-color: white;
-  overflow: hidden;
-  transition: max-height 0.6s ease;
-  border-radius: 25px;
+.tab:hover,.active{
+	background-color: #d6d6d6;
 }
 
-.accordion-text {
-  font-weight: 400;
-  font-size: 14px;
-  padding: 18px;
+.content{
+	transition: all 0.5 ease-in-out;
+	height: 0;
+	overflow: hidden;
+}
+
+
+.content p{
+	padding:10px;
+}
+
+.showContent{
+	width: 388px;
+	height: 608px;
+	background-color: #44B2A5;
+	border-radius: 0px 0px 10px 10px;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.textbox{
+	width: 328px;
+	height: 470px;
+	background-color: white;
+	border-radius: 10px 10px 10px 10px;
+	color: black;
+
 }

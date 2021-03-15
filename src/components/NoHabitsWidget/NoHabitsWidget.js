@@ -1,40 +1,38 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { Component } from 'react';
+//import ReactDOM from 'react-dom';
 import './NoHabitsWidget.css';
 
-const NoHabitsWidget = props => {
-  const [active, setActive] = useState(false)
-  const contentRef = useRef(null)
+class NoHabitsWidget extends Component {
 
-  useEffect(() => {
-    contentRef.current.style.maxHeight = active ? `${contentRef.current.scrollHeight}px` : '0px'
-  }, [contentRef, active])
+	state={
+		showInfo:false
+	}
 
-  const toggleActive = () => {
-    setActive(!active)
-  }
+	handleToogle=()=>{
+		this.setState({
+			showInfo:!this.state.showInfo
+		})
+	}
 
-  const titleStyle = {
-    fontWeight: 600,
-    fontSize: '14px',
-  }
+	render(){
+		return(
+			<div className="container">
+			<div className="accordion">
+			<div className="single_accordion">
+			<div className="tab" onClick={this.handleToogle}>
+				<p>Click here for some tips on mindfulness!</p>
+			</div>
 
-  return (
-    <div className="accordion-section">
-      <button className="accordion-title" onClick={toggleActive}>
-        <p style={titleStyle}>{props.title}</p>
-        <span className={active ? 'accordion-icon rotate': 'accordion-icon'}>
-          >
-        </span>
-      </button>
-
-      <div
-        ref={contentRef}
-        className="accordion-content"
-      >
-        {props.children}
-      </div>
-    </div>
-  )
+			<div className="container2">
+			<div className={this.state.showInfo ? 'showContent content' : 'content' }>
+				<p className="textbox">habit habit habit habit habit habit</p>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
+		)
+	}
 }
 
 export default NoHabitsWidget;
