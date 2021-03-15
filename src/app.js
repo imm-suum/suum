@@ -24,12 +24,8 @@ class App extends Component {
 			  //<HabitCheckItem/>
 		  //</div>,
 
-		  <div className="main-setting-card">
-			  <MainSettingCard/>
-		  <div className="text">
+		  <div>
 			  	<MainSettingCardInfo/>
-					<MainSettingCardInfo/>
-		  </div>
 		  </div>
 
 		  //<div>

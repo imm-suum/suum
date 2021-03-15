@@ -2,50 +2,42 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './MainSettingCardInfo.css';
 
-class MainSettingCardInfo extends Component{
-	state = {
-		value:"Enter User Info Here",
-		isInEditMode: false
-	}
 
-	changeEditMode = () => {
-		this.setState({
-			isInEditMode: !this.state.isInEditMode
-		})
-	}
+class MainSettingCardInfo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fullName: '',
+      emailAddress: '',
+    };
+  }
+  myChangeHandler = (event) => {
+    let nam = event.target.name;
+    let val = event.target.value;
+    this.setState({[nam]: val});
+  }
+  render() {
+    return (
+	<form>
+      <div className="settings-main">
+	  	<h1 className="settings-main-title">Profile</h1>
+	  	<p className="settings-main-item">{this.state.username}</p>
+	  	<p className="settings-main-item2">{this.state.emailAddress}</p>
+	  </div>
 
-	updateComponentValue = () => {
-		this.setState({
-			isInEditMode: false,
-			value: this.refs.theTextInput.value
-		})
-	}
-
-	renderEditView = () => {
-		return <div>
-		<input
-			type="text"
-			id="text"
-			defaultValue={this.state.value}
-			ref="theTextInput"
-		/>
-			<button onClick={this.changeEditMode}>X</button>
-			<button onClick={this.updateComponentValue}>Save</button>
-		</div>
-	}
-
-	renderDefaultView = () => {
-		return <div onDoubleClick={this.changeEditMode}>
-			{this.state.value}
-		</div>
-	}
-
-
-	render() {
-		return this.state.isInEditMode ?
-		this.renderEditView() :
-		this.renderDefaultView()
-	}
+	  <input
+        type='text'
+        name='username'
+        onChange={this.myChangeHandler}
+      />
+      <input
+        type='text'
+        name='emailAddress'
+        onChange={this.myChangeHandler}
+      />
+      </form>
+    );
+  }
 }
 
 export default MainSettingCardInfo;
