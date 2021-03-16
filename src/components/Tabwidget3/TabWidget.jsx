@@ -32,7 +32,7 @@ class TabWidget extends Component {
              )
             }
          </ul>
-         {/* whenever we use this component, anything we nest inside will nder next to ul */}
+         {/* whenever we use this component, anything we nest inside will under next to ul */}
          {this.props.children}
        </div>     
       );
