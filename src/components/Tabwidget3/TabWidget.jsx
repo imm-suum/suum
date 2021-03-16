@@ -23,9 +23,9 @@ class TabWidget extends Component {
                    return (
                      //key is required for map loop
                      <li className="nav-item" key={ tab }>
-                         <a href="" className={"nav-link" + active} onclick={() => this.props.setSelected(tab) }>
+                         <button href="#" className={"nav-link" + active} onClick={() => this.props.setSelected(tab) }>
                              { tab }
-                         </a>
+                         </button>
                      </li>
                    );
                 }
