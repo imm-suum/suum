@@ -10,7 +10,7 @@
     justify-content: left;
     align-items: center;
 
-    font-size: 18px; 
+    font-size: 18px;
     padding-left: 20px;
 }
 
@@ -30,7 +30,3 @@
 .checkItem > input:checked {
     background-color: #33C5BC;
 }
-
-
-
-
