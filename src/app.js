@@ -7,6 +7,7 @@ import SettingCardToggle from './components/SettingCardToggle/SettingCardToggle.
 import SettingCard from './components/SettingCard/SettingCard.js';
 import SettingSocialMedia from './components/SettingSocialMedia/SettingSocial.js';
 import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu.js';
+import HabitNurseryTag from './components/HabitNurseryTag/HabitNurseryTag.js';
 
 //A class that shows all the components that we imported abve ^
 
@@ -19,32 +20,31 @@ class App extends Component {
 		  //add imported classes here
 		  //always have div to place component notes
 
-		  <div>
+		  //<div>
+			//<HabitCheckItem/>
+		  //<div className="primary-setting-card">
+		      //<div className="text">
+			  	//<SettingCard/>
+			  //</div>
+			  	//<SettingCardToggle/>
+		   //</div>
 
-			<HabitCheckItem/>
-
-		  <div className="primary-setting-card">
-		      <div className="text">
-			  	<SettingCard/>
-			  </div>
-			  	<SettingCardToggle/>
-		   </div>
-
-		   <div className="primary-setting-card">
-			 <div className="text">
-			   <SettingCard/>
-			 </div>
-			   <SettingCardToggle/>
-		  </div>
-
-		  <HamburgerMenu/>
-
-		 </div>
-
+		   //<div className="primary-setting-card">
+			 //<div className="text">
+			   //<SettingCard/>
+			 //</div>
+			   //<SettingCardToggle/>
+		  //</div>
+		  	//<HamburgerMenu/>
+		 //</div>
 
 		  //<div>
 		  	//<SettingSocialMedia/>
 		  //</div>
+
+		  <div>
+		  	<HabitNurseryTag/>
+		  </div>
 
 		);
   }
