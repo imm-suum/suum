@@ -13,6 +13,9 @@ var testAPIRouter = require("./routes/testAPI");
 var postsRoute = require("./routes/posts");
 const pushHabitRoute = require("./routes/pushHabit");
 const getStashRoute = require("./routes/getStash");
+const allHabits = require("./routes/allHabits");
+const postHabit=require("./routes/postHabit");
+
 var app = express();
 
 // view engine setup
@@ -27,7 +30,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.listen(3000);
 
-mongoose.connect(process.env.DB_CONNECTION, { usenewURLParser: true }, () => {
+mongoose.connect(process.env.DB_CONNECTION,{ useNewUrlParser: true }, () => {
   console.log("connected to DB");
 });
 
@@ -37,6 +40,8 @@ app.use("/testAPI", testAPIRouter);
 app.use("/posts", postsRoute);
 app.use("/pushHabit", pushHabitRoute);
 app.use("/getStash", getStashRoute);
+app.use("/allHabits", allHabits);
+app.use("/postHabit", postHabit);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
