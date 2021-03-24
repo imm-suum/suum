@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './app.css';
 import HabitCheckItem from './components/HabitCheckList/HabitCheckItem.js';
-import MainSettingCard from './components/MainSettingCard/MainSettingCard.js';
-import SettingCardToggle from './components/SettingCardToggle/SettingCardToggle.js';
-import SettingCard from './components/SettingCard/SettingCard.js';
-import SettingSocialMedia from './components/SettingSocialMedia/SettingSocial.js';
+import Settings from './screen/Settings.jsx';
+
 import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu.js';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -25,20 +23,22 @@ class App extends Component {
 				<Switch>
 					<Route path="/" exact component={HabitCheckItem}/>
 					<Route path="/weeklyReport" exact component={HabitCheckItem}/>
-					<Route path="/stashed" exact component={HabitCheckItem}/>
+					<Route path="/stash" exact component={HabitCheckItem}/>
 					<Route path="/history" exact component={HabitCheckItem}/>
-					<Route path="/settings"  exact component={SettingCard}/>
+					<Route path="/settings"  exact component={Settings}/>
 				</Switch>
+
+				<HamburgerMenu/>
 
 				
 			
 
-				<HamburgerMenu/>
+				
 
 
 
 			
-				<SettingSocialMedia/>
+			
 			
 			</Router>
 
