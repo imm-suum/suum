@@ -27,16 +27,11 @@ class App extends Component {
 					<Route path="/weeklyReport" exact component={HabitCheckItem}/>
 					<Route path="/stashed" exact component={HabitCheckItem}/>
 					<Route path="/history" exact component={HabitCheckItem}/>
-					<Route path="/settings"  exact component={SettingSocialMedia}/>
+					<Route path="/settings"  exact component={SettingCard}/>
 				</Switch>
 
-				<div className="primary-setting-card">
-					<div className="text">
-						<SettingCard/>
-					</div>
-						<SettingCardToggle/>
-				</div>
-				<HabitCheckItem/>
+				
+			
 
 				<HamburgerMenu/>
 
