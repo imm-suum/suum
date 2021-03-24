@@ -7,6 +7,7 @@ import SettingCardToggle from './components/SettingCardToggle/SettingCardToggle.
 import SettingCard from './components/SettingCard/SettingCard.js';
 import SettingSocialMedia from './components/SettingSocialMedia/SettingSocial.js';
 import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu.js';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //A class that shows all the components that we imported abve ^
 
@@ -18,33 +19,33 @@ class App extends Component {
 
 		  //add imported classes here
 		  //always have div to place component notes
+			<Router>
 
-		  <div>
+				
+				<Switch>
+					<Route path="/" exact component={HabitCheckItem}/>
+					<Route path="/weeklyReport" exact component={HabitCheckItem}/>
+					<Route path="/stashed" exact component={HabitCheckItem}/>
+					<Route path="/history" exact component={HabitCheckItem}/>
+					<Route path="/settings"  exact component={SettingSocialMedia}/>
+				</Switch>
 
-			<HabitCheckItem/>
+				<div className="primary-setting-card">
+					<div className="text">
+						<SettingCard/>
+					</div>
+						<SettingCardToggle/>
+				</div>
+				<HabitCheckItem/>
 
-		  <div className="primary-setting-card">
-		      <div className="text">
-			  	<SettingCard/>
-			  </div>
-			  	<SettingCardToggle/>
-		   </div>
-
-		   <div className="primary-setting-card">
-			 <div className="text">
-			   <SettingCard/>
-			 </div>
-			   <SettingCardToggle/>
-		  </div>
-
-		  <HamburgerMenu/>
-
-		 </div>
+				<HamburgerMenu/>
 
 
-		  //<div>
-		  	//<SettingSocialMedia/>
-		  //</div>
+
+			
+				<SettingSocialMedia/>
+			
+			</Router>
 
 		);
   }
