@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import '../app.css';
 
-import MainSettingCard from '../components/MainSettingCard/MainSettingCard.js';
-import SettingCard from '../components/SettingCard/SettingCard.js';
-import SettingSocialMedia from '../components/SettingSocialMedia/SettingSocial.js';
+
+import HabitCheckItem from '../components/HabitCheckList/HabitCheckItem.js';
 
 
-//A Class that holds all components for Settings Screen
+//A Class that holds all components for Habit Nursery Screen
 
 class HabitNursery extends Component {
 
@@ -19,10 +18,8 @@ class HabitNursery extends Component {
 		  //always have div to place component notes
 			<div>
 
-				<SettingCard/>
-                <MainSettingCard/>
-
-				<SettingSocialMedia/>
+				<HabitCheckItem/>
+            
 
             </div>
 
