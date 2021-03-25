@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './app.css';
-import HabitTabWidget from './components/HabitTabWidget/index.js';
+import {Tab} from './components/HabitTabWidget/index.js';
+import { HabitCheckItem } from './components/HabitCheckList/HabitCheckItem.js';
 
 
 import './scss/main.scss'
@@ -17,7 +18,9 @@ class App extends Component {
 		  //always have div to place component notes
 
 		  <div>
-			  <HabitTabWidget/>
+			  <HabitCheckItem/>
+			  <Tab/>
+
 		 </div>
 
 
