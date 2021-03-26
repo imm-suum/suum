@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './app.css';
-import HabitCheckItem from './components/HabitCheckList/HabitCheckItem.js';
-import MainSettingCard from './components/MainSettingCard/MainSettingCard.js';
-import SettingCardToggle from './components/SettingCardToggle/SettingCardToggle.js';
-import SettingCard from './components/SettingCard/SettingCard.js';
-import SettingSocialMedia from './components/SettingSocialMedia/SettingSocial.js';
-import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu.js';
+import {Tab} from './components/HabitTabWidget/index.js';
+import { HabitCheckItem } from './components/HabitCheckList/HabitCheckItem.js';
+
+
 import './scss/main.scss'
 //A class that shows all the components that we imported abve ^
 
@@ -20,27 +18,8 @@ class App extends Component {
 		  //always have div to place component notes
 
 		  <div>
-
-			<HabitCheckItem/>
-
-		  <div className="primary-setting-card">
-		      <div className="text">
-			  	<SettingCard/>
-			  </div>
-			  	<SettingCardToggle/>
-		   </div>
-
-		   <div className="primary-setting-card">
-			 <div className="text">
-			   <SettingCard/>
-			 </div>
-			   <SettingCardToggle/>
-		  </div>
-
-		  <HamburgerMenu/>
-
-          <button className="long-button main-green"></button>
-          <button className="sm-button"></button>  
+			  <HabitCheckItem/>
+			  <Tab/>
 
 		 </div>
 
