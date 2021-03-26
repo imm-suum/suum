@@ -2,26 +2,28 @@ import React, {useState} from 'react';
 //import ReactDOM from 'react-dom';
 import './HabitCheckItem.css';
 
-// var testHabits = [{habit:"test habit"},{habit:"test habit2"}, {habit:"test habit2"}];
 
-export const HabitCheckItem = ({habitName}) => {
+export const HabitCheckItem = ({checked, habitName, setHabit}) => {
 
-  const [isChecked, setCheckedState ] = useState(false);
-  
-  const onChangeValue = (event) => {
-    //this method captures the event of the checkitem being checked and logs the value at the time it was checked and then makes react state to the the current status of the input. 
-    console.log(event.target.checked);
-
-    //update component state to what the input is right now. 
-    setCheckedState(event.target.checked);
-    
-  }
-
+      // const dosomething = () => {
+      //     setHabit(!checked);
+      //     // disable this checkbox
+      //     // write code to call the backend to say the item is checked
+      // }
       return (
         <div className= "checkItem">
-          <input type="checkbox" checked={isChecked} name="checkItem" onChange={onChangeValue}/> 
+            <input type="checkbox" checked={checked} name="checkItem" onChange={() => setHabit(!checked)}
+            />
             <p className= "checkItemText">{habitName}</p>
         </div>
       );
 }
   
+
+
+// {!checked ? 
+//   <input type="checkbox" checked={checked} name="checkItem" onChange={() => !checked ? dosomething : null}
+//   /> : 
+//   <input type="checkbox" disabled checked={checked} name="checkItem" onChange={() => !checked ? dosomething : null}
+//   />
+// }
