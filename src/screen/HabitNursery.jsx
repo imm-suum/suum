@@ -5,6 +5,8 @@ import '../app.css';
 
 import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
 
+import NoHabitsWidget from '../components/NoHabitsWidget/NoHabitsWidget.js';
+
 
 //A Class that holds all components for Habit Nursery Screen
 
@@ -19,6 +21,7 @@ class HabitNursery extends Component {
 			<div>
 
 				<HabitTabWidget/>
+				<NoHabitsWidget/>
             
 
             </div>
