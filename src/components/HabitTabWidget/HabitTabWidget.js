@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import HabitTabWidget from './HabitTabWidget.jsx';
 import './HabitTabWidget.scss';
 import { HabitCheckItem } from '../HabitCheckList/HabitCheckItem';
 
-import { NewHabitTabWidget } from './newHabitTabWidget';
+import { Tabs } from './Tabs';
 //need habitcheckItem for content render.
 
 
-export const Tab = () => {
+export const HabitTabWidget = () => {
   const [activeTab, setActiveTab ] = useState('tab1');
   const [ habit1IsChecked, setHabit1 ] = useState(false);
   const [ habit2IsChecked, setHabit2 ] = useState(true);
@@ -55,7 +54,7 @@ export const Tab = () => {
         <div>
           {
             tabs.map((tab, idx)=> {
-              return <NewHabitTabWidget key={idx} onClickHandler={onTabClickHandler} tab={tab} />
+              return <Tabs key={idx} onClickHandler={onTabClickHandler} tab={tab} />
             })
           }
         <div className='HabitTabWidget bg-green'>{displayContent(activeTab)}</div>

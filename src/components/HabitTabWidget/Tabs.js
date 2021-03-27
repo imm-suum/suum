@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const NewHabitTabWidget = ({onClickHandler, tab}) => {
+export const Tabs = ({onClickHandler, tab}) => {
 
     return (
         <button 

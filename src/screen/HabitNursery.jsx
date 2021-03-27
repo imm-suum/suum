@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../app.css';
 
 
-import HabitCheckItem from '../components/HabitCheckList/HabitCheckItem.js';
+import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
 
 
 //A Class that holds all components for Habit Nursery Screen
@@ -18,7 +18,7 @@ class HabitNursery extends Component {
 		  //always have div to place component notes
 			<div>
 
-				<HabitCheckItem/>
+				<HabitTabWidget/>
             
 
             </div>

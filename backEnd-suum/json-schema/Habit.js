@@ -24,7 +24,7 @@ const habitSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  user_id: {type:mongoose.ObjectId, ref:user},
+  user_id: {type:mongoose.ObjectId},
 });
 
 const userSchema = mongoose.Schema({
