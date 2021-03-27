@@ -10,10 +10,8 @@ import NoHabitsWidget from '../components/NoHabitsWidget/NoHabitsWidget.js';
 
 //A Class that holds all components for Habit Nursery Screen
 
-class HabitNursery extends Component {
+export const HabitNursery =  () => {
 
-
-  render() {
 	  return (
 
 		  //add imported classes here
@@ -27,8 +25,8 @@ class HabitNursery extends Component {
             </div>
 
 		);
-  }
+
 
 }
 
-export default HabitNursery;
+

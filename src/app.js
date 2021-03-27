@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './app.css';
 
-import HabitNursery from './screen/HabitNursery.jsx';
+import { HabitNursery } from './screen/HabitNursery.jsx';
 import History from './screen/History.jsx';
 import Settings from './screen/Settings.jsx';
 import Stash from './screen/Stash.jsx';
