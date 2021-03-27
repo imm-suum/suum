@@ -9,10 +9,9 @@ import SettingSocialMedia from '../components/SettingSocialMedia/SettingSocial.j
 
 //A Class that holds all components for Settings Screen
 
-class Settings extends Component {
+export const Settings =  () => {
 
 
-  render() {
 	  return (
 
 		  //add imported classes here
@@ -27,8 +26,8 @@ class Settings extends Component {
             </div>
 
 		);
-  }
+
 
 }
 
-export default Settings;
+

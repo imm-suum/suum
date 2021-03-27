@@ -4,7 +4,7 @@ import './app.css';
 
 import { HabitNursery } from './screen/HabitNursery.jsx';
 import History from './screen/History.jsx';
-import Settings from './screen/Settings.jsx';
+import { Settings } from './screen/Settings.jsx';
 import Stash from './screen/Stash.jsx';
 import WeeklyReport from './screen/WeeklyReport.jsx';
 
