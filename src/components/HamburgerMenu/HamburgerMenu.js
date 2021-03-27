@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav.jsx';
 import Burger from '../Burger/Burger.jsx';
 import './HamburgerMenu.css';
-import Backdrop from '../Backdrop/Backdrop.jsx';
+import { Backdrop } from '../Backdrop/Backdrop.jsx';
 
 class HamburgerMenu extends Component {
   //set up initial state of HMMenu as closed
