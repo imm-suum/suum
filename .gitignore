@@ -6,7 +6,10 @@
 .pnp.js
 
 /backEnd-suum/node_modules/**
+<<<<<<< HEAD
 
+=======
+>>>>>>> frontend-react-router
 # testing
 /coverage
 
