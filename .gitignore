@@ -6,14 +6,7 @@
 .pnp.js
 
 /backEnd-suum/node_modules/**
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> frontend-react-router
-=======
-
->>>>>>> backend-api
 # testing
 /coverage
 
