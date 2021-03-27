@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-const habit = mongoose.Schema({
+const habitSchema = mongoose.Schema({
   habitName: {
     type: String,
     required: true,
@@ -24,7 +24,33 @@ const habit = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  user_id: mongoose.ObjectId,
+  user_id: {type:mongoose.ObjectId, ref:user},
 });
 
-module.exports = mongoose.model("habit", habit, "habits");
+const userSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  notifications: {
+    Boolean,
+    default:true
+  }, 
+  habits:[habitSchema]
+});
+
+module.exports = mongoose.model("habit", habitSchema, "habits");
+
+module.exports = mongoose.model("user", userSchema, "users");
+
+module.exports = {
+  user,habit
+}
