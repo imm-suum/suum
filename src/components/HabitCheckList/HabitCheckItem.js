@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import './HabitCheckItem.css';
 
 
-export const HabitCheckItem = ({checked, habitName, setHabit}) => {
+export const HabitCheckItem = ({checked, habitName, setHabitState}) => {
 
       // const dosomething = () => {
       //     setHabit(!checked);
@@ -11,10 +11,27 @@ export const HabitCheckItem = ({checked, habitName, setHabit}) => {
       //     // write code to call the backend to say the item is checked
       // }
       return (
-        <div className= "checkItem">
-            <input type="checkbox" checked={checked} name="checkItem" onChange={() => setHabit(!checked)}
-            />
-            <p className= "checkItemText">{habitName}</p>
+        <div>
+          {checked ? //ternary operator to display disabled checkitem or actionable one.
+
+            //If true show disabled div here
+            <div className= "checkItem">
+              <input type="checkbox" disabled checked={checked} name="checkItem" onChange={() => setHabitState(!checked)}
+              />
+              <p className= "checkItemText">{habitName}</p>
+            </div>
+
+            ://OR
+
+            //If false show disabled div here
+            <div className= "checkItem">
+              <input type="checkbox" checked={checked} name="checkItem" onChange={() => setHabitState(!checked)}
+              />
+              <p className= "checkItemText">{habitName}</p>
+            </div>
+
+          }
+            
         </div>
       );
 }
@@ -27,3 +44,8 @@ export const HabitCheckItem = ({checked, habitName, setHabit}) => {
 //   <input type="checkbox" disabled checked={checked} name="checkItem" onChange={() => !checked ? dosomething : null}
 //   />
 // }
+
+
+// <input type="checkbox" checked={checked} name="checkItem" onChange={() => setHabit(!checked)}
+// />
+// <p className= "checkItemText">{habitName}</p>
