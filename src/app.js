@@ -14,6 +14,8 @@ import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //A class that shows all the components that we imported abve ^
 
+//make all screens dark mode.
+
 class App extends Component {
 
 
