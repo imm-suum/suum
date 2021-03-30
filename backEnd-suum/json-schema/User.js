@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema=mongoose.Schema; 
 
 const userSchema = Schema({
-    // _id=String, 
+    // _id=Schema.Types.ObjectId, 
 
     name: {
       type: String,
@@ -21,9 +21,9 @@ const userSchema = Schema({
       Boolean
       
     }, 
-    habits:[{type:Schema.Types.ObjectId, ref:'habit'}]
+    habits:[[{type:Schema.Types.ObjectId, ref:'habit'}]]
   });
 
-const User = mongoose.model('user', userSchema, 'users');
+const User = mongoose.model('user', userSchema, 'user');
 
 module.exports = User; 
