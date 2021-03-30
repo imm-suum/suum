@@ -14,6 +14,24 @@ import NoHabitsWidget from '../components/NoHabitsWidget/NoHabitsWidget.js';
 // fecth all habits. 
 //make all components dark mode as well. 
 
+ ///habitTab1 is checked && dispalay component
+  //
+
+  // async function asyncFunc() {
+  //   try {
+  //     // fetch data from a url endpoint
+  //     const data = await axios.get("/some_url_endpoint");
+  //     return data;
+  //   } catch(error) {
+  //     console.log("error", error);
+  //     // appropriately handle the error
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   asyncFunc();
+  // [asyncFunc]});
+
 export const HabitNursery =  () => {
 
 	  return (
