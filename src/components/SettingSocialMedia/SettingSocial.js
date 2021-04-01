@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
-import './SettingSocial.css';
+import './SettingSocial.scss';
 import cx from "classnames";	//INSTALLED "npm install classnames"
 
 function SettingSocialMedia(){
