@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import '../app.css';
-
+import OnBoardingScreens from '../components/OnBoardingScreens/OnBoardingScreens.js';
 
 
 //A Class that holds all components for Habit Nursery Screen
@@ -17,8 +17,8 @@ class History extends Component {
 			<div>
 
 				<p>History screen</p>
-            
 
+				<OnBoardingScreens/>
             </div>
 
 		);
