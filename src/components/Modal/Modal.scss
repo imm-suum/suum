@@ -1,0 +1,39 @@
+@use '../../scss/_main.scss' as *;
+
+
+.close {
+  font-family: $font-stack;
+  font-weight:600;
+}
+
+.modalWrapper {
+  position: relative;
+  background-color: $dark-blue;
+  width: 388px;
+  height: 477px;
+  margin: auto;
+  padding: 30px 37px 22px 37px;
+  box-shadow: 0 3px 6px #00000029;
+  z-index: 100;
+}
+
+.modalInner {
+  font-family: $font-stack;
+  color: $white;
+  z-index: 30;
+}
+
+.margin-y {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.extrabold {
+  font-weight: 800;
+  font-size: $heading-font;
+  margin: 0px;
+}
+
+.center-text {
+  text-align: center;
+}
