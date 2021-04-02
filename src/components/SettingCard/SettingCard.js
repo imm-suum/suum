@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
-import './SettingCard.css';
+import './SettingCard.scss';
+import SettingCardToggle from '../SettingCardToggle/SettingCardToggle.js';
 
 function SettingCard(){
 	return(
-		<div>
-			<h1 className="settings-card-title">Notifications</h1>
+		<div className="primary-setting-card">
+			<div className="text">
+				<div>
+					<h1 className="settings-card-title">Notifications</h1>
+				</div>
+			</div>
+			<SettingCardToggle/>
 		</div>
 	);
 

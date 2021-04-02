@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
-import './MainSettingCardInfo.css';
+import './MainSettingCardInfo.scss';
 
 
 class MainSettingCardInfo extends Component {
