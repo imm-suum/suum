@@ -25,7 +25,7 @@ export const HabitTabWidget = (todayHabits) => {
     tab3: <HabitCheckItem setHabitState={setHabit3} checked={habit3IsChecked} habitName= "habit 3 name"/>
   }
   
-  //When tab is clicked this function sets the state of the active tab on the HabitTabWidget to the sected tab
+  //When tab is clicked this function sets the state of the active tab on the HabitTabWidget to the selected tab
   const onTabClickHandler = (tab) => {
     setActiveTab(tab);
   }
@@ -38,8 +38,7 @@ export const HabitTabWidget = (todayHabits) => {
 
   return (
      <div> 
-        <h1>HI WE'RE TESTING THE HabitTabWidget</h1>
-        <div>
+          
           {
             tabs.map((tab, idx)=> {
               return <Tabs key={idx} onClickHandler={onTabClickHandler} tab={tab} />
@@ -47,7 +46,6 @@ export const HabitTabWidget = (todayHabits) => {
 
           }
         <div className='HabitTabWidget bg-green'>{displayContent(activeTab)}</div>
-        </div>
      </div> 
   );  
 } 
