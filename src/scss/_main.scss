@@ -1,0 +1,77 @@
+/*COLOR VARIABLES*/ 
+$main-green: #44B2A5;
+$light-green: #D2F4D0;
+$bright-yellow: #FDCA6E;
+$bg-yellow: #FFF7E8;
+$dark-blue: #142B55;
+
+$white: #FFF;
+$black: #323232;
+
+
+/*FONT STACKS*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$font-stack: 'Montserrat', sans-serif;
+
+$body-font: 18px;
+
+//look at nightly checkin card title 
+$heading-font: 24px;
+
+//look at weekly review completed task title
+$subheading-font: 20px;
+
+
+/*GLOBAL CLASSES FOR BUTTONS*/
+.long-button {
+    border-radius: 15px;
+    box-shadow: 0 3px 6px #00000029;
+    height: 48px;
+    width: 328px;
+    padding: 15px 64px;
+    border: none;
+    margin: auto;
+}
+
+.sm-button {
+    border-radius: 15px;
+    height: 36px;
+    width: 105px;
+    padding: 9px 32px;
+    border: none;
+    margin: 1rem;
+}
+
+.circle-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: calc(60px/2);
+    border: none;
+    margin: 1rem;
+    background-color: white;
+}
+
+
+/*COLOR CLASS*/ 
+
+.main-green {
+    background-color: $main-green;
+}
+
+.black {
+    color: $black;
+}
+
+.white {
+    color: $white;
+}
+
+.grey {
+    color: grey;
+}
+
+body {
+ width: 500px;
+ background-color:$bg-yellow;
+}
