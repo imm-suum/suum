@@ -24,21 +24,23 @@ export const Modal = ({toggleModal, closeModal}) => {
   ];
 
   const modalContent = habits.map((habit, idx) => {
-    return <div className="margin-y"><HabitCheckItem key={idx} checked={habit.checked} habitName={habit.name} setHabitState={habit.setting}/></div>
+    return <div className="margin-y black"><HabitCheckItem key={idx} checked={habit.checked} habitName={habit.name} setHabitState={habit.setting}/></div>
+    
   })
   
   return ( 
-    <div className="modalWrapper">
+    <aside id="modalbackdrop" className="modalWrapper" onClick={e=> closeModal(e)}>
       <div className="modalInner">
-        <span id="closer" onClick={closeModal}>X</span>
+        <span className="close" id="closer" onClick={toggleModal}>X</span>
         <h2 className="extrabold center-text">How did you do today?</h2>
         <p className="center-text">Check the habits you've completed today!</p>
-      </div>
-      {modalContent}
       
-      <Button style={btnBottom} color="yellow" size={"lg"}>
-        Let's Plan for Tomorrow!
-      </Button>
-    </div>
+        {modalContent}
+        <Button style={btnBottom} color="yellow" size={"lg"}>
+          Let's Plan for Tomorrow!
+        </Button>
+      </div>
+
+    </aside>
    )
 }
