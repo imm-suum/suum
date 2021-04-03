@@ -1,6 +1,7 @@
 //reusable Button UI component
 //can display different sizes and colors based on Button.css
 import React, { useState } from "react";
+import './Button.scss';
 
 
 function Button(props) {

@@ -1,19 +1,4 @@
-/*COLOR VARIABLES*/ 
-$main-green: #44B2A5;
-$light-green: #D2F4D0;
-$bright-yellow: #FDCA6E;
-$bg-yellow: #FFF7E8;
-$dark-blue: #142B55;
-
-$white: #FFF;
-$black: #323232;
-
-/*FONT STACKS*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-$font-stack: 'Montserrat', sans-serif;
-
-$body-font: 18px;
+@use '../../scss/main.scss' as *;
 
 .App {
   text-align: center;
@@ -21,7 +6,7 @@ $body-font: 18px;
 
 button {
   font-size: $body-font;
-  font-weight: 800;
+  font-weight: 600;
   font-family: $font-stack;
   color: #fff;
   margin: 0 5px;
@@ -41,12 +26,21 @@ button {
   color: #fff;
 }
 
+.btn-clear {
+  background-color: transparent;
+}
+
+.btn-link {
+  color: $bright-yellow;
+  font-size: 14px;
+}
+
 .btn-lg {
   border-radius: 15px;
   box-shadow: 0 3px 6px #00000029;
   height: 48px;
-  width: 328px;
-  padding: 15px 64px;
+  width: 100%;
+  padding: 15px auto;
   border: none;
   margin: auto;
 }

@@ -5,16 +5,24 @@ import './Modal.scss';
 
 export const Modal = ({toggleModal, closeModal}) => {
 
+  //style object to apply on button
   const btnBottom = {
     position: 'absolute',
-    bottom: '-100px'
+    bottom: '22px',
+    width: "80%"
+  }
+
+  //click event 
+  const handleClick = ()=> {
+    return (
+      console.log("clicked button")
+    )
   }
   
   //Track state for each of the 3 Habit Check Items that are used 
   const [ habit1IsChecked, setHabit1 ] = useState(false);
   const [ habit2IsChecked, setHabit2 ] = useState(false);
   const [ habit3IsChecked, setHabit3 ] = useState(false);
-
 
   //array of information 
   const habits = [
@@ -31,14 +39,19 @@ export const Modal = ({toggleModal, closeModal}) => {
   return ( 
     <aside id="modalbackdrop" className="modalWrapper" onClick={e=> closeModal(e)}>
       <div className="modalInner">
-        <span className="close" id="closer" onClick={toggleModal}>X</span>
-        <h2 className="extrabold center-text">How did you do today?</h2>
-        <p className="center-text">Check the habits you've completed today!</p>
+        <div className="modalContent">
+        {/* <span className="close" id="closer" onClick={toggleModal}>X</span> */}
+        <h2 style={{color:"white", fontSize:"24px", marginBottom:"30px"}} className="extrabold center-text">How did you do today?</h2>
       
         {modalContent}
-        <Button style={btnBottom} color="yellow" size={"lg"}>
-          Let's Plan for Tomorrow!
-        </Button>
+        {/* <p className="center-text">Check the habits you've completed today!</p> */}
+        <div style={btnBottom}>
+          <Button color="yellow" size={"lg"} handleClick={handleClick}>
+            Let's Plan for Tomorrow!
+          </Button>
+        </div>
+        </div>
+
       </div>
 
     </aside>

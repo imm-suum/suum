@@ -1,4 +1,4 @@
-@use '../../scss/_main.scss' as *;
+@use '../../scss/main.scss' as *;
 
 #modalbackdrop {
   position: fixed;
@@ -23,10 +23,6 @@
   padding:.2em .5em;
 }
 
-.modalWrapper {
-
-}
-
 .modalInner {
   position: relative;
   background-color: $dark-blue;
@@ -39,17 +35,27 @@
   font-family: $font-stack;
   color: $white;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .margin-y {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .extrabold {
   font-weight: 800;
   font-size: $heading-font;
   margin: 0px;
+  padding-top: 0px;
 }
 
 .center-text {
