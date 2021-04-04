@@ -32,7 +32,7 @@ import NoHabitsWidget from '../components/NoHabitsWidget/NoHabitsWidget.js';
   //   asyncFunc();
   // [asyncFunc]});
 
-export const HabitNursery =  () => {
+export const Home =  () => {
 
 	  return (
 
