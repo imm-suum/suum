@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './app.css';
 
-import { HabitNursery } from './screen/HabitNursery.jsx';
+import { Home } from './screen/Home.jsx';
 import History from './screen/History.jsx';
 import { Settings } from './screen/Settings.jsx';
+import { Login } from './screen/Login.jsx';
 import Stash from './screen/Stash.jsx';
 import WeeklyReport from './screen/WeeklyReport.jsx';
 
@@ -27,9 +28,10 @@ class App extends Component {
 			<Router>
 				
 				<Switch>
-					<Route path="/" exact component={HabitNursery}/>
+					<Route path="/" exact component={Home}/>
+					<Route path="/login" exact component={Login}/>
 					<Route path="/weeklyReport" exact component={WeeklyReport}/>
-					<Route path="/stash" exact component={Stash}/>
+					<Route path="/habitNursery" exact component={Stash}/>
 					<Route path="/history" exact component={History}/>
 					<Route path="/settings"  exact component={Settings}/>
 				</Switch>
