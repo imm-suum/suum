@@ -1,7 +1,7 @@
 import React from 'react';
 import '../app.css';
 
-import LoginForm from '../components/LoginForm/LoginForm.jsx';
+import { LoginForm } from '../components/LoginForm/LoginForm.jsx';
 
 
 export const Login =  () => {
