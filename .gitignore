@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 
-/backEnd-suum/node_modules
+/backEnd-suum/node_modules/**
 
 # testing
 /coverage
@@ -26,4 +26,5 @@ yarn-debug.log*
 yarn-error.log*
 
 
+src/app.js
 src/app.css
