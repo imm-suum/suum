@@ -1,7 +1,8 @@
+@use '../../scss/main.scss' as *;
 
 .checkItem {
     height: 48px;
-    width: 388px;
+    width: 100%;
     /* border: 1px solid; */
     border-radius: 10px;
     background-color: white;
@@ -16,6 +17,7 @@
 
 .checkItemText {
     margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .checkItem > input {

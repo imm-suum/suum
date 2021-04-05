@@ -1,6 +1,7 @@
 import React from 'react';
 import ListItem from '../ListItem/ListItem.jsx';
 import './Nav.css';
+import { Link } from 'react-router-dom';
 
 const Nav = (props) => {
 
@@ -26,9 +27,18 @@ const Nav = (props) => {
 
     return (
         <ul className={navClasses}>
+          <Link to='/'>
           <li className="nav-li"><ListItem name= "Habit Nursery" /></li> 
-          <li className="nav-li"><ListItem name="History" /></li>  
-          <li className="nav-li"><ListItem name="Settings" /></li>   
+          </Link>
+
+          <Link to='/history'>
+          <li className="nav-li"><ListItem name="History" /></li>
+          </Link>  
+          
+          <Link to='/settings'>
+          <li className="nav-li"><ListItem name="Settings" /></li> 
+          </Link>
+
         </ul>
 
     );
