@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './HabitCheckItem.css';
+import './HabitCheckItem.scss';
 
 
 export const HabitCheckItem = ({checked, habitName, setHabitState}) => {
