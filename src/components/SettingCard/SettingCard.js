@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
-import './SettingCard.css';
+import './SettingCard.scss';
 import SettingCardToggle from '../SettingCardToggle/SettingCardToggle.js';
 
 function SettingCard(){

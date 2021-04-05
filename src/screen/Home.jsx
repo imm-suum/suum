@@ -35,7 +35,7 @@ import DateTime from '../components/DateTime/DateTime.jsx';
   //   asyncFunc();
   // [asyncFunc]});
 
-export const HabitNursery =  () => {
+export const Home =  () => {
 
 	  return (
 
