@@ -7,6 +7,9 @@ import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
 
 import NoHabitsWidget from '../components/NoHabitsWidget/NoHabitsWidget.js';
 
+import DateTime from '../components/DateTime/DateTime.jsx';
+
+
 
 //A Class that holds all components for Habit Nursery Screen
 
@@ -39,7 +42,7 @@ export const Home =  () => {
 		  //add imported classes here
 		  //always have div to place component notes
 			<div>
-
+        <DateTime date={new Date()} />,
 				<HabitTabWidget/>
 				<NoHabitsWidget/>
             
