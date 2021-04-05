@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
-import './SettingCardToggle.css';
+import './SettingCardToggle.scss';
 
 class SettingCardToggle extends Component{
 	constructor(){

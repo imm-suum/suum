@@ -1,54 +1,45 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './app.css';
-import HabitCheckItem from './components/HabitCheckList/HabitCheckItem.js';
-import MainSettingCard from './components/MainSettingCard/MainSettingCard.js';
-import SettingCardToggle from './components/SettingCardToggle/SettingCardToggle.js';
-import SettingCard from './components/SettingCard/SettingCard.js';
-import SettingSocialMedia from './components/SettingSocialMedia/SettingSocial.js';
+
+import { Home } from './screen/Home.jsx';
+import History from './screen/History.jsx';
+import { Settings } from './screen/Settings.jsx';
+import { Login } from './screen/Login.jsx';
+import Stash from './screen/Stash.jsx';
+import WeeklyReport from './screen/WeeklyReport.jsx';
+
+
 import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu.js';
-import PastPlantWidget from './components/PastPlantWidget/PastPlantWidget.js';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //A class that shows all the components that we imported abve ^
+
+//make all screens dark mode.
 
 class App extends Component {
 
 
   render() {
 	  return (
+		 	//Router navigates the "page" in the broswer search bar to the correct screen component as listed below
 
-		  //add imported classes here
-		  //always have div to place component notes
+			//Switch ensures that each page component is displayed on its own. And the URL has to be an 'exact match'
+			<Router>
+				
+				<Switch>
+					<Route path="/" exact component={Home}/>
+					<Route path="/login" exact component={Login}/>
+					<Route path="/weeklyReport" exact component={WeeklyReport}/>
+					<Route path="/habitNursery" exact component={Stash}/>
+					<Route path="/history" exact component={History}/>
+					<Route path="/settings"  exact component={Settings}/>
+				</Switch>
 
-		  //<div>
+				{/* The hamburger Menu will now appear above all the pages in the app because its always rendered on the app*/}
+				<HamburgerMenu/> 
 
-			//<HabitCheckItem/>
-
-		  //<div className="primary-setting-card">
-		      //<div className="text">
-			  	//<SettingCard/>
-			  //</div>
-			  	//<SettingCardToggle/>
-		   //</div>
-
-		   //<div className="primary-setting-card">
-			 //<div className="text">
-			   //<SettingCard/>
-			 //</div>
-			   //<SettingCardToggle/>
-		  //</div>
-
-		  //<HamburgerMenu/>
-
-		 //</div>
-
-		  //<div>
-		  	//<SettingSocialMedia/>
-		  //</div>
-
-		<div>
-		  	<PastPlantWidget/>
-		</div>
+			</Router>
 
 		);
   }
