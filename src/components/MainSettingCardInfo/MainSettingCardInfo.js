@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
-import './MainSettingCardInfo.css';
+import './MainSettingCardInfo.scss';
 
 
 class MainSettingCardInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fullName: '',
-      emailAddress: '',
+      username: 'Christie',
+      emailAddress: 'christie.112@gmail.com',
+	  showEdit: false,
     };
   }
   myChangeHandler = (event) => {
@@ -16,6 +17,15 @@ class MainSettingCardInfo extends Component {
     let val = event.target.value;
     this.setState({[nam]: val});
   }
+
+  handleClick = (e) => {
+	  e.preventDefault();
+	  this.setState({
+		  showEdit:!this.state.showEdit
+
+	  })
+   }
+
   render() {
     return (
 	<form>
@@ -23,8 +33,12 @@ class MainSettingCardInfo extends Component {
 	  	<h1 className="settings-main-title">Profile</h1>
 	  	<p className="settings-main-item">{this.state.username}</p>
 	  	<p className="settings-main-item2">{this.state.emailAddress}</p>
+		<button className="edit-button" onClick={this.handleClick}>
+		Edit
+		</button>
 	  </div>
 
+	  <div className={this.state.showEdit ? 'showEdit edit' : 'edit'}>
 	  <input
         type='text'
         name='username'
@@ -35,6 +49,8 @@ class MainSettingCardInfo extends Component {
         name='emailAddress'
         onChange={this.myChangeHandler}
       />
+
+	  </div>
       </form>
     );
   }
