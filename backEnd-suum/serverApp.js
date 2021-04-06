@@ -45,7 +45,7 @@ app.use("/posts", postsRoute);
 app.use("/pushHabit", pushHabitRoute);
 app.use("/getStash", getStashRoute);
 app.use("/allHabits", allHabits);
-app.use('/habit', HabitEndpoint );
+app.use('/api/habit', HabitEndpoint );
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
