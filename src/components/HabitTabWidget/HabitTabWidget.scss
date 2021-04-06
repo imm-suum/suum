@@ -6,14 +6,19 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
   padding-left: 2rem;
+  padding-right: 2rem;
   margin-top: 0px;
+}
+
+.marginTop {
+  margin-top: 0.5rem;
 }
 
 .HabitTabWidget {
   width:100%;
   position: relative;
   display: inline-block;
-  margin-bottom: 3px;
+  // margin-bottom: 3px;
 }
 
 
@@ -66,5 +71,6 @@ button:focus {
 }
 
 button:active {
-    transform: scale(0.99);
+    transform: scale(0.95);
+    
 }

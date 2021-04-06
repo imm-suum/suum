@@ -34,7 +34,7 @@ export const Form = ({closeForm})=> {
 
                 <input className="inputBg margin-y" id="habit3" placholder="take a 5min walk" {...register("habit3")} />
 
-                <a className="helpLink">Need help finding a habit?</a>
+                <a href="" className="helpLink">Need help finding a habit?</a>
 
               <input class="btn btn-lg btn-yellow bottomBtn"  type="submit" value="Let's Go!"/>
             </form>
