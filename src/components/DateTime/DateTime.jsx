@@ -6,8 +6,9 @@ class DateTime extends Component {
   render() {
     return (
       <div className="text-left dateTimeContainer">
-        <h1>Current Date</h1>
+        <h1>Today's Habits</h1>
         <h2>{this.props.date.toLocaleDateString()}</h2>
+        {/* find method t oconvert date into...english..lol */}
       </div>
     );
   }
