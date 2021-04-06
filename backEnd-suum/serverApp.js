@@ -13,7 +13,7 @@ var testAPIRouter = require("./routes/testAPI");
 const authRoute= require('./routes/auth');
 var postsRoute = require("./routes/posts");
 const pushHabitRoute = require("./routes/pushHabit");
-const postHabit = require("./routes/postHabit");
+const HabitEndpoint = require("./routes/HabitEndpoint");
 const getStashRoute = require("./routes/getStash");
 const allHabits = require("./routes/allHabits");
 var app = express();
@@ -45,7 +45,7 @@ app.use("/posts", postsRoute);
 app.use("/pushHabit", pushHabitRoute);
 app.use("/getStash", getStashRoute);
 app.use("/allHabits", allHabits);
-app.use('/postHabit', postHabit );
+app.use('/habit', HabitEndpoint );
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

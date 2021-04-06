@@ -4,7 +4,24 @@ const Habit = require("../json-schema/Habit");
 const User = require("../json-schema/User");
 const verify = require('./verifyToken');
 
-//submits the habits
+//GET HABITS for A User 
+router.get("/", verify, async (req, res) => {
+  try {
+
+    //Get the user with the user id provided and populate the habits[] with the referenced and full habit objects
+    const Userhabits = await User.findById(req.user).populate('habits');
+
+    res.json(Userhabits.habits);
+  } catch (err) {
+   
+    res.json({ message: err });
+  }
+});
+
+
+
+
+//POST A NEW HABIT
 router.post("/", verify, async (req, res) => {
   //console.log(req.body);
   //console.log(req.user._id);
@@ -49,5 +66,33 @@ router.post("/", verify, async (req, res) => {
 
 
 });
+
+
+//PATCH A NEW HABIT 
+router.patch("/", verify, async (req, res) => {
+  try {
+    // let today = new Date();
+    // let tomorrow = new Date(today);
+    // tomorrow.setDate(today.getDate() + 1);
+
+    //get date from request body
+    let date = req.body.habitAssignedDateTime;
+
+    const updateHabit = await Habit.updateOne(
+      { _id: req.body._id },
+      {
+        $set: {
+          habitAssignedDateTime: date,
+        },
+      }
+    );
+    res.json(updateHabit);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
+
+
 
 module.exports = router;
