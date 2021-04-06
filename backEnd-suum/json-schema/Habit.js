@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
-const Schema=mongoose.Schema; 
 
 const habitSchema = mongoose.Schema({
-  _id:String, 
 
   habitName: {
     type: String,
@@ -26,11 +24,16 @@ const habitSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  user_id: {type:Schema.Types.ObjectId, ref:'user'}
+  user_id: {
+    type: mongoose.Schema.Types.ObjectId, 
+    ref:'User',
+    required: true
+  } 
+  
 });
 
 
 
-const Habit = mongoose.model('habit', habitSchema, 'habits');
+const Habit = mongoose.model('Habit', habitSchema);
 
 module.exports = Habit;

@@ -1,30 +1,54 @@
 const express = require("express");
 const router = express.Router();
 const Habit = require("../json-schema/Habit");
+var mongoose = require('mongoose');
+const verify = require('./verifyToken');
 
 //submits the habits
-router.post("/:userId", (req, res) => {
-  //   console.log(req.body);
+router.post("/", verify, async (req, res) => {
+  console.log(req.body);
+  console.log(req.user._id);
+  
+  //make New user Habit
   const habit = new Habit({
-    habitName: req.body.habitName,
-    user_id:user_id
-    // post the new habit with the current user to the habit collection 
-    // then save the habit in the user's collection as an index in the habit array 
+   habitName: req.body.habitName,
+   user_id: req.user
 
   });
-  habit
-    .save().then(()=>{
-      const user=new Habit.user({ 
-        habits=req.body.habitName, 
-        habit_id=habit_id 
-      })
-    })
-    .then((data) => {
-      res.json(data);
-    })
-    .catch((err) => {
-      res.json({ message: err });
-    });
+
+  console.log(habit);
+
+  //Try to save Habit
+  const newHabitId = {habit:""};
+  try{
+    const saveHabit = await habit.save();
+    
+    res.send({habit: habit.id});
+    
+  } 
+  catch (err){
+
+    res.status(400).send(err);
+  }
+
+  console.log(newHabitId);
+  
+
+  //Try to populate new Habit Id in the approproate user object
+  // try{
+  //   // const saveHabit = await habit.save();
+  //   // res.send({habit});
+
+  //   // habit.findOne(habit.user_id)
+  // // .populate('user_id')
+  // // .exec(function(err, habit){
+  // } 
+  // catch (err){
+
+  //   res.status(400).send(err);
+  // }
+
+
 });
 
 module.exports = router;
