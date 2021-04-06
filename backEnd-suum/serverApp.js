@@ -10,6 +10,7 @@ const bodyParser = require("body-parser"); //handles reading data from forms
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var testAPIRouter = require("./routes/testAPI");
+const authRoute= require('./routes/auth');
 var postsRoute = require("./routes/posts");
 const pushHabitRoute = require("./routes/pushHabit");
 const getStashRoute = require("./routes/getStash");
@@ -32,8 +33,12 @@ mongoose.connect(process.env.DB_CONNECTION, { usenewURLParser: true }, () => {
   console.log("connected to DB");
 });
 
+//Middleware 
+app.use(express.json()); //handles request body
+
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use('/api/user', authRoute);
 app.use("/testAPI", testAPIRouter);
 app.use("/posts", postsRoute);
 app.use("/pushHabit", pushHabitRoute);

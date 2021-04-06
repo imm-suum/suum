@@ -18,7 +18,7 @@ const userSchema = Schema({
       required: true,
     },
     notifications: {
-      Boolean
+      type: Boolean
       
     }, 
     habits:[[{type:Schema.Types.ObjectId, ref:'habit'}]]
