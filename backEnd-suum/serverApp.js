@@ -7,16 +7,20 @@ var cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv/config");
 const bodyParser = require("body-parser"); //handles reading data from forms
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var testAPIRouter = require("./routes/testAPI");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const testAPIRouter = require("./routes/testAPI");
 const authRoute= require('./routes/auth');
-var postsRoute = require("./routes/posts");
+const postsRoute = require("./routes/posts");
 const pushHabitRoute = require("./routes/pushHabit");
 const HabitEndpoint = require("./routes/HabitEndpoint");
 const getStashRoute = require("./routes/getStash");
 const allHabits = require("./routes/allHabits");
 var app = express();
+
+//Swagger import
+const swaggerUi = require('swagger-ui-express');
+import { swaggerDocument } from "./swagger";
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -46,6 +50,7 @@ app.use("/pushHabit", pushHabitRoute);
 app.use("/getStash", getStashRoute);
 app.use("/allHabits", allHabits);
 app.use('/api/habit', HabitEndpoint );
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
