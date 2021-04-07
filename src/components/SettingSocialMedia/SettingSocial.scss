@@ -1,0 +1,28 @@
+@import '../../scss/main.scss';
+
+html,body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+.SocialMediaCard{
+	margin-top: 196px;
+	height: 275px;
+}
+
+h1,h2,h3{
+	font-size: 16px;
+	font-weight: normal;
+	color: $main-green;
+	padding-top: 20px;
+}
+
+h4{
+	font-size:24px;
+	margin-bottom: 12px;
+}
+
+
+svg{
+	margin: 18px;
+}

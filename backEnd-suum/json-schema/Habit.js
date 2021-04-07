@@ -30,6 +30,7 @@ const habitSchema = mongoose.Schema({
     required: true
   } 
   
+
 });
 
 

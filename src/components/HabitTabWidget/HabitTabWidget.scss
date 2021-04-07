@@ -1,0 +1,70 @@
+@import '../../scss/main.scss';
+/*Import main scss for global stylings*/
+
+.bg-green {
+  background-color: $main-green;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  margin-top: 0px;
+}
+
+.HabitTabWidget {
+  width:100%;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+
+.Tabs__Tab {
+    display: inline-block;
+    padding: 1em 1em 0 1em;
+    color: $black;
+    width: fit-content;
+    cursor: pointer;
+  }
+
+  .Tabs__Tab:hover, .Tabs__Tab--active {
+    background: $main-green;
+    color: $black;
+  }
+
+  .Tabs__animate {
+    position:absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-bottom: 3px solid orange;
+    z-index: -1;
+  }
+
+.container{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+
+button{
+	background-color: $light-green;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	border: none;
+	color: white;
+}
+
+button:hover,
+button:focus {
+	color: $bright-yellow;
+	background: white;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}

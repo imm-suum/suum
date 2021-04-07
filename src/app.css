@@ -1,9 +1,35 @@
 .App {
     text-align: center;
   }
-  
 
 .extra{
-
     margin-top: 50px;
+}
+
+.text{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+}
+
+.primary-setting-card{
+	display: flex;
+	margin-bottom: 20px;
+	align-items: center;
+	height: 48px;
+	width: 388px;
+	border-radius:10px;
+	background-color: white;
+	box-shadow: 0px 3px 6px #00000029;
+}
+
+.main-setting-card{
+	display: flex;
+	flex-direction: column;
+	height: 120px;
+	width: 388px;
+	border-radius:10px;
+	background-color: white;
+	box-shadow: 0px 3px 6px #00000029;
+	margin-bottom: 39px;
 }

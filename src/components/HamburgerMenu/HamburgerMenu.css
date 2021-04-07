@@ -1,0 +1,20 @@
+.flexbox {
+    display: flex;
+}
+
+.HBMenu {
+
+    top: 0;
+    right: 0;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    z-index: 200;
+}
+
+
+/* to better see divs and elements. remove from js file on final merge */
+.outline {
+    border: 2px solid blue;
+}

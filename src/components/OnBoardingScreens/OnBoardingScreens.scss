@@ -1,0 +1,17 @@
+@import '../../scss/main.scss';
+
+.screen{
+	height: 926px;
+	width: 428px;
+	background-color: $main-green;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.title{
+	color: white;
+	font-size: 40px;
+	font-weight: bold;
+}
