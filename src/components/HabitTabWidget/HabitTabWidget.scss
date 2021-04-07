@@ -50,7 +50,7 @@
 	background-color: red;
 }
 
-button{
+.habitTabIdx {
 	background-color: $light-green;
 	width: 50px;
 	height: 50px;
@@ -59,18 +59,18 @@ button{
 	color: white;
 }
 
-button:hover,
-button:focus {
+.habitTabIdx:hover,
+.habitTabIdx:focus {
 	color: $bright-yellow;
 	background: white;
 }
 
-button:focus {
+.habitTabIdx:focus {
     outline: 1px solid #fff;
     outline-offset: -4px;
 }
 
-button:active {
+.habitTabIdx:active {
     transform: scale(0.95);
     
 }

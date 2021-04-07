@@ -3,12 +3,16 @@ import './DateTime.scss';
 
 class DateTime extends Component {
   state = {};
-  render() {
+
+  render() { 
+
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+
     return (
       <div className="text-left dateTimeContainer">
-        <h1>Today's Habits</h1>
-        <h2>{this.props.date.toLocaleDateString()}</h2>
-        {/* find method t oconvert date into...english..lol */}
+        <h1 className="todayTitle">Today's Habits</h1>
+        <h2 className="todayDate">{this.props.date.toLocaleDateString(undefined, options)}</h2>
       </div>
     );
   }
