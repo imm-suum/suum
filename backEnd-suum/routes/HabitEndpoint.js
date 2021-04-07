@@ -18,6 +18,37 @@ router.get("/", verify, async (req, res) => {
   }
 });
 
+//GET HABITS for A User for the dat
+router.get("/forToday", verify, async (req, res) => {
+  try {
+
+    //Get todays Date
+    let today = new Date();
+    //Remove the Hours
+    today.setHours(0,0,0,0);
+    console.log(today);
+
+    let tomorrow = new Date();
+    console.log(today.getDate() + 1);
+
+    //Get the user with the user id provided and populate the habits[] with the referenced and full habit objects
+    const Userhabits = await Habit.find({ 
+      user_id:req.user, 
+      habitAssignedDateTime:  {
+        $gte: today,
+        $lt: today
+      } 
+    }).populate('habits');
+
+   
+
+    res.json(Userhabits);
+  } catch (err) {
+   
+    res.json({ message: err });
+  }
+});
+
 
 
 
@@ -58,7 +89,7 @@ router.post("/", verify, async (req, res) => {
         //res.json(updateUserHabitArray);
       });
       
-    res.send({habit: habit.id});
+    res.send({habit_id: habit.id});
   } 
   catch (err){
     res.status(400).send(err);
@@ -86,7 +117,7 @@ router.patch("/", verify, async (req, res) => {
         },
       }
     );
-    res.json(updateHabit);
+    res.json('Habit Date has been Updated');
   } catch (err) {
     res.json({ message: err });
   }
