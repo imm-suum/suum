@@ -10,9 +10,12 @@ const bodyParser = require("body-parser"); //handles reading data from forms
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var testAPIRouter = require("./routes/testAPI");
+const authRoute= require('./routes/auth');
 var postsRoute = require("./routes/posts");
 const pushHabitRoute = require("./routes/pushHabit");
+const HabitEndpoint = require("./routes/HabitEndpoint");
 const getStashRoute = require("./routes/getStash");
+const allHabits = require("./routes/allHabits");
 var app = express();
 
 // view engine setup
@@ -31,12 +34,18 @@ mongoose.connect(process.env.DB_CONNECTION, { usenewURLParser: true }, () => {
   console.log("connected to DB");
 });
 
+//Middleware 
+app.use(express.json()); //handles request body
+
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use('/api/user', authRoute);
 app.use("/testAPI", testAPIRouter);
 app.use("/posts", postsRoute);
 app.use("/pushHabit", pushHabitRoute);
 app.use("/getStash", getStashRoute);
+app.use("/allHabits", allHabits);
+app.use('/api/habit', HabitEndpoint );
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
