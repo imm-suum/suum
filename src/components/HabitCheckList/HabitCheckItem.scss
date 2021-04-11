@@ -1,7 +1,8 @@
+@use '../../scss/main.scss' as *;
 
 .checkItem {
     height: 48px;
-    width: 388px;
+    width: 100%;
     /* border: 1px solid; */
     border-radius: 10px;
     background-color: white;
@@ -10,7 +11,7 @@
     justify-content: left;
     align-items: center;
 
-    font-size: 18px; 
+    font-size: 18px;
     padding-left: 20px;
 }
 
@@ -31,7 +32,3 @@
 .checkItem > input:checked {
     background-color: #33C5BC;
 }
-
-
-
-
