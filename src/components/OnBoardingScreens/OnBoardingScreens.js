@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './OnBoardingScreens.scss';
-import test from './logo.svg'
+import logo from './logo.svg'
+import logo2 from './logo2.svg'
+import logo3 from './logo3.svg'
+import logo4 from './logo4.svg'
+import nav from './nav.svg'
 
 function OnBoardingScreens(){
+
+
 	return(
 		<div className="screen">
-			 <img src={test} alt="test" />
+			<img src={logo} alt="test" />
 			<h1 className="title">how suum works</h1>
+			<p className="help">this is how suum works</p>
+			<a className="next" href="/onboarding2">
+				Proceed
+			</a>
+			<img className="nav-icon" src={nav} alt="test" />
 		</div>
 	);
 }
