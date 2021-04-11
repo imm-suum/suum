@@ -1,0 +1,14 @@
+html,body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+button{
+	width: 151px;
+	height: 27px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #44B2A5;
+	background-color: white;
+	border-radius: 18px;
+	border: 2px solid #41AB9F;
+}

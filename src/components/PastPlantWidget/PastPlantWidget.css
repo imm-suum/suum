@@ -1,0 +1,40 @@
+.card{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 162px;
+	height: 130px;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 0px 3px 6px #00000029;
+	cursor: pointer;
+}
+
+p, h1{
+	padding: 0px;
+	margin: 0px;
+}
+
+.bar-container{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 85px;
+	height: 11px;
+	background-color: white;
+	border: 1px solid #33C5BC;
+	border-radius: 10px;
+	margin-top: 14px;
+}
+
+.bar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 8px;
+	width: 43px;
+	height: 11px;
+	background-color: #33C5BC;
+	border-radius: 10px;
+}
