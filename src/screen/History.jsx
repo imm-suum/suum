@@ -9,11 +9,16 @@ import PastPlantWidget from '../components/PastPlantWidget/PastPlantWidget';
 
 class History extends Component {
 	
-	plantWidgetContainer = {
 
-	}
+
 
   render() {
+			
+		const plantWidgetContainer = {
+			paddingLeft: '2rem',
+
+		}
+
 		//GET API response 
 
 		//for (i=0; i< response.date.month.length; i++){
@@ -30,8 +35,9 @@ class History extends Component {
 		  //always have div to place component notes
 			<div>
 				<DateTime date={new Date()} />
-				<div className="plantWidgetContainer">
-				<PastPlantWidget/>
+				
+				<div style={plantWidgetContainer}>
+					<PastPlantWidget/>
 				</div>
       </div>
 

@@ -4,11 +4,7 @@ import '../app.css';
 
 
 import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
-
-import NoHabitsWidget from '../components/NoHabitsWidget/NoHabitsWidget.js';
-
 import DateTime from '../components/DateTime/DateTime.jsx';
-
 
 
 //A Class that holds all components for Habit Nursery Screen
