@@ -13,7 +13,7 @@ class History extends Component {
 
   render() {
 			
-		const plantWidgetContainer = {
+		const historyScreenPadding = {
 			paddingLeft: '2rem',
 
 		}
@@ -32,10 +32,10 @@ class History extends Component {
 
 		  //add imported classes here
 		  //always have div to place component notes
-			<div>
+			<div style={historyScreenPadding}>
 				<DateTime date={new Date()} />
 				
-				<div style={plantWidgetContainer}>
+				<div>
 					<PastPlantWidget/>
 				</div>
       </div>

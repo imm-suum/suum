@@ -34,7 +34,10 @@ import DateTime from '../components/DateTime/DateTime.jsx';
 export const Home =  () => {
 
     // get API response.
+		const dateTimePadding = {
+			paddingLeft: '2rem',
 
+		}
     // let response = APIresonseArray
 
 	  return (
@@ -51,12 +54,14 @@ export const Home =  () => {
 
 		  //add imported classes here
 		  //always have div to place component notes
-			<div>
-        <DateTime date={new Date()} />
-				<HabitTabWidget/>
+			<div >
+        <div style={dateTimePadding}>
+          <DateTime date={new Date()} />
+        </div>
+        <HabitTabWidget/>
             
 
-            </div>
+      </div>
 
 		);
 

@@ -18,7 +18,7 @@ class PastPlantWidget extends Component{
 	  render() {
 	    return (
 	      <div className="card" onClick={this.handleClick}>
-			<h1 className="title">
+			<h1 className="pastPlantTitle">
 				{this.state.isToggled ? 'Jan 01 ~ 07' : ''}
 			</h1>
 			<p className="progress">
