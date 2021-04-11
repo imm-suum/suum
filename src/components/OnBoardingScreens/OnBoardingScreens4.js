@@ -12,7 +12,7 @@ function OnBoardingScreens4(){
 		<div className="screen2">
 			<img src={logo4} alt="test" />
 			<h1 className="title2">how habits work</h1>
-			<p className="help2">this is how suum works</p>
+			<p className="help2">At the end of each Week, you will see your progress for the week and recieve your suum plant.</p>
 			<a className="next2" href="/Login">
 				Proceed
 			</a>

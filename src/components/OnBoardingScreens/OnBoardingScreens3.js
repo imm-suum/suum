@@ -12,7 +12,7 @@ function OnBoardingScreens3(){
 		<div className="screen2">
 			<img src={logo3} alt="test" />
 			<h1 className="title2">how habits work</h1>
-			<p className="help2">this is how suum works</p>
+			<p className="help2">Once completed by you, it will add to your Weekly Progress of Habits/Goals.</p>
 			<a className="next2" href="/onboarding4">
 				Proceed
 			</a>

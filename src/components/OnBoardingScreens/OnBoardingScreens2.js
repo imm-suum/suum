@@ -12,7 +12,7 @@ function OnBoardingScreens2(){
 		<div className="screen2">
 			<img src={logo2} alt="test" />
 			<h1 className="title2">how suum works</h1>
-			<p className="help2">this is how suum works</p>
+			<p className="help2">At the end of each day, suum will check up and see the progress of your daily habits.</p>
 			<a className="next2" href="/onboarding3">
 				Proceed
 			</a>
