@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import '../app.css';
 
-import MainSettingCard from '../components/MainSettingCard/MainSettingCard.js';
 import SettingCard from '../components/SettingCard/SettingCard.js';
 import SettingSocialMedia from '../components/SettingSocialMedia/SettingSocial.js';
 import MainSettingCardInfo from '../components/MainSettingCardInfo/MainSettingCardInfo.js';
@@ -19,9 +18,9 @@ export const Settings =  () => {
 		  //always have div to place component notes
 			<div>
 
-				<SettingCard/>
-                <MainSettingCard/>
 				<MainSettingCardInfo/>
+
+				<SettingCard/>
 
 				<SettingSocialMedia/>
 
