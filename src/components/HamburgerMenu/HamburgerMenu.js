@@ -47,5 +47,5 @@ class HamburgerMenu extends Component {
 
   }
 }
-  
+
 export default HamburgerMenu;
