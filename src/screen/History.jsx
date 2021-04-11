@@ -11,7 +11,6 @@ class History extends Component {
 	
 
 
-
   render() {
 			
 		const plantWidgetContainer = {

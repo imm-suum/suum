@@ -28,7 +28,7 @@ const Nav = (props) => {
     return (
         <ul className={navClasses}>
           <Link to='/'>
-          <li className="nav-li"><ListItem name= "Habit Nursery" /></li> 
+          <li className="nav-li"><ListItem name= "Home" /></li> 
           </Link>
 
           <Link to='/history'>
@@ -37,6 +37,10 @@ const Nav = (props) => {
           
           <Link to='/settings'>
           <li className="nav-li"><ListItem name="Settings" /></li> 
+          </Link>
+
+          <Link to='/stash'>
+          <li className="nav-li"><ListItem name="Habit Nursery" /></li> 
           </Link>
 
         </ul>
