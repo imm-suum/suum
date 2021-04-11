@@ -37,14 +37,27 @@ import DateTime from '../components/DateTime/DateTime.jsx';
 
 export const Home =  () => {
 
+    // get API response.
+
+    // let response = APIresonseArray
+
 	  return (
+      //if night time show checkin process.
+      //IF (Date.prototype.getHours() > 20 && Date!= "friday" ) {
+      // show checkinModal => Planning Modal        
+      // }else if (Date.prototype.getHours() > 20 && Date(day) === "friday") {
+      //     //show weeklyReviewCard componentONly.
+      //     //on close... load homescreen with habitTabWidget?????
+      // }else{
+          //if it's before 8pm on whatever day
+          //show habitTabWidget
+      //}
 
 		  //add imported classes here
 		  //always have div to place component notes
 			<div>
-        <DateTime date={new Date()} />,
+        <DateTime date={new Date()} />
 				<HabitTabWidget/>
-				<NoHabitsWidget/>
             
 
             </div>

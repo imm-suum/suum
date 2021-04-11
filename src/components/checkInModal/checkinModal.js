@@ -1,7 +1,7 @@
 import React, { useState , useEffect } from 'react';
 import {Modal} from '../Modal/Modal.js';
 
-export const CheckInModal = ()=> {
+const CheckInModal = ()=> {
   //set open state to false to hide
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -13,7 +13,7 @@ export const CheckInModal = ()=> {
     if (e.target.id === "modalbackdrop") {
       toggleModal();
     }else{
-      console.log("stop");
+      console.log("wrongID");
     }
   };
 
@@ -35,3 +35,4 @@ export const CheckInModal = ()=> {
     
   );
 };
+export default CheckInModal;

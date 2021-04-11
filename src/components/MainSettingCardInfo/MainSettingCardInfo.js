@@ -6,8 +6,9 @@ import './MainSettingCardInfo.scss';
 class MainSettingCardInfo extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      username: 'Christie',
+      username: 'Christie', //username accepts props.username
       emailAddress: 'christie.112@gmail.com',
 	  showEdit: false,
     };
