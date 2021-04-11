@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
-import './PastPlantWidget.css';
+import './PastPlantWidget.scss';
 
 class PastPlantWidget extends Component{
 	  constructor(props) {
