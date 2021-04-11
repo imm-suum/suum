@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import '../app.css';
 
-import MainSettingCard from '../components/MainSettingCard/MainSettingCard.js';
 import SettingCard from '../components/SettingCard/SettingCard.js';
 import SettingSocialMedia from '../components/SettingSocialMedia/SettingSocial.js';
 import MainSettingCardInfo from '../components/MainSettingCardInfo/MainSettingCardInfo.js';
@@ -27,13 +26,15 @@ export const Settings =  () => {
 		  //add imported classes here
 		  //always have div to place component notes
 
-			
-			<div>
+       <div>
 				<MainSettingCardInfo/>
-				{/* NOtifications  */}
+        
+        {/* NOtifications  */}
 				{/* SettingCard comonent to call toggle in itself. Accepts label prop to change text. */}
 				{/* API call happens IN SettingCard component. */}
-				<SettingCard ><SettingCardToggle /></SettingCard>
+				<SettingCard/>
+
+
 				<SettingSocialMedia/>
 
             </div>
