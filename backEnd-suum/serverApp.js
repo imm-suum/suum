@@ -47,9 +47,17 @@ app.use("/users", usersRouter);
 app.use('/api/user', authRoute);
 app.use("/testAPI", testAPIRouter);
 app.use("/posts", postsRoute);
+
+
+
+// usable routers for front-end 
+// pushes habit into then next day 
 app.use("/pushHabit", pushHabitRoute);
+// gets all the habits that are stashed 
 app.use("/getStash", getStashRoute);
+// gets all the habits for a user 
 app.use("/allHabits", allHabits);
+// creates a habit and posts it inte habit collection and pushes a habit into the user habits array 
 app.use('/api/habit', HabitEndpoint);
 
 
