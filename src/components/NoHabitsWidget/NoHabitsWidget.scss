@@ -10,38 +10,14 @@
 }
 
 
-.noHabitsContainer{
-	width: 100%;
-	height: 104px;
-	/* padding-right: 2rem;
-	padding-left: 2rem; */
-	background-color: #44B2A5;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	box-shadow: 0 3px 6px #00000029;
-}
-
-.accordion{
-	width: 100%;
-	height: 48px;
-	margin: 0 auto;
-	border-radius: 10px;
-	/* background-color: white; */
-}
-
 .tab{
 	height: 48px;
-	width: auto;
+	width: 100%;
 	background-color: white;
 	padding: 1rem;
 	cursor: pointer;
-	display: flex;
-	justify-content: space-between;
 	border-radius: 10px;
 	align-items: center;
-	margin-left: 2rem;
-	margin-right: 2rem;
 	box-shadow: 0 3px 6px #00000029;
 }
 
@@ -59,24 +35,17 @@
 	padding: 1rem;
 }
 
-.container2 {
-	width: 100%;
-	height: auto;
-	background-color: #44B2A5;
-	box-shadow: 0 3px 6px #00000029;
-}
-
 .showContent{
 	position:relative;
 	width: 100%;
-	height: 608px;
+	height: 100%;
 	background-color: #44B2A5;
 	border-radius: 0px 0px 10px 10px;
 	color: black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 2rem 2rem 3rem 2rem;
+	padding-top: 2rem;
 }
 
 .textbox{
