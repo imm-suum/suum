@@ -43,6 +43,7 @@ class NoHabitsWidget extends Component {
 			</div>
 		</div>
 		</div>
+		</div>
 		)
 	}
 }
