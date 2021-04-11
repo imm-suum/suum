@@ -6,17 +6,23 @@ html,body{
 
 
 .primary-setting-card{
+  width: 100%;
 	background-color: $white;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	margin-top: 2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .setting-card-title{
 	padding-bottom: 1rem;
-	padding-right: 10rem;
-	font-size: 18px;
+	width:100%;
+	font-size: $body-font;
+  color:$main-green;
+  font-weight: normal;
+  padding:0;
 }
 
 .switch {
@@ -24,6 +30,7 @@ html,body{
   display: inline-block;
   width: 55px;
   height: 29px;
+  right: 0;
 }
 
 .switch input {

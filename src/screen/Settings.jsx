@@ -5,13 +5,22 @@ import '../app.css';
 import SettingCard from '../components/SettingCard/SettingCard.js';
 import SettingSocialMedia from '../components/SettingSocialMedia/SettingSocial.js';
 import MainSettingCardInfo from '../components/MainSettingCardInfo/MainSettingCardInfo.js';
-import DateTime from '../components/DateTime/DateTime';
 
 
 //A Class that holds all components for Settings Screen
 
 export const Settings =  () => {
 
+
+	const settingScreenTitle={
+		fontSize: "24px",
+		fontWeight: "600",
+		color: "#323232",
+		marginBottom: "1rem"
+	}
+	const bodyPadding = {
+		padding:"2rem"
+	}
 
 	//GET User call by userId
 	//populate name & email in <MainSettingCardInfo username={(response.username)} email={(response.email)}/>
@@ -26,7 +35,8 @@ export const Settings =  () => {
 		  //add imported classes here
 		  //always have div to place component notes
 
-       <div>
+       <div style={bodyPadding}>
+				<h1 style={settingScreenTitle}>Settings</h1> 
 				<MainSettingCardInfo/>
         
         {/* NOtifications  */}
