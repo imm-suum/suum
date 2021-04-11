@@ -21,7 +21,9 @@ class NoHabitsWidget extends Component {
 		//smake response a variable
 
 		return(
+
 			<div className="noHabitsContainer">
+
 			<div className="accordion">
 			<div className="single_accordion">
 			<div className="tab" onClick={this.handleToogle}>
@@ -41,7 +43,6 @@ class NoHabitsWidget extends Component {
 			</div>
 		</div>
 		</div>
-	</div>
 		)
 	}
 }

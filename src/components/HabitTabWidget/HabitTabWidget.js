@@ -12,7 +12,7 @@ export const HabitTabWidget = (todayHabits) => {
   //Create 3 Tabs by my naming them in this array
   const tabs = ["tab1", "tab2", "tab3", "tab4"]
 
-  //Track state for each of the 3 Habit Check Items that are used 
+  //Track state for each of the 3 Habit Check Items that are used
   const [ habit1IsChecked, setHabit1 ] = useState(false);
   const [ habit2IsChecked, setHabit2 ] = useState(true);
   const [ habit3IsChecked, setHabit3 ] = useState(false);
@@ -20,6 +20,7 @@ export const HabitTabWidget = (todayHabits) => {
   
   // Create and store new stances of the habitCheckItem in here with the 
   //Imporve this section of code to be a map .map((tab, idx)=> { that creates as many habit check items as there are tabs... 
+
   //improve statemanagement to have habitIsChecked to be an array of [true, false, true] for each tab
   const content = {
     tab1: <HabitCheckItem setHabitState={setHabit1} checked={habit1IsChecked} habitName= "habit 1 name"/>,
@@ -27,7 +28,7 @@ export const HabitTabWidget = (todayHabits) => {
     tab3: <HabitCheckItem setHabitState={setHabit3} checked={habit3IsChecked} habitName= "habit 3 name"/>,
     tab4: <NoHabitsWidget/>
   }
-  
+
   //When tab is clicked this function sets the state of the active tab on the HabitTabWidget to the selected tab
   const onTabClickHandler = (tab) => {
     setActiveTab(tab);
@@ -36,19 +37,20 @@ export const HabitTabWidget = (todayHabits) => {
   const displayContent = (tab) => {
     return content[tab];
   }
-  
+
 
 
   return (
-     <div> 
-          
+     <div>
           {
             tabs.map((tab, idx)=> {
-              return <Tabs key={idx} onClickHandler={onTabClickHandler} tab={tab} />
-            })
+			  return <Tabs key={idx} onClickHandler={onTabClickHandler} tab={tab} />
+			})
 
           }
         <div className='HabitTabWidget bg-green marginTop'>{displayContent(activeTab)}</div>
+
      </div> 
   );  
 } 
+

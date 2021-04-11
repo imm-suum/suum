@@ -44,19 +44,23 @@
     z-index: -1;
   }
 
+
 .container{
 	width: 100px;
 	height: 100px;
 	background-color: red;
 }
 
+
 .habitTabIdx {
 	background-color: $light-green;
 	width: 50px;
 	height: 50px;
+	margin-right: 0.55rem;
 	border-radius: 50px;
 	border: none;
 	color: white;
+  box-shadow: 0 3px 6px #00000029;
 }
 
 .habitTabIdx:hover,
@@ -73,4 +77,6 @@
 .habitTabIdx:active {
     transform: scale(0.95);
     
+
+
 }
