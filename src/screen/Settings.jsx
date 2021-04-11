@@ -6,6 +6,7 @@ import MainSettingCard from '../components/MainSettingCard/MainSettingCard.js';
 import SettingCard from '../components/SettingCard/SettingCard.js';
 import SettingSocialMedia from '../components/SettingSocialMedia/SettingSocial.js';
 import MainSettingCardInfo from '../components/MainSettingCardInfo/MainSettingCardInfo.js';
+import SettingCardToggle from '../components/SettingCardToggle/SettingCardToggle';
 
 
 //A Class that holds all components for Settings Screen
@@ -13,16 +14,26 @@ import MainSettingCardInfo from '../components/MainSettingCardInfo/MainSettingCa
 export const Settings =  () => {
 
 
+	//GET User call by userId
+	//populate name & email in <MainSettingCardInfo username={(response.username)} email={(response.email)}/>
+
+	//When edit is finished => PUSH API call
+		//adds new data into user Object
+		//returns current state => take return and populate settings card.
+
+
 	  return (
 
 		  //add imported classes here
 		  //always have div to place component notes
+
+			
 			<div>
-
-				<SettingCard/>
-                <MainSettingCard/>
 				<MainSettingCardInfo/>
-
+				{/* NOtifications  */}
+				{/* SettingCard comonent to call toggle in itself. Accepts label prop to change text. */}
+				{/* API call happens IN SettingCard component. */}
+				<SettingCard ><SettingCardToggle /></SettingCard>
 				<SettingSocialMedia/>
 
             </div>

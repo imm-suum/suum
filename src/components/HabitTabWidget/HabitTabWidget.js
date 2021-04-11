@@ -16,10 +16,11 @@ export const HabitTabWidget = (todayHabits) => {
   const [ habit1IsChecked, setHabit1 ] = useState(false);
   const [ habit2IsChecked, setHabit2 ] = useState(true);
   const [ habit3IsChecked, setHabit3 ] = useState(false);
+  
+  
+  // Create and store new stances of the habitCheckItem in here with the 
+  //Imporve this section of code to be a map .map((tab, idx)=> { that creates as many habit check items as there are tabs... 
 
-
-  // Create and store new stances of the habitCheckItem in here with the
-  //Imporve this section of code to be a map .map((tab, idx)=> { that creates as many habit check items as there are tabs...
   //improve statemanagement to have habitIsChecked to be an array of [true, false, true] for each tab
   const content = {
     tab1: <HabitCheckItem setHabitState={setHabit1} checked={habit1IsChecked} habitName= "habit 1 name"/>,
@@ -48,6 +49,8 @@ export const HabitTabWidget = (todayHabits) => {
 
           }
         <div className='HabitTabWidget bg-green marginTop'>{displayContent(activeTab)}</div>
-     </div>
-  );
-}
+
+     </div> 
+  );  
+} 
+

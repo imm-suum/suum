@@ -1,4 +1,5 @@
 import React from 'react';
+import './Tabs.scss';
 
 export const Tabs = ({onClickHandler, tab}) => {
 
