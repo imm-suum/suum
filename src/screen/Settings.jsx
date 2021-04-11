@@ -27,10 +27,10 @@ export const Settings =  () => {
 		  //always have div to place component notes
 
        <div>
-				<DateTime date={new Date()} />
 				<MainSettingCardInfo/>
         
         {/* NOtifications  */}
+			
 				{/* SettingCard comonent to call toggle in itself. Accepts label prop to change text. */}
 				{/* API call happens IN SettingCard component. */}
 				<SettingCard/>
