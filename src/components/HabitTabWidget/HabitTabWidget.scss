@@ -6,14 +6,19 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
   padding-left: 2rem;
+  padding-right: 2rem;
   margin-top: 0px;
+}
+
+.marginTop {
+  margin-top: 0.5rem;
 }
 
 .HabitTabWidget {
   width:100%;
   position: relative;
   display: inline-block;
-  margin-bottom: 3px;
+  // margin-bottom: 3px;
 }
 
 
@@ -39,32 +44,39 @@
     z-index: -1;
   }
 
+
 .container{
 	width: 100px;
 	height: 100px;
 	background-color: red;
 }
 
-button{
+
+.habitTabIdx {
 	background-color: $light-green;
 	width: 50px;
 	height: 50px;
+	margin-right: 0.55rem;
 	border-radius: 50px;
 	border: none;
 	color: white;
+  box-shadow: 0 3px 6px #00000029;
 }
 
-button:hover,
-button:focus {
+.habitTabIdx:hover,
+.habitTabIdx:focus {
 	color: $bright-yellow;
 	background: white;
 }
 
-button:focus {
+.habitTabIdx:focus {
     outline: 1px solid #fff;
     outline-offset: -4px;
 }
 
-button:active {
-    transform: scale(0.99);
+.habitTabIdx:active {
+    transform: scale(0.95);
+    
+
+
 }

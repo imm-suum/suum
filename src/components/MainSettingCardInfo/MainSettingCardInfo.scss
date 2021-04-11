@@ -30,8 +30,14 @@ html,body{
 }
 
 .edit-button{
-	margin-left: 12px;
+	padding-left: 12px;
+	cursor: pointer;
 }
+
+.edit-button:hover{
+	color: $main-green;
+}
+
 
 .edit{
 	transition: all 0.5 ease-in-out;
