@@ -24,7 +24,7 @@ import DateTime from '../components/DateTime/DateTime.jsx';
 
 export const Home =  () => {
 
-	const [habits, setHabits] = useState([]);
+	const [todayHabits, setHabits] = useState([]);
 
 	useEffect(() => {
 		apiCall();
@@ -37,7 +37,6 @@ export const Home =  () => {
 			const data = await axios.get("http://localhost:5000/api/habit",{headers:{'auth-token':jwttoken}})
 			.then(res=>{
 				setHabits(res.data);
-				//console.log(res.data);
 			});
 			//setHabits(data.json());
 			//const items = await data.json();
@@ -71,8 +70,7 @@ export const Home =  () => {
 		  //always have div to place component notes
 			<div>
         <DateTime date={new Date()} />
-				<HabitTabWidget/>
-
+				<HabitTabWidget todayHabits={todayHabits}/>
 
             </div>
 
