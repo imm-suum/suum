@@ -1,37 +1,25 @@
+@import '../../scss/main.scss';
+
 *{
 	margin:0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-
-.container{
-	width: 428px;
-	height: 104px;
-	background-color: #44B2A5;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.accordion{
-	width: 388px;
-	height: 48px;
-	margin: 0 auto;
-	border-radius: 10px;
-	background-color: white;
-}
-
 .tab{
 	height: 48px;
-	width: 388px;
-	background-color: white;
+	width: 100%;
+	background-color: $white;
 	padding: 10px;
 	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
 	border-radius: 10px;
 	align-items: center;
+}
+
+.tab p{
+	padding: 10px;
 }
 
 .tab:hover,.active{
@@ -49,21 +37,22 @@
 }
 
 .showContent{
-	width: 388px;
-	height: 608px;
+	width: 100%;
+	height: 100%;
+	margin-top: 2rem;
 	background-color: #44B2A5;
 	border-radius: 0px 0px 10px 10px;
-	color: black;
+	color: $black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .textbox{
-	width: 328px;
+	width: 100%;
 	height: 470px;
 	background-color: white;
 	border-radius: 10px 10px 10px 10px;
-	color: black;
+	color: $black;
 
 }

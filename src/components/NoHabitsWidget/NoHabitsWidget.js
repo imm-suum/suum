@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
-import './NoHabitsWidget.css';
+import './NoHabitsWidget.scss';
 
 class NoHabitsWidget extends Component {
 
@@ -16,7 +16,6 @@ class NoHabitsWidget extends Component {
 
 	render(){
 		return(
-			<div className="container">
 			<div className="accordion">
 			<div className="single_accordion">
 			<div className="tab" onClick={this.handleToogle}>
@@ -30,7 +29,6 @@ class NoHabitsWidget extends Component {
 			</div>
 		</div>
 		</div>
-	</div>
 		)
 	}
 }
