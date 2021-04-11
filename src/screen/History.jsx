@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import '../app.css';
+import DateTime from '../components/DateTime/DateTime';
 import OnBoardingScreens from '../components/OnBoardingScreens/OnBoardingScreens.js';
 
 
@@ -16,7 +17,7 @@ class History extends Component {
 		  //always have div to place component notes
 			<div>
 
-				<p>History screen</p>
+				<DateTime/>
 
 				<OnBoardingScreens/>
             </div>
