@@ -9,7 +9,6 @@
 	box-sizing: border-box;
 }
 
-
 .tab{
 	height: 48px;
 	width: 100%;
@@ -29,6 +28,8 @@
 	transition: all 0.5 ease-in-out;
 	height: 0;
 	overflow: hidden;
+	opacity: 0%;
+	transform: scaleY(0);
 }
 
 .content p{
@@ -46,6 +47,11 @@
 	justify-content: center;
 	align-items: center;
 	padding-top: 2rem;
+	transition: all .5s ease-in-out;
+  	transform-origin: left top;
+	transform: scaleY(1);
+	opacity: 100%;
+    transition: opacity 0.5s ease-in;
 }
 
 .textbox{
