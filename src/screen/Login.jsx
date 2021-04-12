@@ -3,7 +3,6 @@ import '../app.css';
 
 import { LoginForm } from '../components/LoginForm/LoginForm.jsx';
 
-
 export const Login =  () => {
 
     return (
@@ -11,10 +10,7 @@ export const Login =  () => {
         //add imported classes here
         //always have div to place component notes
           <div>
-
               <LoginForm/>
-          
-
           </div>
 
       );
