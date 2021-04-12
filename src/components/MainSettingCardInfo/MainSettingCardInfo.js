@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import './MainSettingCardInfo.scss';
-
+import axios from 'axios';
 
 class MainSettingCardInfo extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: 'Christie', //username accepts props.username
-      emailAddress: 'christie.112@gmail.com',
+      username: props.userInfo.name,
+      emailAddress: props.userInfo.email,
 	  showEdit: false,
     };
   }
@@ -17,7 +17,21 @@ class MainSettingCardInfo extends Component {
     let nam = event.target.name;
     let val = event.target.value;
     this.setState({[nam]: val});
+	try {
+		const newUserData = this.state;
+		const jwttoken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxOTc1ODJ9.WX5wYXx963YKE_Vhqbv_CbsW4HO0lJIcIsXsnVMqvls";
+		// fetch data from a url endpoint
+		const data = axios.post("http://localhost:5000/api/user/edit",{headers:{'auth-token':jwttoken}}, newUserData)
+		.then(res=>{
+			console.log(res)
+		});
+		return data;
+	} catch(error) {
+		console.log("error", error);
+		// appropriately handle the error
+	}
   }
+
 
   handleClick = (e) => {
 	  e.preventDefault();
