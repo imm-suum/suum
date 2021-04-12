@@ -63,8 +63,13 @@ export const Home =  () => {
 
 
 	const playAnimation = ()=>{
-		anim.playSegments([0,180], true);
+		anim.playSegments([0,165], true);
+		//loopAnimation();
 		console.log("playing")
+	}
+
+	const loopAnimation = ()=>{
+		anim.playSegments([139,165], false);
 	}
 
 	const dateTimePadding = {
