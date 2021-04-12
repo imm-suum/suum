@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import '../Button/Button.scss';
 import './Form.scss';
 
-export const Form = ({closeForm})=> {
+export const Form = ()=> {
 
   // type FormValues = {
   //   habit1: string;
@@ -22,7 +22,7 @@ export const Form = ({closeForm})=> {
   }
 
   return (
-    <div className="modalWrapper" id="modalbackdrop" onClick={e=> closeForm(e)}>
+    <div className="modalWrapper" id="modalbackdrop" >
       <div className="formInner">
         <div className="formContent center-text">
           <h2 style={{color:"white", fontSize:"24px", marginBottom:"30px"}} className="extrabold">What do you want to do tomorrow?</h2>
