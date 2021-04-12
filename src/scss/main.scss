@@ -95,3 +95,14 @@ body {
     background-color:  rgba($main-green, 0.4);
     border-radius: 20px;
   }
+
+//   SCREEN RELATED SCSS
+.plantAnimationDiv {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    margin-top: 10rem;
+}
+

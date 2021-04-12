@@ -31,14 +31,14 @@ router.get("/forToday", verify, async (req, res) => {
     let tomorrow = new Date();
     console.log(today.getDate() + 1);
 
-    //Get the user with the user id provided and populate the habits[] with the referenced and full habit objects
+    //Get habits with the user id provided for the date range provided
     const Userhabits = await Habit.find({ 
       user_id:req.user, 
       habitAssignedDateTime:  {
         $gte: today,
         $lt: today
       } 
-    }).populate('habits');
+    });
 
    
 

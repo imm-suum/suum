@@ -6,8 +6,10 @@ const jwt = require('jsonwebtoken');
 const {registerValidation, loginValidation} = require('../validation');
 const verify = require('./verifyToken');
 
+//  Get user and edit user needs to be fixed 
 
-router.get("/getUser", verify, async (req, res) => {
+
+router.get("/get", verify, async (req, res) => {
   try {
 
     //Get the user with the user id provided and populate the habits[] with the referenced and full habit objects
@@ -36,6 +38,11 @@ try {
     res.json({ message: err });
   }
 });
+
+
+
+
+
 
 router.post('/register', async (req,res) => {
 
