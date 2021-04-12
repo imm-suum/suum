@@ -99,7 +99,7 @@ router.post("/", verify, async (req, res) => {
 });
 
 
-//PATCH A NEW HABIT 
+//PATCH A HABIT DATE
 router.patch("/", verify, async (req, res) => {
   try {
     // let today = new Date();
@@ -122,6 +122,56 @@ router.patch("/", verify, async (req, res) => {
     res.json({ message: err });
   }
 });
+
+
+
+
+
+
+//PATCH HABIT TO BE COMPLETE 
+router.patch("/complete", verify, async (req, res) => {
+  try {    
+    
+    
+    const updateHabit = await Habit.updateOne(
+      { _id: req.body._id },
+      {
+        $set: {
+          habitComplete: true,
+          stashed:false, 
+          habitCompletionDateTime:req.body.habitCompletionDateTime
+        },
+      }
+    );
+    res.json("Habit has been marked as complete");
+  } catch (err) {
+    res.json({ message: err });
+    console.log("error");
+  }
+});
+
+
+//PATCH HABIT TO STASHED
+router.patch("/stash", verify, async (req, res) => {
+  try {    
+    
+    
+    const updateHabit = await Habit.updateOne(
+      { _id: req.body._id },
+      {
+        $set: {          
+          stashed:true,
+        },
+      }
+    );
+    res.json("Habit has been stashed");
+  } catch (err) {
+    res.json({ message: err });
+    console.log("error");
+  }
+});
+
+
 
 
 
