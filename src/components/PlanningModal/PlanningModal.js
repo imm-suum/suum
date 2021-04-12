@@ -6,7 +6,7 @@ import {Form} from '../Form/Form.js';
 
 export const PlanningModal = ()=> {
   const [formOpen, setFormOpen] = useState(true);
-  
+
   const toggleForm = ()=> {
     setFormOpen(!formOpen);
   }
