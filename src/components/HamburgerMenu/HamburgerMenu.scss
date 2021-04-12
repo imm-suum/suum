@@ -1,16 +1,17 @@
-.flexbox {
-    display: flex;
-}
+@use '../../scss/main.scss' as *;
+
 
 .HBMenu {
-
-    top: 0;
+    display: flex;
+    position:absolute;
+    bottom: 0;
     right: 0;
     height: 100%;
-    justify-content: flex-start;
-    align-items: flex-end;
+    width: auto;
     flex-direction: column-reverse;
     z-index: 200;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
 }
 
 

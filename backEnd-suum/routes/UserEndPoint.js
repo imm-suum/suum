@@ -1,11 +1,41 @@
+const express = require("express");
 const router = require('express').Router();
 const User = require('../json-schema/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {registerValidation, loginValidation} = require('../validation');
+const verify = require('./verifyToken');
 
 
+router.get("/getUser", verify, async (req, res) => {
+  try {
 
+    //Get the user with the user id provided and populate the habits[] with the referenced and full habit objects
+    const user = await User.findById(req.user);
+
+    res.json(user);
+  } catch (err) {
+   
+    res.json({ message: err });
+  }
+});
+
+router.patch("/edit", verify, async (req, res) => {
+try {
+     await User.updateOne(
+      { _id: req.user },
+      {
+        $set: {
+          name: req.body.name,
+          email: req.body.email
+        },
+      }
+    );
+    res.json('User has been Updated');
+  }catch (err) {
+    res.json({ message: err });
+  }
+});
 
 router.post('/register', async (req,res) => {
 
@@ -15,17 +45,18 @@ router.post('/register', async (req,res) => {
 
     //Check if The user is already in the Database
     const emailExist = await User.findOne({email: req.body.email});
-    if(emailExist) return res.status(400).send('Email already exisits')
+    if(emailExist) return res.status(400).send('Email already exists')
 
     //Hash Paasswords
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(req.body.password, salt);
-   
+
     //Create a new User
     const user = new User({
         name: req.body.name,
         email: req.body.email,
-        password: hashPassword
+        password: hashPassword,
+        notifications:req.body.notifications
     });
     try{
         const savedUser = await user.save();
@@ -53,13 +84,33 @@ router.post('/login', async (req,res) => {
     if(!validPass) res.status(400).send('Invalid Password')
 
     //Create and assign a token
-    const token = jwt.sign({ _id:user._id }, process.env.TOKEN_SECRET,{expiresIn: "300000" });
+    const token = jwt.sign({ _id:user._id }, process.env.TOKEN_SECRET);
     res.header('auth-token', token).send(token);
 
-    //If succesful, send string that they are login in 
+    //If succesful, send string that they are login in
     //res.send('Logged in!')
 });
 
+
+
+router.patch("/setNotif", verify, async (req, res) => {
+    try {
+   
+      const setNotification = req.body.notifications; 
+  
+       await User.updateOne(
+        { _id: req.user },
+        {
+          $set: {
+            notifications:setNotification
+          },
+        }
+      );
+      res.json('Notifications has been Updated');
+    } catch (err) {
+      res.json({ message: err });
+    }
+  });
 
 
 

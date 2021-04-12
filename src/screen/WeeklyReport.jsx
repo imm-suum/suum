@@ -18,7 +18,7 @@ function WeeklyReport() {
 
     const fetchItems = async () =>{
         const data = await fetch('https://jsonplaceholder.typicode.com/users');
-        
+
 
         const items = await data.json();
         console.log(items);
@@ -34,7 +34,7 @@ function WeeklyReport() {
             {items.map(item => (
                 <p key= {item.id} >{item.name}</p>
             ))}
-        
+
         </div>
 
     );

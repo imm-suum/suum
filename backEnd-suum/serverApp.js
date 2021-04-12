@@ -7,16 +7,18 @@ var cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv/config");
 const bodyParser = require("body-parser"); //handles reading data from forms
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var testAPIRouter = require("./routes/testAPI");
-const authRoute= require('./routes/auth');
-var postsRoute = require("./routes/posts");
-const pushHabitRoute = require("./routes/pushHabit");
+
+// intialize endpoint routes 
+const UserEndPoint = require('./routes/UserEndPoint');
 const HabitEndpoint = require("./routes/HabitEndpoint");
-const getStashRoute = require("./routes/getStash");
-const allHabits = require("./routes/allHabits");
+const Stash = require("./routes/Stash");
+const TipsEndPoint=require("./routes/tipsEndPoint");
+const ReportEndPoint=require("./routes/reportEndPoint"); 
 var app = express();
+
+//Swagger import
+const swaggerUi = require('swagger-ui-express');
+swaggerDocument = require ("./swagger");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -28,24 +30,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
-app.listen(3000);
 
-mongoose.connect(process.env.DB_CONNECTION, { usenewURLParser: true }, () => {
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+//app.listen(5000);
+
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true,useUnifiedTopology: true }, () => {
   console.log("connected to DB");
 });
 
-//Middleware 
-app.use(express.json()); //handles request body
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use('/api/user', authRoute);
-app.use("/testAPI", testAPIRouter);
-app.use("/posts", postsRoute);
-app.use("/pushHabit", pushHabitRoute);
-app.use("/getStash", getStashRoute);
-app.use("/allHabits", allHabits);
-app.use('/api/habit', HabitEndpoint );
+
+
+
+app.use('/api/user', UserEndPoint);
+
+app.use("/api/stash",Stash);
+
+app.use('/api/habit', HabitEndpoint);
+
+app.use('/api/tips',TipsEndPoint);
+
+app.use('/api/report', ReportEndPoint); 
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

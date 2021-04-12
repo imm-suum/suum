@@ -6,9 +6,7 @@ const verify = require('./verifyToken');
 
 router.get("/", verify,  async (req, res) => {
   try {
-    // let stashValue = req.params.stashed;
-    // let stashValue=Habit.stashed; 
-    const stash = await Habit.find({_id: req.user, stashed: true});
+    const stash = await Habit.find({user_id: req.user, stashed: true});
     
     res.json(stash);
   } catch (err) {
