@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="68" height="9" viewBox="0 0 68 9">
-  <circle id="Ellipse_25" data-name="Ellipse 25" cx="4.5" cy="4.5" r="4.5" fill="#44b2a5" opacity="0.25"/>
-  <circle id="Ellipse_26" data-name="Ellipse 26" cx="4.5" cy="4.5" r="4.5" transform="translate(16)" fill="#44b2a5" opacity="0.25"/>
-  <circle id="Ellipse_77" data-name="Ellipse 77" cx="4.5" cy="4.5" r="4.5" transform="translate(59)" fill="#44b2a5" opacity="0.25"/>
-  <rect id="Rectangle_60" data-name="Rectangle 60" width="20" height="9" rx="4.5" transform="translate(32)" fill="#44b2a5"/>
+  <circle id="Ellipse_25" data-name="Ellipse 25" cx="4.5" cy="4.5" r="4.5" fill="#e4e4e4" opacity="0.25"/>
+  <circle id="Ellipse_26" data-name="Ellipse 26" cx="4.5" cy="4.5" r="4.5" transform="translate(16)" fill="#e4e4e4" opacity="0.25"/>
+  <circle id="Ellipse_80" data-name="Ellipse 80" cx="4.5" cy="4.5" r="4.5" transform="translate(59)" fill="#e4e4e4" opacity="0.25"/>
+  <rect id="Rectangle_60" data-name="Rectangle 60" width="20" height="9" rx="4.5" transform="translate(32)" fill="#e4e4e4"/>
 </svg>

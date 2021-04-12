@@ -9,10 +9,10 @@ import nav2 from './nav2.svg'
 
 function OnBoardingScreens2(){
 	return(
-		<div className="screen2">
+		<div className="screen">
 			<img src={logo2} alt="test" />
-			<h1 className="title2">how suum works</h1>
-			<p className="help2">At the end of each day, suum will check up and see the progress of your daily habits.</p>
+			<h1 className="title">how suum works</h1>
+			<p className="help">At the end of each day, suum will check up and see the progress of your daily habits.</p>
 			<img className="nav-icon" src={nav2} alt="test" />
 		</div>
 	);

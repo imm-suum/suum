@@ -3,13 +3,14 @@ import OnBoardingScreens1 from './OnBoardingScreens1.js';
 import OnBoardingScreens2 from './OnBoardingScreens2.js';
 import OnBoardingScreens3 from './OnBoardingScreens3.js';
 import OnBoardingScreens4 from './OnBoardingScreens4.js';
+import './OBScreen.scss';
 var count = 1;
 
 function OnBoardingScreens(){
 	const slide = {
 		slide1:<OnBoardingScreens1/>,
-		slide3:<OnBoardingScreens3/>,
 		slide2:<OnBoardingScreens2/>,
+		slide3:<OnBoardingScreens3/>,
 		slide4:<OnBoardingScreens4/>
 	}
 
@@ -28,11 +29,11 @@ function OnBoardingScreens(){
     }
 
 	return(
-		<div>
-		{activeSlide}
-		<button className="" onClick={() => onClickHandler()}>
-		Proceed
-		</button>
+		<div className='OnBoardingContainer'>
+			{activeSlide}
+			<button className="next" onClick={() => onClickHandler()}>
+			Proceed
+			</button>
 		</div>
 	);
 }

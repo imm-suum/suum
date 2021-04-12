@@ -9,11 +9,12 @@ import nav4 from './nav4.svg'
 
 function OnBoardingScreens4(){
 	return(
-		<div className="screen2">
+		<div className="screen">
 			<img src={logo4} alt="test" />
-			<h1 className="title2">how habits work</h1>
-			<p className="help2">At the end of each Week, you will see your progress for the week and recieve your suum plant.</p>
+			<h1 className="title">how habits work</h1>
+			<p className="help">At the end of each Week, you will see your progress for the week and recieve your suum plant.</p>
 			<img className="nav-icon" src={nav4} alt="test" />
+			<a className='next' href="/login">Get Started</a>
 		</div>
 	);
 }
