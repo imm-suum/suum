@@ -13,9 +13,6 @@ function OnBoardingScreens4(){
 			<img src={logo4} alt="test" />
 			<h1 className="title2">how habits work</h1>
 			<p className="help2">At the end of each Week, you will see your progress for the week and recieve your suum plant.</p>
-			<a className="next2" href="/Login">
-				Proceed
-			</a>
 			<img className="nav-icon" src={nav4} alt="test" />
 		</div>
 	);

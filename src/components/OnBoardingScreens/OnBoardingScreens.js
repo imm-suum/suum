@@ -1,24 +1,38 @@
-import React, { Component } from 'react';
-//import ReactDOM from 'react-dom';
-import './OnBoardingScreens.scss';
-import logo from './logo.svg'
-import logo2 from './logo2.svg'
-import logo3 from './logo3.svg'
-import logo4 from './logo4.svg'
-import nav from './nav.svg'
+import React, { useState } from 'react';
+import OnBoardingScreens1 from './OnBoardingScreens1.js';
+import OnBoardingScreens2 from './OnBoardingScreens2.js';
+import OnBoardingScreens3 from './OnBoardingScreens3.js';
+import OnBoardingScreens4 from './OnBoardingScreens4.js';
+var count = 1;
 
 function OnBoardingScreens(){
+	const slide = {
+		slide1:<OnBoardingScreens1/>,
+		slide3:<OnBoardingScreens3/>,
+		slide2:<OnBoardingScreens2/>,
+		slide4:<OnBoardingScreens4/>
+	}
 
+
+	const [activeSlide, setActiveSlide] = useState(OnBoardingScreens1);
+
+	const onClickHandler = () => {
+
+	if(count < 4){
+		count += 1;
+		var combine = "slide" + count;
+		console.log(combine);
+		console.log(slide[combine]);
+			setActiveSlide(slide[combine]);
+	}
+    }
 
 	return(
-		<div className="screen">
-			<img src={logo} alt="test" />
-			<h1 className="title">how suum works</h1>
-			<p className="help">Set 3 Daily Goals/Habits! Throughout the day, suum will remind you to complete your habits!</p>
-			<a className="next" href="/onboarding2">
-				Proceed
-			</a>
-			<img className="nav-icon" src={nav} alt="test" />
+		<div>
+		{activeSlide}
+		<button className="" onClick={() => onClickHandler()}>
+		Proceed
+		</button>
 		</div>
 	);
 }
