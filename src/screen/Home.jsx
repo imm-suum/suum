@@ -30,9 +30,9 @@ export const Home =  () => {
 
 	async function apiCall() {
 		try {
-			const jwttoken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxNzE4NzR9.hFvosUE591FjGcIdi49Q8OWHPbZJYVID8nytjfAJ9Nk";
+			
 			// fetch data from a url endpoint
-			const data = await axios.get("http://localhost:5000/api/habit",{headers:{'auth-token':jwttoken}})
+			const data = await axios.get("http://localhost:5000/api/habit")
 			.then(res=>{
 				setHabits(res.data);
 			});

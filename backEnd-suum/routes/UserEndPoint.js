@@ -85,7 +85,11 @@ router.post('/login', async (req,res) => {
 
     //Create and assign a token
     const token = jwt.sign({ _id:user._id }, process.env.TOKEN_SECRET);
-    res.header('auth-token', token).send(token);
+    res.cookie('auth-token', token, {httpOnly: true});
+    //res.header('auth-token', token).send(token);
+    res.send('Succesfuly Signed In');
+
+    //set JWT to expire at 3600000 *4 which is 4 hours
 
     //If succesful, send string that they are login in
     //res.send('Logged in!')
