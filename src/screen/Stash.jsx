@@ -15,10 +15,7 @@ class Stash extends Component {
 		  //add imported classes here
 		  //always have div to place component notes
 			<div>
-
-				<p>stash screen</p>
 				<PlanningModal/>
-
             </div>
 
 		);
