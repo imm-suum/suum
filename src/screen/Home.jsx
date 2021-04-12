@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../app.css';
 import axios from 'axios';
-
+import lottie from 'lottie-web';
+import plantAnimation from '../assets/plant0.json';
 import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
 import DateTime from '../components/DateTime/DateTime.jsx';
 
@@ -45,6 +46,10 @@ export const Home =  () => {
 			// appropriately handle the error
 		}
 	}
+
+	//animationCOntainer
+
+
     // let response = APIresonseArray
 	const dateTimePadding = {
 		paddingLeft: '2rem',
@@ -71,6 +76,9 @@ export const Home =  () => {
           <DateTime date={new Date()} />
         </div>
 		  	<HabitTabWidget todayHabits={todayHabits}/>
-         </div>
+				<div id="plantAnimations">
+
+				</div>
+        </div>
 		);
 }
