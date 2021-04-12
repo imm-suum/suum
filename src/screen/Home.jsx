@@ -32,7 +32,7 @@ export const Home =  () => {
 		try {
 			
 			// fetch data from a url endpoint
-			const data = await axios.get("http://localhost:5000/api/habit")
+			const data = await axios.get(`/api/habit`)
 			.then(res=>{
 				setHabits(res.data);
 			});
