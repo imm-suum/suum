@@ -1,3 +1,5 @@
+@use '../../scss/main.scss' as *;
+
 .card{
 	display: flex;
 	justify-content: center;
@@ -11,9 +13,12 @@
 	cursor: pointer;
 }
 
-p, h1{
+.progress, .pastPlantTitle {
 	padding: 0px;
 	margin: 0px;
+	font-weight: 400;
+	font-size: $body-font;
+	text-align: center;
 }
 
 .bar-container{

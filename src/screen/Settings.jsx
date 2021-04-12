@@ -12,6 +12,16 @@ import MainSettingCardInfo from '../components/MainSettingCardInfo/MainSettingCa
 export const Settings =  () => {
 
 
+	const settingScreenTitle={
+		fontSize: "24px",
+		fontWeight: "600",
+		color: "#323232",
+		marginBottom: "1rem"
+	}
+	const bodyPadding = {
+		padding:"2rem"
+	}
+
 	//GET User call by userId
 	//populate name & email in <MainSettingCardInfo username={(response.username)} email={(response.email)}/>
 
@@ -25,10 +35,12 @@ export const Settings =  () => {
 		  //add imported classes here
 		  //always have div to place component notes
 
-       <div>
+       <div style={bodyPadding}>
+				<h1 style={settingScreenTitle}>Settings</h1> 
 				<MainSettingCardInfo/>
 
         {/* NOtifications  */}
+			
 				{/* SettingCard comonent to call toggle in itself. Accepts label prop to change text. */}
 				{/* API call happens IN SettingCard component. */}
 				<SettingCard/>

@@ -4,11 +4,7 @@ import '../app.css';
 import axios from 'axios';
 
 import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
-
-import NoHabitsWidget from '../components/NoHabitsWidget/NoHabitsWidget.js';
-
 import DateTime from '../components/DateTime/DateTime.jsx';
-
 
 
 //A Class that holds all components for Habit Nursery Screen
@@ -23,6 +19,10 @@ import DateTime from '../components/DateTime/DateTime.jsx';
 
 
 export const Home =  () => {
+
+    // get API response.
+		const dateTimePadding = {
+			paddingLeft: '2rem',
 
 	const [todayHabits, setHabits] = useState([]);
 
@@ -49,9 +49,7 @@ export const Home =  () => {
 		}
 	}
 
-
-	// get API response.
-
+		}
     // let response = APIresonseArray
 
 	  return (
@@ -68,11 +66,18 @@ export const Home =  () => {
 
 		  //add imported classes here
 		  //always have div to place component notes
-			<div>
-        <DateTime date={new Date()} />
-				<HabitTabWidget todayHabits={todayHabits}/>
 
-            </div>
+			<div >
+        <div style={dateTimePadding}>
+          <DateTime date={new Date()} />
+				  <HabitTabWidget todayHabits={todayHabits}/>
+     
+          </div>
+         </div>
+            
+
+
+      </div>
 
 		);
 

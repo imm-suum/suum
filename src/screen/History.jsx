@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import '../app.css';
-import OnBoardingScreens from '../components/OnBoardingScreens/OnBoardingScreens.js';
+import DateTime from '../components/DateTime/DateTime.jsx';
 import PastPlantWidget from '../components/PastPlantWidget/PastPlantWidget';
 
 
 //A Class that holds all components for Habit Nursery Screen
 
 class History extends Component {
+	
+
 
   render() {
+			
+		const historyScreenPadding = {
+			paddingLeft: '2rem',
+
+		}
+
 		//GET API response 
 
 		//for (i=0; i< response.date.month.length; i++){
@@ -24,10 +32,12 @@ class History extends Component {
 
 		  //add imported classes here
 		  //always have div to place component notes
-			<div>
-				<h1>Past Plants</h1>
-				<PastPlantWidget/>
+			<div style={historyScreenPadding}>
+				<DateTime date={new Date()} />
 				
+				<div>
+					<PastPlantWidget/>
+				</div>
       </div>
 
 		);
