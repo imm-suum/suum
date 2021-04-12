@@ -38,7 +38,7 @@ export const Settings =  () => {
        <div style={bodyPadding}>
 				<h1 style={settingScreenTitle}>Settings</h1> 
 				<MainSettingCardInfo/>
-        
+
         {/* NOtifications  */}
 			
 				{/* SettingCard comonent to call toggle in itself. Accepts label prop to change text. */}
