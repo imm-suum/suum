@@ -7,15 +7,13 @@ var cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv/config");
 const bodyParser = require("body-parser"); //handles reading data from forms
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
-const testAPIRouter = require("./routes/testAPI");
-const authRoute = require('./routes/auth');
-const postsRoute = require("./routes/posts");
-const pushHabitRoute = require("./routes/pushHabit");
+
+// intialize endpoint routes 
+const UserEndPoint = require('./routes/UserEndPoint');
 const HabitEndpoint = require("./routes/HabitEndpoint");
-const getStashRoute = require("./routes/getStash");
-const allHabits = require("./routes/allHabits");
+const Stash = require("./routes/Stash");
+const TipsEndPoint=require("./routes/tipsEndPoint");
+const ReportEndPoint=require("./routes/reportEndPoint"); 
 var app = express();
 
 //Swagger import
@@ -32,33 +30,28 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.listen(3000);
 
-mongoose.connect(process.env.DB_CONNECTION, { useNewURLParser: true }, () => {
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+//app.listen(5000);
+
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true,useUnifiedTopology: true }, () => {
   console.log("connected to DB");
 });
 
-//Middleware 
-app.use(express.json()); //handles request body
-
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use('/api/user', authRoute);
-app.use("/testAPI", testAPIRouter);
-app.use("/posts", postsRoute);
 
 
 
-// usable routers for front-end 
-// pushes habit into then next day 
-app.use("/pushHabit", pushHabitRoute);
-// gets all the habits that are stashed 
-app.use("/getStash", getStashRoute);
-// gets all the habits for a user 
-app.use("/allHabits", allHabits);
-// creates a habit and posts it inte habit collection and pushes a habit into the user habits array 
+
+app.use('/api/user', UserEndPoint);
+
+app.use("/api/stash",Stash);
+
 app.use('/api/habit', HabitEndpoint);
+
+app.use('/api/tips',TipsEndPoint);
+
+app.use('/api/report', ReportEndPoint); 
+
 
 
 // catch 404 and forward to error handler

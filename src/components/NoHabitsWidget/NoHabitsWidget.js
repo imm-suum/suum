@@ -23,6 +23,10 @@ class NoHabitsWidget extends Component {
 		return(
 
 			<div className="noHabitsContainer">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 70f2e9b563d66d248568b9bf68b351d37c77d12e
 
 				<div className="accordion">
 					<div className="single_accordion">
@@ -42,6 +46,10 @@ class NoHabitsWidget extends Component {
 							</div>
 						</div>
 					</div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 70f2e9b563d66d248568b9bf68b351d37c77d12e
 				</div>
 			</div>
 		)
