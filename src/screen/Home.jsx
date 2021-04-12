@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-//import ReactDOM from 'react-dom';
 import '../app.css';
 import axios from 'axios';
 
@@ -23,6 +22,7 @@ export const Home =  () => {
     // get API response.
 		const dateTimePadding = {
 			paddingLeft: '2rem',
+		}
 
 	const [todayHabits, setHabits] = useState([]);
 
@@ -48,8 +48,6 @@ export const Home =  () => {
 			// appropriately handle the error
 		}
 	}
-
-		}
     // let response = APIresonseArray
 
 	  return (
@@ -74,12 +72,5 @@ export const Home =  () => {
      
           </div>
          </div>
-            
-
-
-      </div>
-
 		);
-
-
 }
