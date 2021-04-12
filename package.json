@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.0",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
+    "concurrently": "^6.0.1",
     "form": "^0.2.4",
     "formik": "^2.2.6",
     "nodemon": "^2.0.7",
@@ -22,7 +23,7 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"cd backEnd-suum && npm start\" \"react-scripts start\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
