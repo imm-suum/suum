@@ -20,14 +20,11 @@ import DateTime from '../components/DateTime/DateTime.jsx';
 export const Home =  () => {
 
     // get API response.
-		const dateTimePadding = {
-			paddingLeft: '2rem',
-		}
 
 	const [todayHabits, setHabits] = useState([]);
 
 	useEffect(() => {
-		apiCall();
+		//apiCall();
 	});
 
 	async function apiCall() {
@@ -49,6 +46,9 @@ export const Home =  () => {
 		}
 	}
     // let response = APIresonseArray
+	const dateTimePadding = {
+		paddingLeft: '2rem',
+	}
 
 	  return (
       //if night time show checkin process.
@@ -68,9 +68,8 @@ export const Home =  () => {
 			<div >
         <div style={dateTimePadding}>
           <DateTime date={new Date()} />
-				  <HabitTabWidget todayHabits={todayHabits}/>
-     
-          </div>
+        </div>
+		  	<HabitTabWidget todayHabits={todayHabits}/>
          </div>
 		);
 }
