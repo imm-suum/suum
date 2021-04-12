@@ -1,5 +1,6 @@
 import React, { useEffect, useState, createRef } from 'react';
 import '../app.css';
+import '../scss/main.scss';
 import axios from 'axios';
 import lottie from 'lottie-web';
 import plantAnimation from '../assets/plant3.json';
@@ -19,7 +20,7 @@ import DateTime from '../components/DateTime/DateTime.jsx';
 
 
 export const Home =  () => {
-
+	let anim;
     // get API response.
 
 	const [todayHabits, setHabits] = useState([]);
@@ -50,10 +51,10 @@ export const Home =  () => {
 	let plantAnimationDiv = createRef();
 
   useEffect(() => {
-    const anim = lottie.loadAnimation({
+    anim = lottie.loadAnimation({
       container: plantAnimationDiv.current,
       renderer: "svg",
-      loop: true,
+      loop: false,
       autoplay: false,
       animationData: plantAnimation
     });
@@ -61,9 +62,11 @@ export const Home =  () => {
   }, []);
 
 
+	const playAnimation = ()=>{
+		anim.playSegments([0,180], true);
+		console.log("playing")
+	}
 
-
-    // let response = APIresonseArray
 	const dateTimePadding = {
 		paddingLeft: '2rem',
 		paddingTop: '2rem'
@@ -88,8 +91,8 @@ export const Home =  () => {
         <div style={dateTimePadding}>
           <DateTime date={new Date()} />
         </div>
-		  	<HabitTabWidget todayHabits={todayHabits}/>
-
+		  	<HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation}/>
+				<button onClick={playAnimation}>Play</button>
 				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 
       </div>

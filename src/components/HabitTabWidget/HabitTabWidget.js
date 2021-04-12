@@ -6,7 +6,7 @@ import './HabitTabWidget.scss';
 
 
 
-export const HabitTabWidget = (todayHabits) => {
+export const HabitTabWidget = (todayHabits, playAnimation) => {
   //Track state for the Habit Tab Widget component to know what tab has been clicked so far
   const [activeTab, setActiveTab] = useState('tab1');
   //Create 3 Tabs by my naming them in this array
@@ -44,7 +44,7 @@ export const HabitTabWidget = (todayHabits) => {
      <div>
           {
             tabs.map((tab, idx)=> {
-			  return <Tabs key={idx} onClickHandler={onTabClickHandler} tab={tab} />
+			  return <Tabs key={idx} onClickHandler={onTabClickHandler} tab={tab} playAnimation={playAnimation}/>
 			})
 
           }
