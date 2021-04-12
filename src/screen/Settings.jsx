@@ -15,14 +15,14 @@ export const Settings =  () => {
 	const [userInfo, setUserInfo] = useState({});
 
 	useEffect(() => {
-		apiSettingCall();
+		//apiSettingCall();
 	});
 
 	async function apiSettingCall() {
 		try {
-			const jwttoken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxOTc1ODJ9.WX5wYXx963YKE_Vhqbv_CbsW4HO0lJIcIsXsnVMqvls";
+
 			// fetch data from a url endpoint
-			const data = await axios.get("http://localhost:5000/api/user/getUser",{headers:{'auth-token':jwttoken}})
+			const data = await axios.get(`/api/user/getUser`) 
 			.then(res=>{
 				setUserInfo(res.data);
 			});
