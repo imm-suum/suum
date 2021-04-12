@@ -34,7 +34,7 @@ class App extends Component {
 					<Route path="/onBoarding"  exact component={OnBoardingScreens}/>
 					<Route path="/login" exact component={Login}/>
 					<Route path="/weeklyReport" exact component={WeeklyReport}/>
-					<Route path="/habitNursery" exact component={Stash}/>
+					//<Route path="/habitNursery" exact component={Stash}/>
 					<Route path="/history" exact component={History}/>
 					<Route path="/settings"  exact component={Settings}/>
 				</Switch>
