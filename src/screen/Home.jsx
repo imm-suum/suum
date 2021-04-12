@@ -26,6 +26,7 @@ export const Home =  () => {
 
 	useEffect(() => {
 		//apiCall();
+		//noHabitCall();
 	});
 
 	async function apiCall() {
@@ -47,8 +48,24 @@ export const Home =  () => {
 		}
 	}
 
-	//animationCOntainer
+	async function noHabitCall() {
+		try {
+			const jwttoken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxNzE4NzR9.hFvosUE591FjGcIdi49Q8OWHPbZJYVID8nytjfAJ9Nk";
+			// fetch data from a url endpoint
+			const data = await axios.get("http://localhost:5000/api/tips",{headers:{'auth-token':jwttoken}})
+			.then(res=>{
+				setHabits(res.data);
+			});
+			//setHabits(data.json());
+			//const items = await data.json();
+				//console.log(res);
 
+			return data;
+		} catch(error) {
+			console.log("error", error);
+			// appropriately handle the error
+		}
+	}
 
     // let response = APIresonseArray
 	const dateTimePadding = {
