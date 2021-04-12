@@ -10,7 +10,7 @@ export const HabitTabWidget = (todayHabits) => {
   //Track state for the Habit Tab Widget component to know what tab has been clicked so far
   const [activeTab, setActiveTab] = useState('tab1');
   //Create 3 Tabs by my naming them in this array
-  const tabs = ["tab1", "tab2", "tab3", "tab4"]
+  const tabs = ["tab1","tab2", "tab3", "tab4"]
 
   //Track state for each of the 3 Habit Check Items that are used
   const [ habit1IsChecked, setHabit1 ] = useState(false);
