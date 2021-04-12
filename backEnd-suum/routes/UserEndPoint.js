@@ -1,9 +1,10 @@
+const express = require("express");
 const router = require('express').Router();
 const User = require('../json-schema/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {registerValidation, loginValidation} = require('../validation');
-
+const verify = require('./verifyToken');
 
 
 
@@ -15,7 +16,7 @@ router.post('/register', async (req,res) => {
 
     //Check if The user is already in the Database
     const emailExist = await User.findOne({email: req.body.email});
-    if(emailExist) return res.status(400).send('Email already exisits')
+    if(emailExist) return res.status(400).send('Email already exists')
 
     //Hash Paasswords
     const salt = await bcrypt.genSalt(10);
@@ -25,7 +26,8 @@ router.post('/register', async (req,res) => {
     const user = new User({
         name: req.body.name,
         email: req.body.email,
-        password: hashPassword
+        password: hashPassword,
+        notifications:req.body.notifications
     });
     try{
         const savedUser = await user.save();
@@ -60,6 +62,26 @@ router.post('/login', async (req,res) => {
     //res.send('Logged in!')
 });
 
+
+
+router.patch("/setNotif", verify, async (req, res) => {
+    try {
+   
+      const setNotification = req.body.notifications; 
+  
+      const updateUserNotifications = await User.updateOne(
+        { _id: req.user },
+        {
+          $set: {
+            notifications:setNotification
+          },
+        }
+      );
+      res.json('Notifications has been Updated');
+    } catch (err) {
+      res.json({ message: err });
+    }
+  });
 
 
 
