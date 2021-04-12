@@ -16,7 +16,7 @@ export const Form = ()=> {
   const onSubmit = (data)=> {
     console.log(data);
   }
-  
+
   const handleClick = ()=> {
     console.log("click!");
   }
@@ -27,14 +27,16 @@ export const Form = ()=> {
         <div className="formContent center-text">
           <h2 style={{color:"white", fontSize:"24px", marginBottom:"30px"}} className="extrabold">What do you want to do tomorrow?</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-              
-                <input className="inputBg margin-y" id="habit1" placholder="take a 5min walk" {...register("habit1")} />
 
-                <input className="inputBg margin-y" id="habit2" placholder="take a 5min walk" {...register("habit2")} />
+                <input className="inputBg margin-y" id="habit1" placeholder="take a 5min walk" {...register("habit1")} />
 
-                <input className="inputBg margin-y" id="habit3" placholder="take a 5min walk" {...register("habit3")} />
+                <input className="inputBg margin-y" id="habit2" placeholder="take a 5min walk" {...register("habit2")} />
 
-                <a href="" className="helpLink">Need help finding a habit?</a>
+                <input className="inputBg margin-y" id="habit3" placeholder="take a 5min walk" {...register("habit3")} />
+
+				{/*
+				<a href="" className="helpLink">Need help finding a habit?</a>
+				*/}
 
               <input class="btn btn-lg btn-yellow bottomBtn"  type="submit" value="Let's Go!"/>
             </form>
