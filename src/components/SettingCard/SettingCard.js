@@ -27,7 +27,7 @@ class SettingCard extends Component{
 		return(
 			<div className="primary-setting-card">
 				<h1 className="setting-card-title">Notifications</h1>
-
+				<div className="spacing"></div>
 				<label className="switch">
 					<input type="checkbox" value={this.state.toggle} name="toggle" onChange={this.onChangeValue}/>
 					<span className="slider round"></span>
