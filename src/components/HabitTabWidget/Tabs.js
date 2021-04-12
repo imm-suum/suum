@@ -5,7 +5,7 @@ import leafIcon from '../../assets/leafIcon.svg'
 export const Tabs = ({onClickHandler, tab}) => {
 
     return (
-        <button className="habitTabIdx"
+        <button className="habitTabIdx" 
             onClick={() => onClickHandler(tab)}
         ><img src={leafIcon}></img>
 

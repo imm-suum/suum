@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './HabitCheckItem.scss';
 
 
-export const HabitCheckItem = ({checked, habitName, setHabitState}) => {
+export const HabitCheckItem = ({checked, habitName, setHabitState, playAnimation}) => {
 
       return (
         <div>
