@@ -8,24 +8,24 @@ import './HabitTabWidget.scss';
 
 export const HabitTabWidget = (todayHabits) => {
   //Track state for the Habit Tab Widget component to know what tab has been clicked so far
-  const [activeTab, setActiveTab ] = useState('tab1');
+  const [activeTab, setActiveTab] = useState('tab1');
   //Create 3 Tabs by my naming them in this array
-  const tabs = ["tab1", "tab2", "tab3", "tab4"]
+  const tabs = ["tab1","tab2", "tab3", "tab4"]
 
   //Track state for each of the 3 Habit Check Items that are used
   const [ habit1IsChecked, setHabit1 ] = useState(false);
   const [ habit2IsChecked, setHabit2 ] = useState(true);
   const [ habit3IsChecked, setHabit3 ] = useState(false);
-  
-  
-  // Create and store new stances of the habitCheckItem in here with the 
-  //Imporve this section of code to be a map .map((tab, idx)=> { that creates as many habit check items as there are tabs... 
+
+
+  // Create and store new stances of the habitCheckItem in here with the
+  //Imporve this section of code to be a map .map((tab, idx)=> { that creates as many habit check items as there are tabs...
 
   //improve statemanagement to have habitIsChecked to be an array of [true, false, true] for each tab
   const content = {
-    tab1: <HabitCheckItem setHabitState={setHabit1} checked={habit1IsChecked} habitName= "habit 1 name"/>,
-    tab2: <HabitCheckItem setHabitState={setHabit2} checked={habit2IsChecked} habitName= "habit 2 name"/>,
-    tab3: <HabitCheckItem setHabitState={setHabit3} checked={habit3IsChecked} habitName= "habit 3 name"/>,
+    tab1: <HabitCheckItem setHabitState={setHabit1} checked={habit1IsChecked} habitName= "{todayHabits.todayHabits[0].habitName}"/>,
+    tab2: <HabitCheckItem setHabitState={setHabit2} checked={habit2IsChecked} habitName= "{todayHabits.todayHabits[1].habitName}"/>,
+    tab3: <HabitCheckItem setHabitState={setHabit3} checked={habit3IsChecked} habitName= "{todayHabits.todayHabits[2].habitName}"/>,
     tab4: <NoHabitsWidget/>
   }
 
@@ -38,7 +38,7 @@ export const HabitTabWidget = (todayHabits) => {
     return content[tab];
   }
 
-
+  //console.log({todayHabits});
 
   return (
      <div>
@@ -50,7 +50,6 @@ export const HabitTabWidget = (todayHabits) => {
           }
         <div className='HabitTabWidget bg-green marginTop'>{displayContent(activeTab)}</div>
 
-     </div> 
-  );  
-} 
-
+     </div>
+  );
+}

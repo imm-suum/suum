@@ -25,8 +25,7 @@ export const HabitCheckItem = ({checked, habitName, setHabitState}) => {
             </div>
 
           }
-            
+
         </div>
       );
 }
-  

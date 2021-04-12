@@ -1,10 +1,13 @@
+@use '../../scss/main.scss' as *;
+
+
 .nav-right {
-    float: right;
-    width: fit-content;
+    width: 100%;
     right: 0;
-    padding-right: 26px;
+    padding:auto;
     z-index: 200;
     opacity: 0%;
+
 }
 
 .nav-right.open {   

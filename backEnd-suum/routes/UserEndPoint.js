@@ -57,7 +57,7 @@ router.post('/register', async (req,res) => {
     //Hash Paasswords
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(req.body.password, salt);
-   
+
     //Create a new User
     const user = new User({
         name: req.body.name,
@@ -94,7 +94,7 @@ router.post('/login', async (req,res) => {
     const token = jwt.sign({ _id:user._id }, process.env.TOKEN_SECRET);
     res.header('auth-token', token).send(token);
 
-    //If succesful, send string that they are login in 
+    //If succesful, send string that they are login in
     //res.send('Logged in!')
 });
 
