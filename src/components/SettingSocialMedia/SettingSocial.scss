@@ -6,23 +6,27 @@ html,body{
 
 
 .SocialMediaCard{
-	margin-top: 196px;
-	height: 275px;
+	position: fixed;
+	bottom: 0;
+	height: auto;
+	padding-bottom: 3rem;
 }
 
-h1,h2,h3{
+#dataLinks,#privacyLinks,#tocLinks{
 	font-size: 16px;
 	font-weight: normal;
 	color: $main-green;
 	padding-top: 20px;
 }
 
-h4{
-	font-size:24px;
-	margin-bottom: 12px;
+.followTag{
+	font-size:$heading-font;
+	margin-top: 5rem;
+	margin-bottom: 1rem;
+
 }
 
 
 svg{
-	margin: 18px;
+	margin-right: 2rem;
 }

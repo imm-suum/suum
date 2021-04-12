@@ -6,8 +6,9 @@ import './MainSettingCardInfo.scss';
 class MainSettingCardInfo extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      username: 'Christie',
+      username: 'Christie', //username accepts props.username
       emailAddress: 'christie.112@gmail.com',
 	  showEdit: false,
     };
@@ -33,19 +34,21 @@ class MainSettingCardInfo extends Component {
 	  	<h1 className="settings-main-title">Profile</h1>
 	  	<p className="settings-main-item">{this.state.username}</p>
 	  	<p className="settings-main-item2">{this.state.emailAddress}</p>
-		<button className="edit-button" onClick={this.handleClick}>
-		Edit
-		</button>
+		<a className="edit-button" onClick={this.handleClick}>
+			Edit
+		</a>
 	  </div>
 
 	  <div className={this.state.showEdit ? 'showEdit edit' : 'edit'}>
 	  <input
         type='text'
+		placeholder='Username'
         name='username'
         onChange={this.myChangeHandler}
       />
       <input
         type='text'
+		placeholder='Email Address'
         name='emailAddress'
         onChange={this.myChangeHandler}
       />

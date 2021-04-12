@@ -44,6 +44,14 @@
     z-index: -1;
   }
 
+
+.container{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+
+
 .habitTabIdx {
 	background-color: $light-green;
 	width: 50px;
@@ -61,7 +69,10 @@
 	background: white;
 }
 
+
 .habitTabIdx:active {
     transform: scale(0.95);
+
+
 
 }

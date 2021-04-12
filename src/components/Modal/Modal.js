@@ -13,18 +13,23 @@ export const Modal = ({toggleModal, closeModal}) => {
   }
 
   //click event 
+  // replace with event to trigger chang in mondalContent div
   const handleClick = ()=> {
     return (
       console.log("clicked button")
     )
-  }
+  };
   
   //Track state for each of the 3 Habit Check Items that are used 
+  //API call
+  // response = [{habit1}, {habit2}, {habit3}]
+
   const [ habit1IsChecked, setHabit1 ] = useState(false);
   const [ habit2IsChecked, setHabit2 ] = useState(false);
   const [ habit3IsChecked, setHabit3 ] = useState(false);
 
   //array of information 
+  //ex: name: {response[i].habitName}
   const habits = [
     {checked:habit1IsChecked , name:"i don't love this for me" , setting: setHabit1},
     {checked:habit2IsChecked , name:"OOP" , setting: setHabit2},
@@ -40,12 +45,12 @@ export const Modal = ({toggleModal, closeModal}) => {
     <aside id="modalbackdrop" className="modalWrapper" onClick={e=> closeModal(e)}>
       <div className="modalInner">
         <div className="modalContent">
-        {/* <span className="close" id="closer" onClick={toggleModal}>X</span> */}
         <h2 style={{color:"white", fontSize:"24px", marginBottom:"30px"}} className="extrabold center-text">How did you do today?</h2>
       
         {modalContent}
-        {/* <p className="center-text">Check the habits you've completed today!</p> */}
+        
         <div style={btnBottom}>
+          {/* handleCLick triggers event to replace content in modalContent div with Form.js */}
           <Button color="yellow" size={"lg"} handleClick={handleClick}>
             Let's Plan for Tomorrow!
           </Button>

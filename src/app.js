@@ -22,6 +22,7 @@ class App extends Component {
 
   render() {
 	  return (
+			//user session?
 		 	//Router navigates the "page" in the broswer search bar to the correct screen component as listed below
 
 			//Switch ensures that each page component is displayed on its own. And the URL has to be an 'exact match'

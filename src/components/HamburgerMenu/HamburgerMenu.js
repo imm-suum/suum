@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav.jsx';
 import Burger from '../Burger/Burger.jsx';
-import './HamburgerMenu.css';
+import './HamburgerMenu.scss';
 import { Backdrop } from '../Backdrop/Backdrop.jsx';
 
 class HamburgerMenu extends Component {
@@ -38,8 +38,7 @@ class HamburgerMenu extends Component {
     return (
       <div className="flexbox HBMenu">
         <Burger click={this.burgerClickHandler} className="burger-button"/>
-        <Nav show={this.state.navOpen} />
-        {/* {nav} */}
+        <Nav show={this.state.navOpen} className="navcomponent"/>
         {backdrop}
       </div>
 

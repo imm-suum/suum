@@ -1,5 +1,5 @@
 import React from 'react';
-import './Burger.css';
+import './Burger.scss';
 
 
 const Burger = props => {
