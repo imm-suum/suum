@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createRef } from 'react';
 import '../app.css';
 import axios from 'axios';
-
+import lottie from 'lottie-web';
+import plantAnimation from '../assets/plant3.json';
 import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
 import DateTime from '../components/DateTime/DateTime.jsx';
 
@@ -45,6 +46,23 @@ export const Home =  () => {
 			// appropriately handle the error
 		}
 	}
+
+	let plantAnimationDiv = createRef();
+
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: plantAnimationDiv.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: false,
+      animationData: plantAnimation
+    });
+    return () => anim.destroy(); // optional clean up for unmounting
+  }, []);
+
+
+
+
     // let response = APIresonseArray
 	const dateTimePadding = {
 		paddingLeft: '2rem',
@@ -66,11 +84,14 @@ export const Home =  () => {
 		  //add imported classes here
 		  //always have div to place component notes
 
-			<div >
+			<div>
         <div style={dateTimePadding}>
           <DateTime date={new Date()} />
         </div>
 		  	<HabitTabWidget todayHabits={todayHabits}/>
-         </div>
+
+				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
+
+      </div>
 		);
 }
