@@ -61,6 +61,7 @@
 	color: white;
   	box-shadow: 0 3px 6px #00000029;
 	transition: opacity 0.3s ease-in;
+	transition: all 200ms;
 }
 
 .habitTabIdx:hover,
@@ -71,5 +72,5 @@
 
 
 .habitTabIdx:active {
-    transform: scale(0.95);
+	transform: scale(0.95);
 }
