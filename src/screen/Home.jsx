@@ -53,7 +53,7 @@ export const Home =  () => {
     // let response = APIresonseArray
 	const dateTimePadding = {
 		paddingLeft: '2rem',
-		paddingTop: '2rem',
+		paddingTop: '2rem'
 	}
 
 	  return (
