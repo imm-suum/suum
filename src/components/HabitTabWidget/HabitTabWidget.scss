@@ -65,6 +65,7 @@
 
 .habitTabIdx:hover,
 .habitTabIdx:focus {
+	cursor: pointer;
 	background: $bright-yellow;
 }
 
