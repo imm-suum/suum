@@ -7,6 +7,35 @@ const {registerValidation, loginValidation} = require('../validation');
 const verify = require('./verifyToken');
 
 
+router.get("/getUser", verify, async (req, res) => {
+  try {
+
+    //Get the user with the user id provided and populate the habits[] with the referenced and full habit objects
+    const user = await User.findById(req.user);
+
+    res.json(user);
+  } catch (err) {
+   
+    res.json({ message: err });
+  }
+});
+
+router.patch("/edit", verify, async (req, res) => {
+try {
+     await User.updateOne(
+      { _id: req.user },
+      {
+        $set: {
+          name: req.body.name,
+          email: req.body.email
+        },
+      }
+    );
+    res.json('User has been Updated');
+  }catch (err) {
+    res.json({ message: err });
+  }
+});
 
 router.post('/register', async (req,res) => {
 
@@ -69,7 +98,7 @@ router.patch("/setNotif", verify, async (req, res) => {
    
       const setNotification = req.body.notifications; 
   
-      const updateUserNotifications = await User.updateOne(
+       await User.updateOne(
         { _id: req.user },
         {
           $set: {
