@@ -24,6 +24,10 @@
 	background-color: #d6d6d6;
 }
 
+.tab p{
+	padding-left: 2rem;
+}
+
 .content{
 	transition: all 0.5 ease-in-out;
 	height: 0;
@@ -33,7 +37,7 @@
 }
 
 .content p{
-	padding: 1rem;
+	padding: 2rem;
 }
 
 .showContent{

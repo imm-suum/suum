@@ -8,8 +8,8 @@ class MainSettingCardInfo extends Component {
     super(props);
 
     this.state = {
-      username: props.userInfo.name,
-      emailAddress: props.userInfo.email,
+      username: 'Tony Stark',
+      emailAddress: 'iamironman@gmail.com',
 	  showEdit: false,
     };
   }
