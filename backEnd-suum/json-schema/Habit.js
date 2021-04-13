@@ -18,7 +18,7 @@ const habitSchema = mongoose.Schema({
 
   habitCompletionDateTime: {
     type: Date,
-    default: Date.now,
+    default: null,
   },
   stashed: {
     type: Boolean,

@@ -141,6 +141,10 @@ router.patch("/", verify, async (req, res) => {
 router.patch("/complete", verify, async (req, res) => {
   try {    
     
+    //Get todays Date
+    let today = new Date();
+    //Dond Remove the Hours because we need to know the time.
+    
     
     const updateHabit = await Habit.updateOne(
       { _id: req.body._id },
@@ -148,11 +152,11 @@ router.patch("/complete", verify, async (req, res) => {
         $set: {
           habitComplete: true,
           stashed:false, 
-          habitCompletionDateTime:req.body.habitCompletionDateTime
+          habitCompletionDateTime:today
         },
       }
     );
-    res.json("Habit has been marked as complete");
+    res.json("Habit has been marked as complete, it has been removed from your stash as well");
   } catch (err) {
     res.json({ message: err });
     console.log("error");
