@@ -41,6 +41,7 @@ async function apiCall(d) {
 
 
 return (
+		<div className="form-container">
 		<form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
 		<h1>Register</h1>
 			<input id="name" className="name" type="text" placeholder="Full Name" {...register("name")} />
@@ -52,5 +53,6 @@ return (
 			</div>
 			<input className="submit" type="submit" />
 		</form>
+		</div>
   );
 }
