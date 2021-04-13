@@ -23,7 +23,7 @@ export const HabitTabWidget = (todayHabits, playAnimation) => {
 
   //improve statemanagement to have habitIsChecked to be an array of [true, false, true] for each tab
   const content = {
-    tab1: <HabitCheckItem setHabitState={setHabit1} checked={habit1IsChecked} habitName= "Drink 5 Cups of Water"/>,
+    tab1: <HabitCheckItem setHabitState={setHabit1} checked={habit1IsChecked} habitName= "Drink 5 cups of Water"/>,
     tab2: <HabitCheckItem setHabitState={setHabit2} checked={habit2IsChecked} habitName= "Walk the Dog"/>,
     tab3: <HabitCheckItem setHabitState={setHabit3} checked={habit3IsChecked} habitName= "Go Visit Spiderman"/>,
     tab4: <NoHabitsWidget/>
