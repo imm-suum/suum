@@ -46,7 +46,7 @@ return (
 			<input id="name" className="name" type="text" placeholder="Full Name" {...register("name")} />
 			<input id="email" className="email" type="email" placeholder="Email" {...register("email")} />
 			<input id="password" className="password" type="password" placeholder="Password" {...register("password")} />
-			<div>
+			<div className="notifContainer">
 				<input id="notifications" type="checkbox" placeholder="Notifications" {...register("notifications")} />
 				<label htmlFor="notifications" style={{marginLeft: "0.5rem"}}>Turn On Notifications</label>
 			</div>
