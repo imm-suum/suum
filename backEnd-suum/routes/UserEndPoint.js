@@ -29,7 +29,8 @@ try {
       {
         $set: {
           name: req.body.name,
-          email: req.body.email
+          email: req.body.email,
+          notifications: req.body.notifications
         },
       }
     );
@@ -96,7 +97,7 @@ router.post('/login', async (req,res) => {
     if(!validPass) res.status(400).send('Invalid Password')
 
     //Create and assign a token
-    const token = jwt.sign({ _id:user._id }, process.env.TOKEN_SECRET);
+    const token = jwt.sign({ _id:user._id }, process.env.TOKEN_SECRET, {expiresIn: 3600000 *4 });
     res.cookie('auth-token', token, {httpOnly: true});
     //res.header('auth-token', token).send(token);
     res.send('Succesfuly Signed In');

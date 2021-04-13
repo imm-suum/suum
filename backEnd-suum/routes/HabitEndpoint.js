@@ -34,10 +34,7 @@ router.get("/forToday", verify, async (req, res) => {
     //Get habits with the user id provided for the date range provided
     const Userhabits = await Habit.find({ 
       user_id:req.user, 
-      habitAssignedDateTime:  {
-        $gte: today,
-        $lt: today
-      } 
+      habitAssignedDateTime: today 
     });
 
    
@@ -56,11 +53,18 @@ router.get("/forToday", verify, async (req, res) => {
 router.post("/", verify, async (req, res) => {
   //console.log(req.body);
   //console.log(req.user._id);
+
+  //Get todays Date
+  let today = new Date();
+  //Remove the Hours
+  today.setHours(0,0,0,0);
+  console.log(today);
   
   //make New user Habit
   const habit = new Habit({
    habitName: req.body.habitName,
-   user_id: req.user
+   user_id: req.user,
+   habitAssignedDateTime: today
 
   });
 
