@@ -5,6 +5,7 @@ import './app.css';
 import { Home } from './screen/Home.jsx';
 import History from './screen/History.jsx';
 import { Settings } from './screen/Settings.jsx';
+import { Register } from './screen/Register.jsx';
 import { Login } from './screen/Login.jsx';
 import Stash from './screen/Stash.jsx';
 import WeeklyReport from './screen/WeeklyReport.jsx';
@@ -32,6 +33,7 @@ class App extends Component {
 				<Switch>
 					<Route path="/" exact component={Home}/>
 					<Route path="/onBoarding"  exact component={OnBoardingScreens}/>
+					<Route path="/register" exact component={Register}/>
 					<Route path="/login" exact component={Login}/>
 					<Route path="/weeklyReport" exact component={WeeklyReport}/>
 					//<Route path="/habitNursery" exact component={Stash}/>

@@ -2,10 +2,10 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
-import "./LoginForm.scss";
+import "./RegisterForm.scss";
 
-export const LoginForm = ()=> {
-	const { register, handleSubmit, formState: { errors } } = useForm();	//HERE TOO "register"
+export const RegisterForm = ()=> {
+	const { register, handleSubmit, formState: { errors } } = useForm();
 	const history = useHistory();
 
 	const onSubmit = data => {
@@ -18,9 +18,11 @@ async function apiCall(d) {
 	try {
 
 		// fetch data from a url endpoint
-		const loginCall = await axios.post(`/api/user/login`, {		//LOGIN CALL API? I COPIED THIS FROM REGISTERFORM
+		const registerCall = await axios.post(`/api/user/register`, {
+			name: d.name ,
 			email: d.email,
 			password: d.password,
+			notifications: d.notifications
 		  })
 		.then(res=>{
 			//redirect('/');
@@ -29,19 +31,26 @@ async function apiCall(d) {
 		});
 		//setHabits(data.json());
 		//res.redirect('/');
-		return loginCall;
+		return registerCall;
 	} catch(error) {
 		console.log("error", error);
 		// appropriately handle the error
 	}
 }
 
+
+
 return (
 	<div className="form-container">
 	<form className="suumForm" onSubmit={handleSubmit(onSubmit)}>
-	<h1>Login</h1>
+	<h1>Register</h1>
+		<input id="name" className="name" type="text" placeholder="Full Name" {...register("name")} />
 		<input id="email" className="email" type="email" placeholder="Email" {...register("email")} />
 		<input id="password" className="password" type="password" placeholder="Password" {...register("password")} />
+		<div className="notifContainer">
+			<input id="notifications" type="checkbox" placeholder="Notifications" {...register("notifications")} />
+			<label htmlFor="notifications" style={{marginLeft: "0.5rem"}}>Turn On Notifications</label>
+		</div>
 		<input className="submit" type="submit" />
 	</form>
 	</div>
