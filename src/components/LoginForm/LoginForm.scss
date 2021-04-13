@@ -24,6 +24,19 @@ h1{
 	box-shadow: 0 3px 6px #00000029;
 }
 
+.loginForm>input {
+	border-radius: 10px;
+	border: 2px solid lightgrey;
+}
+
+.loginForm>input:focus {
+	outline:none;
+}
+
+.loginForm>div>[type=submit]{
+	border:#00000029 none;
+}
+
 .email{
 	width: 80%;
 	height: 2rem;
@@ -60,20 +73,36 @@ h1{
 	background-color: $light-green;
 }
 
+
 input[type=submit]{
     font-family: 'Montserrat', sans-serif;
-	outline: none;
+		outline: none;
+		border:none;
 }
 
-input[type=checkbox] {
-    -webkit-appearance: none;
-    width:1rem;
-    height:1rem;
+.notifContainer {
+	display:flex;
+	align-items: center;
 }
 
-input[type=checkbox]:checked {
+.notifContainer > input {
+	-webkit-appearance: none;
+	width: 1.25rem;
+	height: 1.25rem;
+	border-radius: 50%;
+	background-color: $white;
+	border: 2px solid $bright-yellow;
+}
+
+.notifContainer > input:checked {
+	content: '✔';
+	color: $white;
 	border: 1px solid $main-green;
 	background-color: $main-green;
+}
+
+.notifContainer > input:focus {
+	outline:none;
 }
 
 @media all and (min-width: 480px) {
