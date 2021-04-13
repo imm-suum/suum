@@ -9,7 +9,7 @@
   bottom:0;
   left: 0;
   right:0;
-  z-index: -1;
+  z-index: 400;
   display: flex;
   align-items: center;
 }
@@ -26,7 +26,7 @@
 .formInner {
   position: relative;
   background-color: $dark-blue;
-  width: 388px;
+  width: 350px;
   height: 477px;
   margin: auto;
   padding: 30px 37px 22px 37px;

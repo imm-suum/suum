@@ -6,6 +6,7 @@ import lottie from 'lottie-web';
 import plantAnimation from '../assets/plant3.json';
 import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
 import DateTime from '../components/DateTime/DateTime.jsx';
+import { PlanningModal } from '../components/PlanningModal/PlanningModal';
 
 
 //A Class that holds all components for Habit Nursery Screen
@@ -93,6 +94,7 @@ export const Home =  () => {
 		  //always have div to place component notes
 
 			<div>
+				<PlanningModal/>
         <div style={dateTimePadding}>
           <DateTime date={new Date()} />
         </div>
