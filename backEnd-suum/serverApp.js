@@ -11,7 +11,7 @@ const bodyParser = require("body-parser"); //handles reading data from forms
 // intialize endpoint routes 
 const UserEndPoint = require('./routes/UserEndPoint');
 const HabitEndpoint = require("./routes/HabitEndpoint");
-const Stash = require("./routes/Stash");
+const Stash = require("./routes/StashEndPoint");
 const TipsEndPoint=require("./routes/tipsEndPoint");
 const ReportEndPoint=require("./routes/reportEndPoint"); 
 var app = express();

@@ -106,9 +106,14 @@ router.post("/", verify, async (req, res) => {
 //PATCH A HABIT DATE
 router.patch("/", verify, async (req, res) => {
   try {
-    // let today = new Date();
-    // let tomorrow = new Date(today);
-    // tomorrow.setDate(today.getDate() + 1);
+    let today = new Date();
+    let tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    //Get todays Date
+    let dateRemoveTime = tomorrow.setHours(0,0,0,0);
+    //Remove the Hours
+    console.log(dateRemoveTime);
 
     //get date from request body
     let date = req.body.habitAssignedDateTime;
@@ -117,7 +122,7 @@ router.patch("/", verify, async (req, res) => {
       { _id: req.body._id },
       {
         $set: {
-          habitAssignedDateTime: date,
+          habitAssignedDateTime: dateRemoveTime,
         },
       }
     );
