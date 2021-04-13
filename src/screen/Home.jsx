@@ -99,7 +99,7 @@ export const Home =  () => {
           <DateTime date={new Date()} />
         </div>
 		  	<HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation}/>
-				<button onClick={playAnimation}>Play</button>
+				<button id="playButton" className="input" onClick={playAnimation}/>
 				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 
       </div>
