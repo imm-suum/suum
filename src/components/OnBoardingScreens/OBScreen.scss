@@ -2,13 +2,14 @@
 
 
 .OnBoardingContainer{
-	height: 926px;
-	width: 428px;
+	height: 812px;
+	width: 375px;
 	background-color: $main-green;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	z-index: 600;
 }
 
 .next {
@@ -25,9 +26,11 @@
 	justify-content: center;
 	align-items: center;
 	transition: all 300ms;
+	z-index: 600;
 }
 
 .next:hover{
 	background-color: $light-green;
 	transform: scale(0.95);
+	z-index: 600;
 }
