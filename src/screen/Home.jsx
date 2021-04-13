@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
-//import ReactDOM from 'react-dom';
+import React, { useEffect, useState, createRef } from 'react';
 import '../app.css';
+import '../scss/main.scss';
 import axios from 'axios';
-
+import lottie from 'lottie-web';
+import plantAnimation from '../assets/plant3.json';
 import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
 import DateTime from '../components/DateTime/DateTime.jsx';
 
@@ -19,22 +20,20 @@ import DateTime from '../components/DateTime/DateTime.jsx';
 
 
 export const Home =  () => {
-
+	let anim;
     // get API response.
-		const dateTimePadding = {
-			paddingLeft: '2rem',
 
 	const [todayHabits, setHabits] = useState([]);
 
 	useEffect(() => {
-		apiCall();
+		//apiCall();
 	});
 
 	async function apiCall() {
 		try {
-			const jwttoken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxNzE4NzR9.hFvosUE591FjGcIdi49Q8OWHPbZJYVID8nytjfAJ9Nk";
+			
 			// fetch data from a url endpoint
-			const data = await axios.get("http://localhost:5000/api/habit",{headers:{'auth-token':jwttoken}})
+			const data = await axios.get(`/api/habit`)
 			.then(res=>{
 				setHabits(res.data);
 			});
@@ -49,8 +48,34 @@ export const Home =  () => {
 		}
 	}
 
-		}
-    // let response = APIresonseArray
+	let plantAnimationDiv = createRef();
+
+  useEffect(() => {
+    anim = lottie.loadAnimation({
+      container: plantAnimationDiv.current,
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      animationData: plantAnimation
+    });
+    return () => anim.destroy(); // optional clean up for unmounting
+  }, []);
+
+
+	const playAnimation = ()=>{
+		anim.playSegments([0,165], true);
+		//loopAnimation();
+		console.log("playing")
+	}
+
+	const loopAnimation = ()=>{
+		anim.playSegments([139,165], false);
+	}
+
+	const dateTimePadding = {
+		paddingLeft: '2rem',
+		paddingTop: '2rem'
+	}
 
 	  return (
       //if night time show checkin process.
@@ -67,19 +92,14 @@ export const Home =  () => {
 		  //add imported classes here
 		  //always have div to place component notes
 
-			<div >
+			<div>
         <div style={dateTimePadding}>
           <DateTime date={new Date()} />
-				  <HabitTabWidget todayHabits={todayHabits}/>
-     
-          </div>
-         </div>
-            
-
+        </div>
+		  	<HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation}/>
+				<button onClick={playAnimation}>Play</button>
+				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 
       </div>
-
 		);
-
-
 }

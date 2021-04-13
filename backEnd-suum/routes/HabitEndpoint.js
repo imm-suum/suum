@@ -31,14 +31,11 @@ router.get("/forToday", verify, async (req, res) => {
     let tomorrow = new Date();
     console.log(today.getDate() + 1);
 
-    //Get the user with the user id provided and populate the habits[] with the referenced and full habit objects
+    //Get habits with the user id provided for the date range provided
     const Userhabits = await Habit.find({ 
       user_id:req.user, 
-      habitAssignedDateTime:  {
-        $gte: today,
-        $lt: today
-      } 
-    }).populate('habits');
+      habitAssignedDateTime: today 
+    });
 
    
 
@@ -56,11 +53,18 @@ router.get("/forToday", verify, async (req, res) => {
 router.post("/", verify, async (req, res) => {
   //console.log(req.body);
   //console.log(req.user._id);
+
+  //Get todays Date
+  let today = new Date();
+  //Remove the Hours
+  today.setHours(0,0,0,0);
+  console.log(today);
   
   //make New user Habit
   const habit = new Habit({
    habitName: req.body.habitName,
-   user_id: req.user
+   user_id: req.user,
+   habitAssignedDateTime: today
 
   });
 
@@ -99,7 +103,7 @@ router.post("/", verify, async (req, res) => {
 });
 
 
-//PATCH A NEW HABIT 
+//PATCH A HABIT DATE
 router.patch("/", verify, async (req, res) => {
   try {
     // let today = new Date();
@@ -122,6 +126,56 @@ router.patch("/", verify, async (req, res) => {
     res.json({ message: err });
   }
 });
+
+
+
+
+
+
+//PATCH HABIT TO BE COMPLETE 
+router.patch("/complete", verify, async (req, res) => {
+  try {    
+    
+    
+    const updateHabit = await Habit.updateOne(
+      { _id: req.body._id },
+      {
+        $set: {
+          habitComplete: true,
+          stashed:false, 
+          habitCompletionDateTime:req.body.habitCompletionDateTime
+        },
+      }
+    );
+    res.json("Habit has been marked as complete");
+  } catch (err) {
+    res.json({ message: err });
+    console.log("error");
+  }
+});
+
+
+//PATCH HABIT TO STASHED
+router.patch("/stash", verify, async (req, res) => {
+  try {    
+    
+    
+    const updateHabit = await Habit.updateOne(
+      { _id: req.body._id },
+      {
+        $set: {          
+          stashed:true,
+        },
+      }
+    );
+    res.json("Habit has been stashed");
+  } catch (err) {
+    res.json({ message: err });
+    console.log("error");
+  }
+});
+
+
 
 
 

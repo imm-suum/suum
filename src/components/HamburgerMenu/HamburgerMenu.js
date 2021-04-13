@@ -31,14 +31,14 @@ class HamburgerMenu extends Component {
 
     // if this.state.nav is OPEN (or true)->
     if (this.state.navOpen) {
-      //nav = <Nav show={this.state.navOpen} />
+      nav = <Nav show={this.state.navOpen} className="navcomponent"/>
       backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
 
     return (
       <div className="flexbox HBMenu">
         <Burger click={this.burgerClickHandler} className="burger-button"/>
-        <Nav show={this.state.navOpen} className="navcomponent"/>
+		{nav}
         {backdrop}
       </div>
 
