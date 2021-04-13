@@ -9,7 +9,7 @@ class MainSettingCardInfo extends Component {
 
     this.state = {
       username: 'Tony Stark',
-      emailAddress: 'iamironman05@gmail.com',
+      emailAddress: 'iamironman06@gmail.com',
 	  showEdit: false,
     };
   }
