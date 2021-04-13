@@ -23,8 +23,8 @@ export const PlanningModal = ()=> {
    useEffect(()=>{
     const timer = setTimeout(()=> {
       setFormOpen(e => !e)
-    }, 1500);
-    return () => clearTimeout(timer); 
+  	}, 0);
+    return () => clearTimeout(timer);
   },[]);
 
 

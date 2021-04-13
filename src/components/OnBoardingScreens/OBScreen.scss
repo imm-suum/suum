@@ -9,6 +9,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	position: absolute;
 	z-index: 600;
 }
 
@@ -19,7 +20,8 @@
     width: 328px;
     padding: 15px 64px;
     border: none;
-	margin-top: 1rem;
+	margin-top: 0.5rem;
+	margin-bottom: 1.2rem;
 	background-color: $bright-yellow;
 	cursor: pointer;
 	display: flex;
