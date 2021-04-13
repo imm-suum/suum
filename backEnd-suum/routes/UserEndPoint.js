@@ -6,10 +6,8 @@ const jwt = require('jsonwebtoken');
 const {registerValidation, loginValidation} = require('../validation');
 const verify = require('./verifyToken');
 
-//  Get user and edit user needs to be fixed 
-
-
-router.get("/get", verify, async (req, res) => {
+//  Get user 
+router.get("/", verify, async (req, res) => {
   try {
 
     //Get the user with the user id provided and populate the habits[] with the referenced and full habit objects
@@ -22,6 +20,7 @@ router.get("/get", verify, async (req, res) => {
   }
 });
 
+//Edit User details
 router.patch("/edit", verify, async (req, res) => {
 try {
      await User.updateOne(
@@ -30,12 +29,32 @@ try {
         $set: {
           name: req.body.name,
           email: req.body.email,
-          notifications: req.body.notifications
         },
       }
     );
     res.json('User has been Updated');
   }catch (err) {
+    res.json({ message: err });
+  }
+});
+
+
+//Edit User notification Setting
+router.patch("/setNotif", verify, async (req, res) => {
+  try {
+ 
+    const setNotification = req.body.notifications; 
+
+     await User.updateOne(
+      { _id: req.user },
+      {
+        $set: {
+          notifications:setNotification
+        },
+      }
+    );
+    res.json('Notifications has been Updated');
+  } catch (err) {
     res.json({ message: err });
   }
 });
@@ -107,27 +126,6 @@ router.post('/login', async (req,res) => {
     //If succesful, send string that they are login in
     //res.send('Logged in!')
 });
-
-
-
-router.patch("/setNotif", verify, async (req, res) => {
-    try {
-   
-      const setNotification = req.body.notifications; 
-  
-       await User.updateOne(
-        { _id: req.user },
-        {
-          $set: {
-            notifications:setNotification
-          },
-        }
-      );
-      res.json('Notifications has been Updated');
-    } catch (err) {
-      res.json({ message: err });
-    }
-  });
 
 
 
