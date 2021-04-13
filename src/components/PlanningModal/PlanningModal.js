@@ -11,13 +11,13 @@ export const PlanningModal = ()=> {
     setFormOpen(!formOpen);
   }
 
-  // const closeForm = (e)=> {
-  //   if (e.target.id==="modalbackdrop") {
-  //     toggleForm();
-  //   }else{
-  //     console.log("wrongId");
-  //   }
-  // }
+  const closeForm = (e)=> {
+    if (e.target.id==="modalCloser") {
+      toggleForm();
+    }else{
+      console.log("wrongId");
+    }
+  }
 
    //popup effect. show form after 1.5 seconds
    useEffect(()=>{
@@ -32,7 +32,7 @@ export const PlanningModal = ()=> {
   return (
     <>
     {formOpen &&
-      <Form toggleForm={toggleForm}/>
+      <Form toggleForm={toggleForm} closeForm={closeForm}/>
     }
       </>
   )
