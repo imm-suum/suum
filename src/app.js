@@ -11,7 +11,7 @@ import Stash from './screen/Stash.jsx';
 import WeeklyReport from './screen/WeeklyReport.jsx';
 
 import OnBoardingScreens from './screen/OnBoarding.jsx';
-
+import GetStartedScreen from './screen/GetStarted.jsx';
 import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu.js';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -32,6 +32,7 @@ class App extends Component {
 
 				<Switch>
 					<Route path="/" exact component={Home}/>
+					<Route path="/getStarted"  exact component={GetStartedScreen}/>
 					<Route path="/onBoarding"  exact component={OnBoardingScreens}/>
 					<Route path="/register" exact component={Register}/>
 					<Route path="/login" exact component={Login}/>
