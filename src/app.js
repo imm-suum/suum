@@ -6,7 +6,7 @@ import { Home } from './screen/Home.jsx';
 import History from './screen/History.jsx';
 import { Settings } from './screen/Settings.jsx';
 import { Login } from './screen/Login.jsx';
-import Stash from './screen/Stash.jsx';
+import {HabitNursery} from './screen/HabitNursery.jsx';
 import WeeklyReport from './screen/WeeklyReport.jsx';
 
 import OnBoardingScreens from './screen/OnBoarding.jsx';
@@ -34,7 +34,7 @@ class App extends Component {
 					<Route path="/onBoarding"  exact component={OnBoardingScreens}/>
 					<Route path="/login" exact component={Login}/>
 					<Route path="/weeklyReport" exact component={WeeklyReport}/>
-					//<Route path="/habitNursery" exact component={Stash}/>
+					<Route path="/habitNursery" exact component={HabitNursery}/>
 					<Route path="/history" exact component={History}/>
 					<Route path="/settings"  exact component={Settings}/>
 				</Switch>

@@ -35,15 +35,14 @@ const Nav = (props) => {
           <li className="nav-li"><ListItem name="History" /></li>
           </Link>
 
+          <Link to='/habitNursery'>
+          <li className="nav-li"><ListItem name="Habit Nursery" /></li>
+          </Link>
+          
           <Link to='/settings'>
           <li className="nav-li"><ListItem name="Settings" /></li>
           </Link>
 
-		  {/*  
-          // <Link to='/stash'>
-          // <li className="nav-li"><ListItem name="Habit Nursery" /></li>
-          // </Link>
-		  */}
 
         </ul>
 
