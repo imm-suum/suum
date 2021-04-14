@@ -33,7 +33,7 @@ export const Home =  () => {
 
 	async function apiCall() {
 		try {
-			
+
 			// fetch data from a url endpoint
 			const data = await axios.get(`/api/habit`)
 			.then(res=>{
@@ -78,9 +78,9 @@ export const Home =  () => {
 		paddingLeft: '2rem',
 		paddingTop: '2rem'
 	}
-	
+
 	//if night time show checkin process.
-	if (currentTime.getHours() < 20) {
+	if (currentTime.getHours() > 20) {
 	// show checkinModal => Planning Modal
 	// }else if (Date.prototype.getHours() > 20 && Date(day) === "friday") {
 	//     //show weeklyReviewCard componentONly.
@@ -99,10 +99,10 @@ export const Home =  () => {
 			//if it's before 8pm on whatever day
 			//show habitTabWidget
 			return (
-				
+
 				//add imported classes here
 				//always have div to place component notes
-				
+
 				<div>
         <div style={dateTimePadding}>
           <DateTime date={new Date()} />

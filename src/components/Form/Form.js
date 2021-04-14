@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import '../Button/Button.scss';
 import './Form.scss';
 
-export const Form = ()=> {
+export const Form = ({toggleForm})=> {
 
   // type FormValues = {
   //   habit1: string;
@@ -15,6 +15,7 @@ export const Form = ()=> {
 
   const onSubmit = (data)=> {
     console.log(data);
+	toggleForm();
   }
 
   const handleClick = ()=> {
@@ -38,7 +39,7 @@ export const Form = ()=> {
 				<a href="" className="helpLink">Need help finding a habit?</a>
 				*/}
 
-              <input class="btn btn-lg btn-yellow bottomBtn"  type="submit" value="Let's Go!"/>
+              <input class="btn btn-lg btn-yellow bottomBtn" type="submit" value="Let's Go!"/>
             </form>
           </div>
       </div>

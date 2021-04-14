@@ -12,8 +12,7 @@ function Button(props) {
   return (
     //class names are passed in as variables so we can reuse the component to accept any css styling
     //set onClick to event in App.js
-    <button className={`btn-${color} btn-${size}`} onClick={props.handleClick}>{props.children}</button>
+    <button id={props.id} className={`btn-${color} btn-${size}`} onClick={props.handleClick}>{props.children}</button>
   );
 }
 export default Button;
-
