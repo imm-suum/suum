@@ -1,0 +1,21 @@
+@use '../../scss/main.scss' as *;
+
+
+.HBMenu {
+    display: flex;
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+    flex-direction: column-reverse;
+    z-index: 200;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+}
+
+
+/* to better see divs and elements. remove from js file on final merge */
+.outline {
+    border: 2px solid blue;
+}

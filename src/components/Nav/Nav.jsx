@@ -1,6 +1,7 @@
 import React from 'react';
 import ListItem from '../ListItem/ListItem.jsx';
-import './Nav.css';
+import './Nav.scss';
+import { Link } from 'react-router-dom';
 
 const Nav = (props) => {
 
@@ -13,9 +14,9 @@ const Nav = (props) => {
   //   otherState: 'someothervalue'
   // }
 
-  
 
-  
+
+
 
     //define the classes that style the nav component
     let navClasses = 'nav-right';
@@ -26,12 +27,27 @@ const Nav = (props) => {
 
     return (
         <ul className={navClasses}>
-          <li className="nav-li"><ListItem name= "Habit Nursery" /></li> 
-          <li className="nav-li"><ListItem name="History" /></li>  
-          <li className="nav-li"><ListItem name="Settings" /></li>   
+          <Link to='/'>
+          <li className="nav-li"><ListItem name= "Home" /></li>
+          </Link>
+
+          <Link to='/history'>
+          <li className="nav-li"><ListItem name="History" /></li>
+          </Link>
+
+          <Link to='/settings'>
+          <li className="nav-li"><ListItem name="Settings" /></li>
+          </Link>
+
+		  {/*  
+          // <Link to='/stash'>
+          // <li className="nav-li"><ListItem name="Habit Nursery" /></li>
+          // </Link>
+		  */}
+
         </ul>
 
     );
 }
 
-export default Nav; 
+export default Nav;

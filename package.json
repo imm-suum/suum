@@ -6,19 +6,31 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.0",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
+    "concurrently": "^6.0.1",
+    "cookie-parser": "^1.4.5",
+    "form": "^0.2.4",
+    "formik": "^2.2.6",
+    "lottie-web": "^5.7.8",
+    "nodemon": "^2.0.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hook": "0.0.1",
+    "react-hook-form": "^7.0.5",
     "react-lottie": "^1.2.3",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
+    "sass": "^1.32.8",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"cd backEnd-suum && npm start\" \"react-scripts start\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -36,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0"
   }
 }
