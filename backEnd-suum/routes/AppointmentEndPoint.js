@@ -33,23 +33,27 @@ router.get("/create", function (req, res, next) {
 });
 
 // POST: /appointments
-router.post("/", function (req, res, next) {
+router.post("/", async (req, res, next) => {
   const name = req.body.name;
   const phoneNumber = req.body.phoneNumber;
   const notification = req.body.notification;
   const timeZone = req.body.timeZone;
   const time = moment(req.body.time, "MM-DD-YYYY hh:mma");
+  try {
+    const appointment = new Appointment({
+      name: name,
+      phoneNumber: phoneNumber,
+      notification: notification,
+      timeZone: timeZone,
+      time: time,
+    });
 
-  const appointment = new Appointment({
-    name: name,
-    phoneNumber: phoneNumber,
-    notification: notification,
-    timeZone: timeZone,
-    time: time,
-  });
-  appointment.save().then(function () {
+    const newAppointment = await appointment.save();
+    res.json({ newAppointment });
     res.redirect("/");
-  });
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
 // GET: /appointments/:id/edit

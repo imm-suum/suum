@@ -12,6 +12,7 @@ const AppointmentSchema = new mongoose.Schema({
 });
 
 AppointmentSchema.methods.requiresNotification = function (date) {
+  console.log("i'M RUNNING APPOINTMENT SCHEMA");
   return (
     Math.round(
       moment
@@ -25,8 +26,10 @@ AppointmentSchema.methods.requiresNotification = function (date) {
 
 AppointmentSchema.statics.sendNotifications = function (callback) {
   // now
+  console.log("I am sending you a notifi");
   const searchDate = new Date();
   Appointment.find().then(function (appointments) {
+    console.log("appointments");
     appointments = appointments.filter(function (appointment) {
       return appointment.requiresNotification(searchDate);
     });
@@ -76,5 +79,9 @@ AppointmentSchema.statics.sendNotifications = function (callback) {
   }
 };
 
-const Appointment = mongoose.model("appointment", AppointmentSchema);
+const Appointment = mongoose.model(
+  "appointment",
+  AppointmentSchema,
+  "appointment"
+);
 module.exports = Appointment;
