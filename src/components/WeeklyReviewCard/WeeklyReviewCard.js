@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
-import './WeeklyReviewCard.css';
+import './WeeklyReviewCard.scss';
 
 class WeeklyReviewCard extends Component{
 	  constructor(props) {

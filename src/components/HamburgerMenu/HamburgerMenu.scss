@@ -1,6 +1,5 @@
 @use '../../scss/main.scss' as *;
 
-
 .HBMenu {
     display: flex;
     position:absolute;
@@ -12,10 +11,4 @@
     z-index: 200;
     padding-bottom: 2rem;
     padding-right: 2rem;
-}
-
-
-/* to better see divs and elements. remove from js file on final merge */
-.outline {
-    border: 2px solid blue;
 }

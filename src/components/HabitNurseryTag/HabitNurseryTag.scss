@@ -1,0 +1,16 @@
+@import '../../scss/main.scss';
+
+html,body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.habitTag{
+	width: auto;
+	height: 27px;
+	font-size: 14px;
+	font-weight: bold;
+	color: $main-green;
+	background-color: $white;
+	border-radius: 18px;
+	border: 2px solid $main-green;
+}

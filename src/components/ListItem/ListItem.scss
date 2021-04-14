@@ -5,7 +5,7 @@
    flex-direction: row;
    justify-content: flex-end;
    align-items: center;
-   background: white;
+   background: $white;
    width: fit-content;
    height:48px;
    margin-right: 0;
@@ -20,7 +20,6 @@
 
 .list-item-label {
 	color: $black;
-	font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight:600;
     margin-right: 10px;

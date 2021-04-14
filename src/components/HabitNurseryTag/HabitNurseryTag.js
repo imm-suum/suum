@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
-import './HabitNurseryTag.css';
+import './HabitNurseryTag.scss';
 
 class HabitNurseryTag extends Component{
 	  constructor(props) {
@@ -17,7 +17,7 @@ class HabitNurseryTag extends Component{
 
 	  render() {
 	    return (
-	      <button onClick={this.handleClick}>
+	      <button className="habitTag" onClick={this.handleClick}>
 	        {this.state.isSaved ? 'Added!' : 'Habit 1'}
 	      </button>
 	    );
