@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {HabitNurseryTag} from '../components/HabitNurseryTag/HabitNurseryTagcopy';
 import '../scss/main.scss';
 
 
@@ -6,8 +7,13 @@ import '../scss/main.scss';
 
 export const HabitNursery = ()=>{
 	
+
+	//put api response in an array so that the map function can call the crrect content for each tag
+	const tagContent = ["walk the dog" , "meet spiderman", "smack thor","smack loki", "save the world", "oop"];
 	
-	
+	const habitTagClick= ()=>{
+		console.log("tag clicked");
+	}
 	
 	
 	return(
@@ -19,7 +25,13 @@ export const HabitNursery = ()=>{
 
 			<div style={{padding:"2rem"}} className="habitStashContainer">
 				<h2 style={{fontSize:"1rem", marginBottom:"1rem"}}>Tap a Habit to add it to Today's List!</h2>
-				this is where we will map all the tags!
+				{
+					tagContent.map((tag,idx)=> {
+						return <HabitNurseryTag key={idx} habitTagClick={habitTagClick}>
+							{tagContent[idx]}
+						</HabitNurseryTag>
+					})
+				}
 
 			</div>
 
