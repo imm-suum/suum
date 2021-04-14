@@ -57,7 +57,20 @@ h1{
 	margin-bottom: 0.8rem;
 }
 
+.num{
+	color: $main-green;
+	font-size: 0.85rem;
+	margin-bottom: 0.8rem;
+}
+
 .name{
+	width: 80%;
+	height: 2rem;
+	padding: 12px;
+	margin: 12px;
+}
+
+.tel{
 	width: 80%;
 	height: 2rem;
 	padding: 12px;
