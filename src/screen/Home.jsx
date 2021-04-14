@@ -7,7 +7,7 @@ import plantAnimation from '../assets/plant3.json';
 import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
 import DateTime from '../components/DateTime/DateTime.jsx';
 import CheckInModal from '../components/checkInModal/checkinModal';
-
+import {WeeklyReviewCard} from '../components/WeeklyReviewCard/WeeklyReviewCard.js';
 
 //A Class that holds all components for Habit Nursery Screen
 
@@ -79,10 +79,11 @@ export const Home =  () => {
 		paddingTop: '2rem'
 	}
 
+	console.log(currentTime.getDay());
+
 	//if night time show checkin process.
-	if (currentTime.getHours() > 20) {
+	if (currentTime.getHours() > 20 && currentTime.getDay()!= 0) {
 	// show checkinModal => Planning Modal
-	// }else if (Date.prototype.getHours() > 20 && Date(day) === "friday") {
 	//     //show weeklyReviewCard componentONly.
 	//     //on close... load homescreen with habitTabWidget?????
 		return (
@@ -95,6 +96,19 @@ export const Home =  () => {
 				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 			</div>
 		)
+
+	}else if (currentTime.getHours() > 12 && currentTime.getDay() === 3) {
+		return (
+			<div>
+			<WeeklyReviewCard/>
+		<div style={dateTimePadding}>
+		  <DateTime date={new Date()} />
+		</div>
+			<HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation}/>
+				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
+			</div>
+		)
+
 	}else{
 			//if it's before 8pm on whatever day
 			//show habitTabWidget
