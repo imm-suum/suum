@@ -11,6 +11,7 @@ const AppointmentSchema = new mongoose.Schema({
   time: { type: Date, index: true },
 });
 
+//Figure out how this works >>
 AppointmentSchema.methods.requiresNotification = function (date) {
   return (
     Math.round(
