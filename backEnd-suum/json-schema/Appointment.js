@@ -63,7 +63,7 @@ AppointmentSchema.statics.sendNotifications = function (callback) {
     
     console.log(appointments.length);
     if (1 > 0) {
-      sendNotifications(appoint);
+      //sendNotifications(appoint);
       console.log("more than 1 appointment ");
       console.log(appoint);
     }
