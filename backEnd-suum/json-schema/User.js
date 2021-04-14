@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
+const moment = require("moment");
+const cfg = require("dotenv/config");
+const Twilio = require("twilio");
  
 
 const userSchema = mongoose.Schema({  
@@ -11,7 +14,7 @@ const userSchema = mongoose.Schema({
       type: String,
       required: true,
     },
-    email: {
+    phoneNumber: {
       type: String,
       required: true,
     },
