@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "c2d11d0f-2d6f-455f-a248-cb128f8972de",
+		"_postman_id": "bb861bbe-e6a3-44c0-b4bb-c287d3df79d2",
 		"name": "Suum",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Register",
+			"name": "Register & Start Session",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -37,13 +37,13 @@
 			"response": []
 		},
 		{
-			"name": "Login",
+			"name": "Login & Start Session",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"tonystark@email.com\",\n    \"password\": \"1234567\"\n}",
+					"raw": "{\n    \"email\": \"imbald@email.com\",\n    \"password\": \"1234567\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -68,16 +68,10 @@
 			"response": []
 		},
 		{
-			"name": "getUserInfo",
+			"name": "Get All User Info",
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxOTc1ODJ9.WX5wYXx963YKE_Vhqbv_CbsW4HO0lJIcIsXsnVMqvls",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"url": {
 					"raw": "http://localhost:5000/api/user/getUser",
 					"protocol": "http",
@@ -96,9 +90,9 @@
 			"response": []
 		},
 		{
-			"name": "editUserSettings",
+			"name": "Edit User Name & Email",
 			"request": {
-				"method": "POST",
+				"method": "PATCH",
 				"header": [
 					{
 						"key": "auth-token",
@@ -108,7 +102,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"imbald@email.com\",\r\n    \"name\": \"dan zen\"\r\n}",
+					"raw": "{\r\n    \"name\": \"SpiderMan \",\r\n    \"email\": \"webJ@email.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -133,256 +127,7 @@
 			"response": []
 		},
 		{
-			"name": "POST New Habit for User",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZiYTg3OWQ3ZDU0Njg2NDU4OWFmODQiLCJpYXQiOjE2MTc3MzA5MzQsImV4cCI6MTYxNzczMTIzNH0.2VgrDRLh2g5-epBhnhWdASmz6erkkmMAgo71uYWAG-M",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"habitName\": \"NEW NEW  Names New habit April620201 2\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/habit",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"habit"
-					]
-				},
-				"description": "Post a Habit for an authenticated User"
-			},
-			"response": []
-		},
-		{
-			"name": "PATCH Habit assigned date",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODI0MDh9.s9NdaEWO_Nf_7pFyijdIPKBzxGoW2yRwedpg2tYq_GI",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"_id\": \"606d012cf79fed3852fe0290\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/habit",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"habit"
-					]
-				},
-				"description": "Push updates to a habit"
-			},
-			"response": []
-		},
-		{
-			"name": "GET Habit for user for today",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTc3MzQxMjQsImV4cCI6MTYxNzczNDQyNH0.DYQaP5tzMv5HxxNl98Udp-lXQ9xk92NHP3hdnTl_mhM",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:5000/api/habit/forToday",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"habit",
-						"forToday"
-					]
-				},
-				"description": "Get habits for a user\n"
-			},
-			"response": []
-		},
-		{
-			"name": "GET All Habit for user",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODM0MDJ9._HSPvdXcL8-IExxB7fftp-_l3mKWEcA4Y20cU-ZOFK4",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:5000/api/habit",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"habit"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": "",
-							"disabled": true
-						}
-					]
-				},
-				"description": "Get habits for a user\n"
-			},
-			"response": []
-		},
-		{
-			"name": "PATCH habit to complete",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODI1NjB9.d0DXh9tR8xcOO9EaYXAm0MYNKa_4A0q33buWY4GWRxw",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"606d012cf79fed3852fe0290\",\r\n    \"habitCompletionDateTime\": \"1993-04-12T00:00:16.131+00:00\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/habit/complete",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"habit",
-						"complete"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PATCH habit to stashed",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODMxNjV9.O4m0P2EjS_wBIDQ_xqlNkEgobul8yn4IMB5F4DJUAFU",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"_id\":\"606d012cf79fed3852fe0290\"\r\n\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/stash?auth-token",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"stash"
-					],
-					"query": [
-						{
-							"key": "auth-token",
-							"value": ""
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET Stash for User",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODM0MDJ9._HSPvdXcL8-IExxB7fftp-_l3mKWEcA4Y20cU-ZOFK4",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/stash",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"stash"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PATCH Notifications",
+			"name": "Edit User Notifications Setting",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -425,14 +170,260 @@
 			"response": []
 		},
 		{
-			"name": "GET all Tips",
+			"name": "Habits for User Assigned to today",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTc3MzQxMjQsImV4cCI6MTYxNzczNDQyNH0.DYQaP5tzMv5HxxNl98Udp-lXQ9xk92NHP3hdnTl_mhM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/habit/forToday",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"habit",
+						"forToday"
+					]
+				},
+				"description": "Get habits for a user\n"
+			},
+			"response": []
+		},
+		{
+			"name": "All Habits a User Ever Has Made",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODM0MDJ9._HSPvdXcL8-IExxB7fftp-_l3mKWEcA4Y20cU-ZOFK4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/habit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"habit"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Get habits for a user\n"
+			},
+			"response": []
+		},
+		{
+			"name": "POST New Habit for User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZiYTg3OWQ3ZDU0Njg2NDU4OWFmODQiLCJpYXQiOjE2MTc3MzA5MzQsImV4cCI6MTYxNzczMTIzNH0.2VgrDRLh2g5-epBhnhWdASmz6erkkmMAgo71uYWAG-M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"habitName\": \"NEW NEW  Names New habit April620201 2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/habit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"habit"
+					]
+				},
+				"description": "Post a Habit for an authenticated User"
+			},
+			"response": []
+		},
+		{
+			"name": "Change Habit date to Tomorow",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODI0MDh9.s9NdaEWO_Nf_7pFyijdIPKBzxGoW2yRwedpg2tYq_GI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"606d012cf79fed3852fe0290\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/habit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"habit"
+					]
+				},
+				"description": "Push updates to a habit"
+			},
+			"response": []
+		},
+		{
+			"name": "Set A Habit to Complete",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODI1NjB9.d0DXh9tR8xcOO9EaYXAm0MYNKa_4A0q33buWY4GWRxw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"6075f83c9e19942e13f07836\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/habit/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"habit",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stash a Habit",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODI1NjB9.d0DXh9tR8xcOO9EaYXAm0MYNKa_4A0q33buWY4GWRxw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"6075f83c9e19942e13f07836\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/habit/stash",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"habit",
+						"stash"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ALL Stashed Habits for User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODM0MDJ9._HSPvdXcL8-IExxB7fftp-_l3mKWEcA4Y20cU-ZOFK4",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/stash",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"stash"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Tips",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "auth-token",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODQyMjl9.L-jQamoViyzOHTtGHXuFUUiylvlUPoxkkwDWxb7dFXs",
-						"type": "text"
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"url": {
@@ -445,6 +436,76 @@
 					"path": [
 						"api",
 						"tips"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User Habits for The Week",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODQyMjl9.L-jQamoViyzOHTtGHXuFUUiylvlUPoxkkwDWxb7dFXs",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/report/week",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"report",
+						"week"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User Habits for A Year",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxODQyMjl9.L-jQamoViyzOHTtGHXuFUUiylvlUPoxkkwDWxb7dFXs",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/report/year",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"report",
+						"year"
 					],
 					"query": [
 						{
