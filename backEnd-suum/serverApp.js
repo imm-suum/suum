@@ -8,17 +8,18 @@ const mongoose = require("mongoose");
 require("dotenv/config");
 const bodyParser = require("body-parser"); //handles reading data from forms
 
-// intialize endpoint routes 
-const UserEndPoint = require('./routes/UserEndPoint');
+// intialize endpoint routes
+const UserEndPoint = require("./routes/UserEndPoint");
 const HabitEndpoint = require("./routes/HabitEndpoint");
 const Stash = require("./routes/StashEndPoint");
-const TipsEndPoint=require("./routes/tipsEndPoint");
-const ReportEndPoint=require("./routes/reportEndPoint"); 
+const TipsEndPoint = require("./routes/tipsEndPoint");
+const ReportEndPoint = require("./routes/reportEndPoint");
+const AppointmentEndPoint = require("./routes/AppointmentEndPoint");
 var app = express();
 
 //Swagger import
-const swaggerUi = require('swagger-ui-express');
-swaggerDocument = require ("./swagger");
+const swaggerUi = require("swagger-ui-express");
+swaggerDocument = require("./swagger");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -32,28 +33,30 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.json());
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.listen(5000, ()=> console.log("Express server is running on localhost:5000"));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.listen(5000, () =>
+  console.log("Express server is running on localhost:5000")
+);
 
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true,useUnifiedTopology: true }, () => {
-  console.log("connected to DB");
-});
+mongoose.connect(
+  process.env.DB_CONNECTION,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => {
+    console.log("connected to DB");
+  }
+);
 
+app.use("/api/user", UserEndPoint);
 
+app.use("/api/stash", Stash);
 
+app.use("/api/habit", HabitEndpoint);
 
+app.use("/api/tips", TipsEndPoint);
 
-app.use('/api/user', UserEndPoint);
+app.use("/api/report", ReportEndPoint);
 
-app.use("/api/stash",Stash);
-
-app.use('/api/habit', HabitEndpoint);
-
-app.use('/api/tips',TipsEndPoint);
-
-app.use('/api/report', ReportEndPoint); 
-
-
+app.use("/api/appointment", AppointmentEndPoint);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
