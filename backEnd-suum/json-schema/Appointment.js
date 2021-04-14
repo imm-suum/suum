@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const moment = require("moment");
-// const cfg = require("../config");
+const cfg = require("dotenv/config");
 const Twilio = require("twilio");
 
 const AppointmentSchema = new mongoose.Schema({
@@ -12,7 +12,6 @@ const AppointmentSchema = new mongoose.Schema({
 });
 
 AppointmentSchema.methods.requiresNotification = function (date) {
-  console.log("i'M RUNNING APPOINTMENT SCHEMA");
   return (
     Math.round(
       moment
@@ -25,30 +24,45 @@ AppointmentSchema.methods.requiresNotification = function (date) {
 };
 
 AppointmentSchema.statics.sendNotifications = function (callback) {
+  console.log(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN,process.env.TWILIO_PHONE_NUMBER );
   // now
-  console.log("I am sending you a notifi");
   const searchDate = new Date();
   Appointment.find().then(function (appointments) {
-    console.log("appointments");
+
+    console.log("found objects");
+
     appointments = appointments.filter(function (appointment) {
+
+      console.log(appointment + " single object");
+      console.log(appointments + "FILTERED objects");
+      //console.log(requiresNotification(searchDate));
+      console.log(appointment.requiresNotification(searchDate));
+
       return appointment.requiresNotification(searchDate);
     });
+
+    console.log(appointments.length);
     if (appointments.length > 0) {
       sendNotifications(appointments);
+      console.log("more than 1 appointment ");
     }
   });
+
+  
 
   /**
    * Send messages to all appoinment owners via Twilio
    * @param {array} appointments List of appointments.
    */
   function sendNotifications(appointments) {
-    const client = new Twilio(cfg.twilioAccountSid, cfg.twilioAuthToken);
+    console.log("sendNotifications called")
+    const client = new Twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+
     appointments.forEach(function (appointment) {
       // Create options to send the message
       const options = {
         to: `+ ${appointment.phoneNumber}`,
-        from: cfg.twilioPhoneNumber,
+        from: process.env.TWILIO_PHONE_NUMBER,
         /* eslint-disable max-len */
         body: `Hi ${appointment.name}. Just a reminder that you have an appointment coming up.`,
         /* eslint-enable max-len */
