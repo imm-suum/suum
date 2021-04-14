@@ -22,7 +22,7 @@ import CheckInModal from '../components/checkInModal/checkinModal';
 
 export const Home =  () => {
 	let anim;
-	const currentTime = new Date().getHours();
+	const currentTime = new Date();
     // get API response.
 
 	const [todayHabits, setHabits] = useState([]);
@@ -80,13 +80,20 @@ export const Home =  () => {
 	}
 	
 	//if night time show checkin process.
-	if (currentTime > 20) {
+	if (currentTime.getHours() < 20) {
 	// show checkinModal => Planning Modal
 	// }else if (Date.prototype.getHours() > 20 && Date(day) === "friday") {
 	//     //show weeklyReviewCard componentONly.
 	//     //on close... load homescreen with habitTabWidget?????
 		return (
+			<div>
 			<CheckInModal/>
+        <div style={dateTimePadding}>
+          <DateTime date={new Date()} />
+        </div>
+		  	<HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation}/>
+				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
+			</div>
 		)
 	}else{
 			//if it's before 8pm on whatever day

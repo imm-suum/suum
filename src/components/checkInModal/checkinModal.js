@@ -27,11 +27,11 @@ const CheckInModal = ()=> {
 
   return (
     //modalOpen is true therefore show modal
-    <>
+    <div className="checkInModal">
       {modalOpen && (
         <Modal toggleModal={toggleModal} closeModal={closeModal}/>
       )}
-    </>
+    </div>
     
   );
 };
