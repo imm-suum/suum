@@ -14,9 +14,9 @@ const Nav = (props) => {
   //   otherState: 'someothervalue'
   // }
 
-  
 
-  
+
+
 
     //define the classes that style the nav component
     let navClasses = 'nav-right';
@@ -28,24 +28,26 @@ const Nav = (props) => {
     return (
         <ul className={navClasses}>
           <Link to='/'>
-          <li className="nav-li"><ListItem name= "Home" /></li> 
+          <li className="nav-li"><ListItem name= "Home" /></li>
           </Link>
 
           <Link to='/history'>
           <li className="nav-li"><ListItem name="History" /></li>
-          </Link>  
-          
-          <Link to='/settings'>
-          <li className="nav-li"><ListItem name="Settings" /></li> 
           </Link>
 
-          <Link to='/stash'>
-          <li className="nav-li"><ListItem name="Habit Nursery" /></li> 
+          <Link to='/settings'>
+          <li className="nav-li"><ListItem name="Settings" /></li>
           </Link>
+
+		  {/*  
+          // <Link to='/stash'>
+          // <li className="nav-li"><ListItem name="Habit Nursery" /></li>
+          // </Link>
+		  */}
 
         </ul>
 
     );
 }
 
-export default Nav; 
+export default Nav;

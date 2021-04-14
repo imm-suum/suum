@@ -1,6 +1,5 @@
 @use '../../scss/main.scss' as *;
 
-
 .flexbox {
     display: flex;
 }
@@ -19,12 +18,13 @@
     padding: 15px 0;
     margin-left: auto;
     z-index: 200;
-
 }
 
-.burger-toggle:focus {
-    outline: none;
-
+.burger-toggle:focus:active {
+	border: none;
+	outline: none;
+	transform: scale(0.95);
+	box-shadow: 0 2px 6px #00000029;
 }
 
 .burger-toggle-line {
