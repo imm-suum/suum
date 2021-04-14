@@ -1,0 +1,23 @@
+@use '../../scss/main.scss' as *;
+
+.habitTag{
+	width: auto;
+	height: 27px;
+	font-size: 14px;
+	font-weight: bold;
+	color: $main-green;
+	background-color: white;
+	border-radius: 18px;
+	border: 2px solid $main-green;
+	margin: .25rem .25rem;
+	padding: 0 .5rem;
+	cursor: pointer;
+	transition: 450ms;
+}
+
+.habitTag:hover {
+	background-color: $main-green;
+	color: $white;
+	border: 2px solid $main-green;
+}
+
