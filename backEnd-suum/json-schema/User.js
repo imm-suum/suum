@@ -48,8 +48,11 @@ const userSchema = mongoose.Schema({
 
   userSchema.statics.sendNotifications = function (callback) {
     // now
-    const searchDate = new Date();
-    User.find().then(function (users) {
+    let todayDateTime = moment(); //the current date and time
+
+    User.find().populate('habits').then(function (users, habits) {
+
+      //if notifications = false && there are no habits && dont notfications
   
       console.log("found objects");
       let appointUser = users;
@@ -57,46 +60,49 @@ const userSchema = mongoose.Schema({
       users = users.filter(function (user) {
         //filter for users that have notifications set to true
         console.log(user.notifications, "the user notification");
-  
-        // console.log(user + " single object");
-        // console.log(users + "FILTERED objects");
-        // appointUser = users;
-        // console.log(appointUser);
-        //console.log(user.requiresNotification(searchDate), " < line 50 from appointment.requiresNotification(searchDate");
+        let habitForToday = true;
+        habits = user.habits.filter( function (habitList) {
+          
+            // if (habits.habitAssignedDateTime == today){
+              
+            //   habitForToday = true
+            // }
+            return habits
+          }
+        )
+          console.log(habits);
         
-        if (user.notifications){
+        if (user.notifications && habitForToday ){ // Check if user has notifications on
           return user;
         }
       });
 
       console.log(users, "this is the filtered results");
 
-      let todayDateTime = moment(); //the current date and time
+      
   
 
-      const morningTime = moment(16, "HH");
+      const morningTime = moment(17, "HH"); //Set morning Time 9am 
 
-      const afternoonTime = moment(17, "HH");
+      const afternoonTime = moment(17, "HH"); //Set Afternoon Time  5pm
       
       console.log(todayDateTime, "this is the current dateTime ");
       console.log(morningTime, "this is the morning dateTime");
 
       console.log(moment(todayDateTime).isSame(morningTime), "should be true or false");
       console.log(todayDateTime.format('HH') === morningTime.format('HH'), "might be true");
-      // console.log(moment().format('MMMM Do YYYY, h:mm a'), "moment().format('MMMM Do YYYY, h:mm a')");
+
+      console.log(todayDateTime.format('MMMM Do YYYY') === morningTime.format('MMMM Do YYYY'))
       
       
       if (todayDateTime.format('HH') === morningTime.format('HH')) {
 
-        //for each users[] send morning-text to (user.number) were User.notifications=true
         sendMorningNotifications(users);
 
       } else if(todayDateTime.format('HH') === afternoonTime.format('HH')) {
 
-        //for each users[] send afternoon-text to (user.number) were User.notifications=true
         sendAfternoonNotifications(users);
-        //console.log(appointUser);
-        //console.log("more than 1 appointment ");
+        
         
       }
     });
