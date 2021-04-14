@@ -44,13 +44,15 @@ return (
 	<div className="form-container">
 	<form className="suumForm" onSubmit={handleSubmit(onSubmit)}>
 	<h1>Register</h1>
-		<input id="name" className="name" type="text" placeholder="Full Name" {...register("name")} />
-		<input id="email" className="email" type="email" placeholder="Email" {...register("email")} />
-		<input id="password" className="password" type="password" placeholder="Password" {...register("password")} />
+		<input id="name" className="name" type="text" placeholder="Full Name" {...register("name", {required:true, minLength:1, maxLength:35})} />
+		<input id="email" className="email" type="email" placeholder="Email" {...register("email", {required:true, minLength:1, maxLength:35})} />
+		<input id="password" className="password" type="password" placeholder="Password" {...register("password", {required:true, minLength:6, maxLength:35})} />
+		{errors.password?.type === "minLength" && <span className="error">Please Input 6 Characters for Password!</span>}
 		<div className="notifContainer">
 			<input id="notifications" type="checkbox" placeholder="Notifications" {...register("notifications")} />
 			<label htmlFor="notifications" style={{marginLeft: "0.5rem"}}>Turn On Notifications</label>
 		</div>
+
 		<input className="submit" type="submit" />
 	</form>
 	</div>

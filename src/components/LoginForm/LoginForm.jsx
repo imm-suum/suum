@@ -40,8 +40,10 @@ return (
 	<div className="form-container">
 	<form className="suumForm" onSubmit={handleSubmit(onSubmit)}>
 	<h1>Login</h1>
-		<input id="email" className="email" type="email" placeholder="Email" {...register("email")} />
-		<input id="password" className="password" type="password" placeholder="Password" {...register("password")} />
+		<input id="email" className="email" type="email" placeholder="Email" {...register("email", {required:true, min:1, maxLength:30})} />
+		{errors.email && <span className="error">Email Invalid!</span>}
+		<input id="password" className="password" type="password" placeholder="Password" {...register("password", {required:true, min:6, maxLength:16})} />
+		{errors.password && <span className="error">Password Invalid!</span>}
 		<input className="submit" type="submit" />
 	</form>
 	</div>

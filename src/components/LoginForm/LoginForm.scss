@@ -112,6 +112,12 @@ input[type=submit]{
 	outline:none;
 }
 
+.error{
+	color: red;
+	font-size: 0.85rem;
+}
+
+
 @media all and (min-width: 480px) {
     .Login {
       padding: 60px 0;
