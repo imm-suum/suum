@@ -15,35 +15,20 @@ export const Settings = () => {
 	const [userInfo, setUserInfo] = useState([]);
 
 	useEffect(() => {
-		//apiSettingCall();
-	});
-
-	async function apiSettingCall() {
-		try {
-
-			// fetch data from a url endpoint
-			const data = await axios.get(`/api/user/`)
-				.then(res => {
-					setUserInfo(res.data);
+		
+		async function getSettings() {
+			const getSettings = await axios.get('/api/user')
+				.then(response => {
+					setUserInfo(response.data);
 				});
-			//setHabits(data.json());
-			//const items = await data.json();
-			//console.log(res);
-
-			return data;
-		} catch (error) {
-			console.log("error", error);
-			// appropriately handle the error
 		}
-	}
 
-	async function getSettings() {
-		const getSettings = await axios.get('/api/user')
-			.then(response => {
-				setUserInfo(response.data);
-			});
-	}
-	//getSettings();
+		getSettings();
+		
+	},[]);
+
+
+	
 
 
 console.log(userInfo);
@@ -72,7 +57,7 @@ return (
 
 	<div style={bodyPadding}>
 		<h1 style={settingScreenTitle}>Settings</h1>
-		<MainSettingCardInfo userInfo={userInfo} />
+		{ userInfo && <MainSettingCardInfo userInfo={userInfo} />}
 
 		{/* NOtifications  */}
 
