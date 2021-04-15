@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 //import ReactDOM from 'react-dom';
 import './NoHabitsWidget.scss';
 
-export const NoHabitsWidget= (tipOfDay) => {
+export const NoHabitsWidget= ({tipOfDay}) => {
 
 	// state={
 	// 	showInfo:false
@@ -28,16 +28,16 @@ export const NoHabitsWidget= (tipOfDay) => {
 				<div className="single_accordion">
 					<div className="tab" onClick={handleToogle}>
 						{/* return content.contentTitle */}
-						<p>Click for daily wellness tips!</p>
+						<p>{tipOfDay.contentTitle}</p>
 					</div>
 					{/* edit CSS selectors for merge */}
 					<div className="container2 bg-maingreen">
 						<div className={showInfo? 'showContent content' : 'content' }>
 							<div className="textbox">
 								{/* return random tip content in p tag */}
-								<p>habit habit habit habit habit habit</p>
+								<p>{tipOfDay.content}</p>
 								{/* return tip URL anchor tag href*/}
-								<a href="{(response['Contentlink'])}" className="readMoreLink">Read More</a>
+								<a href={tipOfDay.contentLink} className="readMoreLink">Read More</a>
 							</div>
 						</div>
 					</div>

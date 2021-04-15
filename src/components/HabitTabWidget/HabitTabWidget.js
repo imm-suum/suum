@@ -16,8 +16,9 @@ export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) =>
 
   //console.log(todayHabits);
  
-  // console.log(tipOfDay);
+  console.log(tipOfDay);
   //Track state for each of the 3 Habit Check Items that are used
+  const [ todayTip, setTodayTip] = useState([]);
   const [ habit1IsChecked, setHabit1 ] = useState(false);
   const [ habit2IsChecked, setHabit2 ] = useState(false);
   const [ habit3IsChecked, setHabit3 ] = useState(false);
@@ -28,9 +29,16 @@ export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) =>
     setHabit1(todayHabits[0].habitComplete);
     setHabit2(todayHabits[1].habitComplete);
     setHabit3(todayHabits[2].habitComplete);
+    setTodayTip(tipOfDay);
+    
+
+    let ran = Math.floor(Math.random() * (tipOfDay.length));
+    console.log(ran, "random");
+    {setTodayTip(tipOfDay[ran])};
 
   } , []);
 
+  console.log(todayTip, "should be filtered");
 
 
   useEffect(() =>{
@@ -70,7 +78,7 @@ export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) =>
     tab2: <HabitCheckItem playAnimation={playAnimation} setHabitState={setHabit2} checked={habit2IsChecked} habitName= {todayHabits[1].habitName}/>,
     tab3: <HabitCheckItem playAnimation={playAnimation} setHabitState={setHabit3} checked={habit3IsChecked} habitName= {todayHabits[2].habitName}/>,
 
-    tab4: <NoHabitsWidget/>
+    tab4: <NoHabitsWidget tipOfDay={todayTip}/>
   }
 
   //When tab is clicked this function sets the state of the active tab on the HabitTabWidget to the selected tab
