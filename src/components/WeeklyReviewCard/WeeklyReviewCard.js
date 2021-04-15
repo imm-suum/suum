@@ -80,8 +80,8 @@ export const WeeklyReviewCard = ()=> {
         <div className="reportTitle">
           <h2>{cardTitle}</h2>
           <div className="barContainer">
-            <div className="bar">
-            <p className="num">{myCompletedHabits.length}/21</p>
+            <div style={{width: `calc(${myCompletedHabits.length}/21*100%)`}} className="progressBar">
+            <p className="progressNum">{myCompletedHabits.length}/21</p>
             </div>
 
           </div>

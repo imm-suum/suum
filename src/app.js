@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './app.css';
 
 import { Home } from './screen/Home.jsx';
-import History from './screen/History.jsx';
+import { History } from './screen/History.jsx';
 import { Settings } from './screen/Settings.jsx';
 import { Register } from './screen/Register.jsx';
 import { Login } from './screen/Login.jsx';
