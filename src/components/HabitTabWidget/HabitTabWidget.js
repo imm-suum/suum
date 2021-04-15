@@ -7,7 +7,8 @@ import './HabitTabWidget.scss';
 
 
 
-export const HabitTabWidget = ({todayHabits, playAnimation, tipOfDay}) => {
+export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) => {
+
   //Track state for the Habit Tab Widget component to know what tab has been clicked so far
   const [activeTab, setActiveTab] = useState('tab1');
   //Create 3 Tabs by my naming them in this array
@@ -55,9 +56,10 @@ export const HabitTabWidget = ({todayHabits, playAnimation, tipOfDay}) => {
  console.log(todayHabits);
  
   const content = {
-    tab1: <HabitCheckItem setHabitState={setHabit1} checked={habit1IsChecked} habitName= {todayHabits[0].habitName} />,
-    tab2: <HabitCheckItem setHabitState={setHabit2} checked={habit2IsChecked} habitName= {todayHabits[1].habitName} />,
-    tab3: <HabitCheckItem setHabitState={setHabit3} checked={habit3IsChecked} habitName= {todayHabits[2].habitName} />,
+    tab1: <HabitCheckItem playAnimation={props.playAnimation} setHabitState={setHabit1} checked={habit1IsChecked} habitName= {todayHabits[0].habitName}/>,
+    tab2: <HabitCheckItem playAnimation={props.playAnimation} setHabitState={setHabit2} checked={habit2IsChecked} habitName= {todayHabits[1].habitName}/>,
+    tab3: <HabitCheckItem playAnimation={props.playAnimation} setHabitState={setHabit3} checked={habit3IsChecked} habitName= {todayHabits[2].habitName}/>,
+
     tab4: <NoHabitsWidget/>
   }
 
@@ -76,7 +78,7 @@ export const HabitTabWidget = ({todayHabits, playAnimation, tipOfDay}) => {
      <div>
           {
             tabs.map((tab, idx)=> {
-			  return <Tabs key={idx} onClickHandler={onTabClickHandler} tab={tab} playAnimation={playAnimation}/>
+			  return <Tabs key={idx} onClickHandler={onTabClickHandler} tab={tab} />
 			})
 
           }
