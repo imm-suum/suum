@@ -33,7 +33,7 @@ export const RegisterForm = ()=> {
 return (
 	<div className="form-container">
 	<form className="suumForm" onSubmit={handleSubmit(onSubmit)}>
-	<h1>Register</h1>
+	<h1 className="RegisterTitle">Register</h1>
 		<input id="name" className="name" type="text" placeholder="Full Name" {...register("name", {required:true, minLength:1, maxLength:35})} />
 
 		<input id="tel" type="tel" className="tel" placeholder="Phone Number" {...register("phoneNumber", {required: true, minLength:6, maxLength:14 })} />
@@ -47,7 +47,7 @@ return (
 			<label htmlFor="notifications" style={{marginLeft: "0.5rem"}}>Turn On Notifications</label>
 		</div>
 
-		<input className="submit" type="submit" />
+		<input className="submit" type="submit" value="Register"/>
 	</form>
 	</div>
   );

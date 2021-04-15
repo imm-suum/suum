@@ -41,7 +41,7 @@ export const WeeklyReviewCard = ()=> {
           <h2>{cardTitle}</h2>
           <div className="barContainer">
             <div className="bar">
-            <p className="num">14/21</p>
+            <p id="num">14/21</p>
             </div>
 
           </div>

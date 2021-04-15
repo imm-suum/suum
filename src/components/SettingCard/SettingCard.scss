@@ -5,7 +5,7 @@ html,body{
 }
 
 
-.primary-setting-card{
+.primary-setting-card {
 	width: 100%;
 	background-color: $white;
 	display: flex;
@@ -17,7 +17,7 @@ html,body{
 	padding-left: 1rem;
 }
 
-.setting-card-title{
+.setting-card-title {
 	padding-bottom: 1rem;
 	width:100%;
 	font-size: $body-font;
@@ -27,7 +27,7 @@ html,body{
 	float: right;
 }
 
-.spacing{
+.spacing {
 	width: 2rem;
 }
 
@@ -57,6 +57,9 @@ html,body{
   transition: .4s;
 }
 
+
+
+// toggle selectors
 .slider:before {
   position: absolute;
   content: "";
