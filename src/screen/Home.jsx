@@ -6,7 +6,8 @@ import lottie from 'lottie-web';
 import plantAnimation from '../assets/plant3.json';
 import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
 import DateTime from '../components/DateTime/DateTime.jsx';
-
+import CheckInModal from '../components/checkInModal/checkinModal';
+import {WeeklyReviewCard} from '../components/WeeklyReviewCard/WeeklyReviewCard.js';
 
 //A Class that holds all components for Habit Nursery Screen
 
@@ -21,13 +22,18 @@ import DateTime from '../components/DateTime/DateTime.jsx';
 
 export const Home = () => {
 	let anim;
-	// get API response.
+
+	const currentTime = new Date();
+    // get API response.
+
 
 	const [todayHabits, setHabits] = useState([]);
 	const [todayTip, setTodayTip] = useState([]);
 
 	useEffect(() => {
+
 		async function getHabits() {
+
 			// fetch data from a url endpoint
 			const getHabit = await axios.get('/api/habit')
 				.then(response => {
@@ -89,29 +95,54 @@ export const Home = () => {
 		paddingTop: '2rem'
 	}
 
-	return (
-		//if night time show checkin process.
-		//IF (Date.prototype.getHours() > 20 && Date!= "friday" ) {
-		// show checkinModal => Planning Modal
-		// }else if (Date.prototype.getHours() > 20 && Date(day) === "friday") {
-		//     //show weeklyReviewCard componentONly.
-		//     //on close... load homescreen with habitTabWidget?????
-		// }else{
-		//if it's before 8pm on whatever day
-		//show habitTabWidget
-		//}
+	console.log(currentTime.getDay());
 
-		//add imported classes here
-		//always have div to place component notes
-
-		<div>
-			<div style={dateTimePadding}>
-				<DateTime date={new Date()} />
+	//if night time show checkin process.
+	if (currentTime.getHours() > 20 && currentTime.getDay()!= 0) {
+	// show checkinModal => Planning Modal
+	//     //show weeklyReviewCard componentONly.
+	//     //on close... load homescreen with habitTabWidget?????
+		return (
+			<div>
+			<CheckInModal/>
+        <div style={dateTimePadding}>
+          <DateTime date={new Date()} />
+        </div>
+		  	{todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
+				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 			</div>
-			{todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
-			
-			<div className="plantAnimationDiv" ref={plantAnimationDiv} />
+		)
 
+	}else if (currentTime.getHours() > 12 && currentTime.getDay() === 3) {
+		return (
+			<div>
+			<WeeklyReviewCard/>
+		<div style={dateTimePadding}>
+		  <DateTime date={new Date()} />
 		</div>
-	);
+			{todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
+				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
+			</div>
+		)
+
+	}else{
+			//if it's before 8pm on whatever day
+			//show habitTabWidget
+			return (
+
+				//add imported classes here
+				//always have div to place component notes
+
+				<div>
+        <div style={dateTimePadding}>
+          <DateTime date={new Date()} />
+        </div>
+		  	
+        {todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
+				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
+
+      </div>
+		);
+	}
+
 }

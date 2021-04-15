@@ -12,6 +12,8 @@ export const WeeklyReviewCard = ()=> {
   );
   const [btnContainerContent, setBtnContainerContent] = useState("");
 
+	const [isOpen, setisOpen] = useState(true);
+
   //function to set state true to false etcetc;
   const flipReport= ()=>{
     setIsToggled(!isToggled);
@@ -22,19 +24,22 @@ export const WeeklyReviewCard = ()=> {
 
   const closeReport = (e)=> {
     if (e.target.id = 'greatJobBtn'){
-      console.log('closed')
+	setisOpen(!isOpen);
+	  console.log('closed')
     }else{
       console.log("u dumbo oldhead");
     }
   }
 
   return(
-    <div className="weeklyScreenBg">
+	  <>
+	 {isOpen &&
+	<div className="weeklyScreenBg">
       <div className="reportBg" onClick={flipReport}>
 
         <div className="reportTitle">
           <h2>{cardTitle}</h2>
-          <div className="barContainer"> 
+          <div className="barContainer">
             <div className="bar">
             <p className="num">14/21</p>
             </div>
@@ -52,5 +57,7 @@ export const WeeklyReviewCard = ()=> {
 
       </div>
     </div>
+	}
+	</>
   );
 }
