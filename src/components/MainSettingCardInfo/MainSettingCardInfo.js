@@ -1,25 +1,23 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 //import ReactDOM from 'react-dom';
 import './MainSettingCardInfo.scss';
 import axios from 'axios';
 
-class MainSettingCardInfo extends Component {
-  constructor(props) {
-    super(props);
+export const MainSettingCardInfo = ({userInfo}) => {
 
-    this.state = {
-      name: props.userInfo.name,
-      phoneNumber: props.userInfo.phoneNumber,
-	  showEdit: false,
-    };
-  }
-  myChangeHandler = (event) => {
+	const [userData, setUserData] = useState(userInfo);
+	const [newUserData, setNewUserData] = useState({});
+	const [showEdit, setShowEdit] = useState(false);
+
+  const myChangeHandler = (event) => {
     let nam = event.target.name;
     let val = event.target.value;
-    this.setState({[nam]: val});
+    setUserData({[nam]: val});
+
 	try {
-		const newUserData = this.state;
-		const data = axios.patch('/api/user/edit', newUserData)
+		
+		// fetch data from a url endpoint
+		const data = axios.post(`/api/user/edit`, userData)
 		.then(res=>{
 			console.log(res)
 		});
@@ -31,44 +29,39 @@ class MainSettingCardInfo extends Component {
   }
 
 
-  handleClick = (e) => {
+  const onClickHandler = (e) => {
 	  e.preventDefault();
-	  this.setState({
-		  showEdit:!this.state.showEdit
-
-	  })
+	  setShowEdit(!showEdit);
    }
 
-  render() {
+
     return (
 	<form>
       <div className="settings-main">
 	  	<h1 className="settings-main-title">Profile</h1>
-	  	<p className="settings-main-item">{this.state.name}</p>
-	  	<p className="settings-main-item2">{this.state.phoneNumber}</p>
-		<a className="edit-button" onClick={this.handleClick}>
+	  	<p className="settings-main-item">{userData.name}</p>
+	  	<p className="settings-main-item2">{userData.phoneNumber}</p>
+		<a className="edit-button" onClick={onClickHandler}>
 			Edit
 		</a>
 	  </div>
 
-	  <div className={this.state.showEdit ? 'showEdit edit' : 'edit'}>
+	  <div className={showEdit ? 'showEdit edit' : 'edit'}>
 	  <input
         type='text'
 		placeholder='Full Name'
         name='name'
-        onChange={this.myChangeHandler}
+        onChange={myChangeHandler}
       />
       <input
         type='text'
 		placeholder='Phone Number'
         name='phoneNumber'
-        onChange={this.myChangeHandler}
+        onChange={myChangeHandler}
       />
 
 	  </div>
       </form>
     );
-  }
 }
 
-export default MainSettingCardInfo;
