@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import '../Button/Button.scss';
 import './Form.scss';
+import axios from 'axios';
 
 export const Form = ({toggleForm})=> {
 
@@ -15,6 +16,29 @@ export const Form = ({toggleForm})=> {
 
   const onSubmit = (data)=> {
     console.log(data);
+
+    var i;
+    for (i =0; i < 3; i++){
+    console.log("habit" + i);
+    let eachNewHabit = {
+        "habitName": "Weekly Habits Test 5"
+      };
+
+      //sendNewHabits(data);
+    }
+    
+
+    
+
+    async function sendNewHabits(data) {
+			// Send habit id to complete the habit;
+
+        const newtHabit = await axios.post(`/api/habit`, data)
+        .then(res=>{
+          console.log(res);
+        });  
+    }
+
 	toggleForm();
   }
 
