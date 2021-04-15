@@ -43,7 +43,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"imbald@email.com\",\n    \"password\": \"1234567\"\n}",
+					"raw": "{\n    \"email\": \"email@tester.com\",\n    \"password\": \"12345678\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -73,7 +73,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/user/getUser",
+					"raw": "http://localhost:5000/api/user/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -82,7 +82,7 @@
 					"path": [
 						"api",
 						"user",
-						"getUser"
+						""
 					]
 				},
 				"description": "Login to Suum"
