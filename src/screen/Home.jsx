@@ -2,7 +2,7 @@ import React, { useEffect, useState, createRef } from 'react';
 import '../app.css';
 import '../scss/main.scss';
 import axios from 'axios';
-import lottie from 'lottie-web';
+import Lottie from 'react-lottie';
 import plantAnimation from '../assets/plant3.json';
 import { HabitTabWidget } from '../components/HabitTabWidget/HabitTabWidget.js';
 import DateTime from '../components/DateTime/DateTime.jsx';
@@ -22,12 +22,11 @@ import { PlanningModal } from '../components/PlanningModal/PlanningModal.js';
 
 
 export const Home = () => {
-	let anim;
-
 	const currentTime = new Date();
 	// get API response.
 
-
+	const [isStopped, setIsStopped] = useState(true);
+	const [isComplete, setIsComplete] = useState(false);
 	const [todayHabits, setHabits] = useState([]);
 	const [todayTip, setTodayTip] = useState([]);
 
@@ -47,41 +46,42 @@ export const Home = () => {
 
 		}
 		getHabits();
-		
-
-		anim = lottie.loadAnimation({
-			container: plantAnimationDiv.current,
-			renderer: "svg",
-			loop: false,
-			autoplay: false,
-			animationData: plantAnimation
-		});
-		return () => anim.destroy(); // optional clean up for unmounting
 	}, []);
 
-	console.log(todayHabits);
-	//console.log(todayTip);
-	let plantAnimationDiv = createRef();
-
-
-
-
-	const playAnimation = () => {
-		anim.playSegments([0, 165], true);
-		//loopAnimation();
-		console.log("playing")
+	const completeFunction = ()=> {
+		setIsStopped(true);
+		console.log(isStopped);
 	}
 
-	const loopAnimation = () => {
-		anim.playSegments([139, 165], false);
+	const startPoint = {
+		value:0,
+		isFrame:true
+	}
+
+	const sequence = {
+		segments: [0,189],
+		forceFlag:true
+	}
+
+	const defaultOptions = {
+		loop: false,
+		autoplay: false,
+		animationData: plantAnimation,
+		rendererSettings: {
+			preserveAspectRatio: "xMidYMid slice"
+		}	
+
+	};
+
+	let playAnimation = () => {
+		setIsStopped(!isStopped)
+		console.log(isStopped)
 	}
 
 	const dateTimePadding = {
 		paddingLeft: '2rem',
 		paddingTop: '2rem'
 	}
-
-	console.log(currentTime.getDay());
 
 	//tracking the modals below
 	let checkInTime = false;
@@ -108,9 +108,18 @@ export const Home = () => {
 				<DateTime date={new Date()} />
 			</div>
 
-			{(todayHabits.length && todayTip.length ) ? <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} /> : <PlanningModal />}
-			<div className="plantAnimationDiv" ref={plantAnimationDiv} />
+			<button onClick={()=> setIsStopped(!isStopped)}>Play</button>
 
+			{(todayHabits.length && todayTip.length ) ? <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} /> : <PlanningModal />}
+			<div className="plantDiv">
+			<Lottie 
+				options={defaultOptions}
+				isStopped={isStopped}
+				width={"100%"}
+				height={"auto"}
+				goToAndPlay={startPoint}
+			/>
+		</div>
 		</div>
 	);
 

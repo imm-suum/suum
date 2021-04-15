@@ -97,12 +97,13 @@ body {
   }
 
 //   SCREEN RELATED SCSS
-.plantAnimationDiv {
+.plantDiv {
     width: 100%;
     height: auto;
     position: absolute;
     z-index: -1;
     bottom: 0;
     margin-top: 10rem;
+    pointer-events: none;
 }
 

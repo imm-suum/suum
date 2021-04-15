@@ -16,8 +16,7 @@ export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) =>
 
   //console.log(todayHabits);
  
-  console.log(tipOfDay);
-  //Track state for each of the 3 Habit Check Items that are used
+ //Track state for each of the 3 Habit Check Items that are used
   const [ todayTip, setTodayTip] = useState([]);
   const [ habit1IsChecked, setHabit1 ] = useState(false);
   const [ habit2IsChecked, setHabit2 ] = useState(false);
@@ -33,12 +32,10 @@ export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) =>
     
 
     let ran = Math.floor(Math.random() * (tipOfDay.length));
-    console.log(ran, "random");
     {setTodayTip(tipOfDay[ran])};
 
   } , []);
 
-  console.log(todayTip, "should be filtered");
 
 
   useEffect(() =>{
@@ -48,10 +45,9 @@ export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) =>
 
     async function sendHabits(d) {
 			// Send habit id to complete the habit;
-      console.log(d, "sendHabits Called");
         const completetHabit = await axios.patch(`/api/habit/complete`, d)
         .then(res=>{
-          console.log(res);
+
         });  
     }
 
