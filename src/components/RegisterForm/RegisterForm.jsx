@@ -2,10 +2,10 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
-import "./LoginForm.scss";
+import "./RegisterForm.scss";
 
-export const LoginForm = ()=> {
-	const { register, handleSubmit, formState: { errors } } = useForm();	//HERE TOO "register"
+export const RegisterForm = ()=> {
+	const { register, handleSubmit, formState: { errors } } = useForm();
 	const history = useHistory();
 
 	const onSubmit = data => {
@@ -18,9 +18,11 @@ async function apiCall(d) {
 	try {
 
 		// fetch data from a url endpoint
-		const loginCall = await axios.post(`/api/user/login`, {		//LOGIN CALL API? I COPIED THIS FROM REGISTERFORM
+		const registerCall = await axios.post(`/api/user/register`, {
+			name: d.name ,
 			email: d.email,
 			password: d.password,
+			notifications: d.notifications
 		  })
 		.then(res=>{
 			//redirect('/');
@@ -29,25 +31,30 @@ async function apiCall(d) {
 		});
 		//setHabits(data.json());
 		//res.redirect('/');
-		return loginCall;
+		return registerCall;
 	} catch(error) {
 		console.log("error", error);
 		// appropriately handle the error
 	}
 }
-
 	var regexConst = new RegExp('/\A\+?\d{11}\z/');
 
 return (
 	<div className="form-container">
 	<form className="suumForm" onSubmit={handleSubmit(onSubmit)}>
-	<h1>Login</h1>
+	<h1>Register</h1>
+		<input id="name" className="name" type="text" placeholder="Full Name" {...register("name", {required:true, minLength:1, maxLength:35})} />
 
 		<input id="tel" type="tel" className="tel" placeholder="Phone Number" {...register("phoneNumber", {required: true, minLength:6, maxLength:14, pattern:regexConst })} />
 		{errors.phoneNumber?.type != "pattern" && <span className="num">Phone number in E.164 format: +123456789</span>}
 
-		<input id="password" className="password" type="password" placeholder="Password" {...register("password", {required:true, min:6, maxLength:16})} />
-		{errors.password && <span className="error">Password Invalid!</span>}
+		<input id="password" className="password" type="password" placeholder="Password" {...register("password", {required:true, minLength:6, maxLength:35})} />
+		{errors.password?.type === "minLength" && <span className="error">Please Input 6 Characters for Password!</span>}
+
+		<div className="notifContainer">
+			<input id="notifications" type="checkbox" placeholder="Notifications" {...register("notifications")} />
+			<label htmlFor="notifications" style={{marginLeft: "0.5rem"}}>Turn On Notifications</label>
+		</div>
 
 		<input className="submit" type="submit" />
 	</form>

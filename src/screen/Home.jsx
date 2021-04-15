@@ -15,63 +15,79 @@ import {WeeklyReviewCard} from '../components/WeeklyReviewCard/WeeklyReviewCard.
 // fecth all habits.
 //make all components dark mode as well.
 
- ///habitTab1 is checked && dispalay component
-  //
+///habitTab1 is checked && dispalay component
+//
 
 
 
-export const Home =  () => {
+export const Home = () => {
 	let anim;
+
 	const currentTime = new Date();
     // get API response.
 
+
 	const [todayHabits, setHabits] = useState([]);
+	const [todayTip, setTodayTip] = useState([]);
 
 	useEffect(() => {
-		//apiCall();
-	});
 
-	async function apiCall() {
-		try {
+		async function getHabits() {
 
 			// fetch data from a url endpoint
-			const data = await axios.get(`/api/habit`)
-			.then(res=>{
-				setHabits(res.data);
-			});
-			//setHabits(data.json());
-			//const items = await data.json();
-				//console.log(res);
+			const getHabit = await axios.get('/api/habit')
+				.then(response => {
+					setHabits(response.data);
+				});
+			const getTipofDay = await axios.get('/api/tips')
+				.then(response => {
+					setTodayTip(response.data);
+				});
 
-			return data;
-		} catch(error) {
-			console.log("error", error);
-			// appropriately handle the error
 		}
-	}
+		getHabits();
 
+		anim = lottie.loadAnimation({
+			container: plantAnimationDiv.current,
+			renderer: "svg",
+			loop: false,
+			autoplay: false,
+			animationData: plantAnimation
+		});
+		return () => anim.destroy(); // optional clean up for unmounting
+	}, []);
+
+	// async function apiCall() {
+	// 	try {
+
+	// 		// fetch data from a url endpoint
+	// 		const data = await axios.get(`/api/habit`, {headers: {'Content-Type':'application/json','Access-Control-Allow-Origin': '*'}})
+	// 		.then(res=>{
+	// 			setHabits(res.data);
+	// 			//console.log(todayHabits);
+	// 		});
+	// 		return data;
+	// 	} catch(error) {
+	// 		console.log("error", error);
+	// 		// appropriately handle the error
+	// 	}
+	// }
+
+	console.log(todayHabits);
+	//console.log(todayTip);
 	let plantAnimationDiv = createRef();
 
-  useEffect(() => {
-    anim = lottie.loadAnimation({
-      container: plantAnimationDiv.current,
-      renderer: "svg",
-      loop: false,
-      autoplay: false,
-      animationData: plantAnimation
-    });
-    return () => anim.destroy(); // optional clean up for unmounting
-  }, []);
 
 
-	const playAnimation = ()=>{
-		anim.playSegments([0,165], true);
+
+	const playAnimation = () => {
+		anim.playSegments([0, 165], true);
 		//loopAnimation();
 		console.log("playing")
 	}
 
-	const loopAnimation = ()=>{
-		anim.playSegments([139,165], false);
+	const loopAnimation = () => {
+		anim.playSegments([139, 165], false);
 	}
 
 	const dateTimePadding = {
@@ -92,7 +108,7 @@ export const Home =  () => {
         <div style={dateTimePadding}>
           <DateTime date={new Date()} />
         </div>
-		  	<HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation}/>
+		  	{todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
 				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 			</div>
 		)
@@ -104,7 +120,7 @@ export const Home =  () => {
 		<div style={dateTimePadding}>
 		  <DateTime date={new Date()} />
 		</div>
-			<HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation}/>
+			{todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
 				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 			</div>
 		)
@@ -121,10 +137,12 @@ export const Home =  () => {
         <div style={dateTimePadding}>
           <DateTime date={new Date()} />
         </div>
-		  	<HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation}/>
+		  	
+        {todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
 				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 
       </div>
 		);
 	}
+
 }
