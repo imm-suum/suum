@@ -1,3 +1,5 @@
+@use '../../scss/main.scss' as *;
+
 .weeklyScreenBg {
 	position: absolute;
 	top:0;
@@ -95,6 +97,7 @@ p, h1{
 	width: 100%;
 	height: 300px;
 	display:flex;
+	flex-direction: column;
 	justify-content: center;
 
 }
@@ -102,4 +105,41 @@ p, h1{
 .btnContainer {
 	width:100%;
 	margin: 1rem 0 2.5rem;
+}
+
+.myCompletedHabit {
+	width: 100%;
+	height: auto;
+	margin-bottom: 0.75rem;
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	justify-content: flex-start;
+
+}
+
+.myCompletedHabit > p {
+	position: relative;
+	float: right;
+	font-size: 12px;
+	margin-left: 1rem;
+
+
+}
+
+.completeIcon {
+	float:left;
+	width: 1rem;
+	height: auto;
+
+	margin-right: .5rem;
+
+}
+
+.completeIcon > div {
+	width:1rem;
+	height: 1rem;
+	background-color: $main-green;
+	border-radius: 50%;
+
 }

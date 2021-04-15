@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import './WeeklyReviewCard.scss';
 import tree from '../../assets/tree.svg';
 import axios from 'axios';
+import { HabitCheckItem } from '../HabitCheckList/HabitCheckItem';
 
 export const WeeklyReviewCard = ()=> {
   const [isToggled, setIsToggled] =  useState(true);
@@ -11,8 +12,25 @@ export const WeeklyReviewCard = ()=> {
     <img src={tree}></img>
   );
   const [btnContainerContent, setBtnContainerContent] = useState("");
-
 	const [isOpen, setisOpen] = useState(true);
+  const [myCompletedHabits, setMyCompletedHabits] = useState({});
+
+  useEffect(() => {
+
+		async function getCompleteHabits() {
+
+			// fetch data from a url endpoint
+			const getCompletedHabits = await axios.get('/api/report/week')
+				.then(response => {
+          console.log(response.data.habits)
+					setMyCompletedHabits(response.data.habits);
+				});
+
+		}
+		getCompleteHabits();
+	}, []);
+
+  console.log(myCompletedHabits);
 
   //function to set state true to false etcetc;
   const flipReport= ()=>{
@@ -31,6 +49,11 @@ export const WeeklyReviewCard = ()=> {
     }
   }
 
+  const habitTagClick= ()=>{
+		console.log("tag clicked");
+	}
+
+
   return(
 	  <>
 	 {isOpen &&
@@ -48,7 +71,19 @@ export const WeeklyReviewCard = ()=> {
         </div>
 
         <div className="plantContainer">
-          {containerContent}
+          {myCompletedHabits.length > 0 ?
+
+            myCompletedHabits.map((item,idx)=>{
+                return <div className="myCompletedHabit">
+                  <div className="completeIcon" ><div></div></div>
+                  <p>{myCompletedHabits[idx].habitName}</p>
+                  </div>
+            })
+            
+            :
+
+            <p>LOADING.....</p>
+          }
         </div>
 
         <div className="btnContainer">
