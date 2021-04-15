@@ -1,6 +1,5 @@
 @import '../../scss/main.scss';
 
-
 .GetStarted{
 	height: 812px;
 	width: 375px;
@@ -42,5 +41,5 @@
 .gsButton:hover{
 	background-color: $light-green;
 	transform: scale(0.95);
-	color: $main-green
+	color: $main-green;
 }
