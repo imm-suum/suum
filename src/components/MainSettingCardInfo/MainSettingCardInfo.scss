@@ -1,7 +1,7 @@
 @import '../../scss/main.scss';
 
 
-.settings-main{
+.settings-main {
   	width: 100%;
 	border-radius:10px;
 	background-color: $white;
@@ -9,7 +9,7 @@
 	padding-bottom: 1rem;
 }
 
-.settings-main-title{
+.settings-main-title {
 	font-weight: 600;
 	font-size: 24px;
 	padding-left: 12px;
@@ -17,38 +17,38 @@
 	padding-bottom: 1rem;
 }
 
-.settings-main-item{
+.settings-main-item {
 	font-size: 16px;
 	padding-left: 12px;
 }
 
-.settings-main-item2{
+.settings-main-item2{ 
 	font-size: 16px;
 	padding-left: 12px;
 	padding-bottom: 10px;
 }
 
-.edit-button{
+.edit-button {
 	padding-left: 12px;
 	cursor: pointer;
 	padding-bottom: 1rem;
 }
 
-.edit-button:hover{
+.edit-button:hover {
 	color: $main-green;
 }
 
-.edit{
+.edit {
 	transition: all 0.5 ease-in-out;
 	height: 0;
 	overflow: hidden;
 }
 
-.edit p{
+.edit p {
 	padding:10px;
 }
 
-.showEdit{
+.showEdit {
 	width: 388px;
 	height: 60px;
 	background-color: $white;
