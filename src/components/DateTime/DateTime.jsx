@@ -1,4 +1,5 @@
-import { Component } from "react";
+// import { Component } from "react";
+import React, { Component } from "react";
 import './DateTime.scss';
 
 class DateTime extends Component {
