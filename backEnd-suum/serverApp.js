@@ -16,12 +16,12 @@ const HabitEndpoint = require("./routes/HabitEndpoint");
 const Stash = require("./routes/StashEndPoint");
 const TipsEndPoint = require("./routes/tipsEndPoint");
 const ReportEndPoint = require("./routes/reportEndPoint");
-const AppointmentEndPoint = require("./routes/AppointmentEndPoint");
+
 var app = express();
 
 // Schedule tasks to be run on the server.
 
-cron.schedule('* * * * *', function() {
+cron.schedule('* * * * *', function () {
   console.log('running a task every minute');
 });
 
@@ -66,7 +66,7 @@ app.use("/api/tips", TipsEndPoint);
 
 app.use("/api/report", ReportEndPoint);
 
-app.use("/api/appointment", AppointmentEndPoint);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
