@@ -9,7 +9,7 @@ class MainSettingCardInfo extends Component {
 
     this.state = {
       username: props.userInfo.name,
-      phoneNumber: props.userInfo.number,
+      phoneNumber: props.userInfo.phoneNumber,
 	  showEdit: false,
     };
   }

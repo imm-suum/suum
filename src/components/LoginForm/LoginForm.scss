@@ -114,9 +114,14 @@ input[type=submit]{
 
 .error{
 	color: red;
-	font-size: 0.85rem;
+	font-size: 0.80rem;
 }
 
+.num{
+	color: $main-green;
+	font-size: 0.85rem;
+	margin-top: 0;
+}
 
 @media all and (min-width: 480px) {
     .Login {
