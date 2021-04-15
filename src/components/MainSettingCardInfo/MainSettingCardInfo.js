@@ -9,7 +9,7 @@ class MainSettingCardInfo extends Component {
 
     this.state = {
       username: props.userInfo.name,
-      emailAddress: props.userInfo.email,
+      phoneNumber: props.userInfo.number,
 	  showEdit: false,
     };
   }
@@ -47,7 +47,7 @@ class MainSettingCardInfo extends Component {
       <div className="settings-main">
 	  	<h1 className="settings-main-title">Profile</h1>
 	  	<p className="settings-main-item">{this.state.username}</p>
-	  	<p className="settings-main-item2">{this.state.emailAddress}</p>
+	  	<p className="settings-main-item2">{this.state.phoneNumber}</p>
 		<a className="edit-button" onClick={this.handleClick}>
 			Edit
 		</a>
@@ -56,14 +56,14 @@ class MainSettingCardInfo extends Component {
 	  <div className={this.state.showEdit ? 'showEdit edit' : 'edit'}>
 	  <input
         type='text'
-		placeholder='Username'
+		placeholder='Full Name'
         name='username'
         onChange={this.myChangeHandler}
       />
       <input
         type='text'
-		placeholder='Email Address'
-        name='emailAddress'
+		placeholder='Phone Number'
+        name='phoneNumber'
         onChange={this.myChangeHandler}
       />
 
