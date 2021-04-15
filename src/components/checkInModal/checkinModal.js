@@ -36,10 +36,11 @@ const CheckInModal = ({todayHabits})=> {
 
   //popup effect. show modal after 1.5 seconds
   useEffect(()=>{
-    const timer = setTimeout(()=> {
-      setModalOpen(e => !e)
-    }, 1500);
-    return () => clearTimeout(timer);
+    setModalOpen(!modalOpen);
+    // const timer = setTimeout(()=> {
+    //   setModalOpen(e => !e)
+    // }, 1500);
+    // return () => clearTimeout(timer);
   },[]);
 
   return (
