@@ -8,8 +8,8 @@ class MainSettingCardInfo extends Component {
     super(props);
 
     this.state = {
-      username: props.userInfo.name,
-      emailAddress: props.userInfo.email,
+      name: props.userInfo.name,
+      phoneNumber: props.userInfo.phoneNumber,
 	  showEdit: false,
     };
   }
@@ -19,9 +19,7 @@ class MainSettingCardInfo extends Component {
     this.setState({[nam]: val});
 	try {
 		const newUserData = this.state;
-		const jwttoken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjYTk4YTM1ZTEwNDJhY2FmNWJlOTIiLCJpYXQiOjE2MTgxOTc1ODJ9.WX5wYXx963YKE_Vhqbv_CbsW4HO0lJIcIsXsnVMqvls";
-		// fetch data from a url endpoint
-		const data = axios.post("http://localhost:5000/api/user/edit",{headers:{'auth-token':jwttoken}}, newUserData)
+		const data = axios.patch('/api/user/edit', newUserData)
 		.then(res=>{
 			console.log(res)
 		});
@@ -46,8 +44,8 @@ class MainSettingCardInfo extends Component {
 	<form>
       <div className="settings-main">
 	  	<h1 className="settings-main-title">Profile</h1>
-	  	<p className="settings-main-item">{this.state.username}</p>
-	  	<p className="settings-main-item2">{this.state.emailAddress}</p>
+	  	<p className="settings-main-item">{this.state.name}</p>
+	  	<p className="settings-main-item2">{this.state.phoneNumber}</p>
 		<a className="edit-button" onClick={this.handleClick}>
 			Edit
 		</a>
@@ -56,14 +54,14 @@ class MainSettingCardInfo extends Component {
 	  <div className={this.state.showEdit ? 'showEdit edit' : 'edit'}>
 	  <input
         type='text'
-		placeholder='Username'
-        name='username'
+		placeholder='Full Name'
+        name='name'
         onChange={this.myChangeHandler}
       />
       <input
         type='text'
-		placeholder='Email Address'
-        name='emailAddress'
+		placeholder='Phone Number'
+        name='phoneNumber'
         onChange={this.myChangeHandler}
       />
 

@@ -12,31 +12,20 @@ import MainSettingCardInfo from '../components/MainSettingCardInfo/MainSettingCa
 
 export const Settings =  () => {
 
-	const [userInfo, setUserInfo] = useState({});
+	const [userInfo, setUserInfo] = useState([]);
 
 	useEffect(() => {
-		//apiSettingCall();
-	});
 
-	async function apiSettingCall() {
-		try {
+		async function getSettings(){
+			const getSettings = await axios.get('/api/user')
+				.then(response=>{
+					setUserInfo(response.data);
+				});
+			}
+			//getSettings();
+		});
 
-			// fetch data from a url endpoint
-			const data = await axios.get(`/api/user/getUser`) 
-			.then(res=>{
-				setUserInfo(res.data);
-			});
-			//setHabits(data.json());
-			//const items = await data.json();
-				//console.log(res);
-
-			return data;
-		} catch(error) {
-			console.log("error", error);
-			// appropriately handle the error
-		}
-	}
-
+		console.log(userInfo);
 
 	//GET User call by userId
 	//populate name & email in <MainSettingCardInfo username={(response.username)} email={(response.email)}/>

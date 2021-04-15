@@ -5,7 +5,7 @@ import axios from 'axios';
 import "./LoginForm.scss";
 
 export const LoginForm = ()=> {
-	const { register, handleSubmit, formState: { errors } } = useForm();
+	const { register, handleSubmit, formState: { errors } } = useForm();	//HERE TOO "register"
 	const history = useHistory();
 
 	const onSubmit = data => {
@@ -16,13 +16,11 @@ export const LoginForm = ()=> {
 
 async function apiCall(d) {
 	try {
-		
+
 		// fetch data from a url endpoint
-		const registerCall = await axios.post(`/api/user/register`, {
-			name: d.name ,
-			email: d.email,
+		const loginCall = await axios.post(`/api/user/login`, {		//LOGIN CALL API? I COPIED THIS FROM REGISTERFORM
+			phoneNumber: d.phoneNumber,
 			password: d.password,
-			notifications: d.notifications   
 		  })
 		.then(res=>{
 			//redirect('/');
@@ -31,23 +29,27 @@ async function apiCall(d) {
 		});
 		//setHabits(data.json());
 		//res.redirect('/');
-		return registerCall;
+		return loginCall;
 	} catch(error) {
 		console.log("error", error);
 		// appropriately handle the error
 	}
 }
-  
+
 
 
 return (
-		<form onSubmit={handleSubmit(onSubmit)}>
-			<input id="name" type="text" placeholder="Full Name" {...register("name")} />
-			<input id="email" type="email" placeholder="Email" {...register("email")} />
-			<input id="password" type="text" placeholder="Password" {...register("password")} />
-			<input id="notifications" type="checkbox" placeholder="Notifications" {...register("notifications")} />
+	<div className="form-container">
+	<form className="suumForm" onSubmit={handleSubmit(onSubmit)}>
+	<h1>Login</h1>
 
-			<input type="submit" />
-		</form>
+		<input id="tel" type="tel" className="tel" placeholder="Phone Number" {...register("phoneNumber", {required: true, minLength:6, maxLength:14})} />
+
+		<input id="password" className="password" type="password" placeholder="Password" {...register("password", {required:true, min:6, maxLength:16})} />
+		{errors.password && <span className="error">Password Invalid!</span>}
+
+		<input className="submit" type="submit" />
+	</form>
+	</div>
   );
 }
