@@ -46,9 +46,9 @@ class App extends Component {
 				<HamburgerMenu/>
 
 				<div className="desktop">
-					<p>Please Access suum on a Mobile Device! (500px Width Maximum)</p>
+					<p className="msg">Please Access suum on a Mobile Device! (500px Width Maximum)</p>
 				</div>
-				
+
 			</Router>
 
 		);
