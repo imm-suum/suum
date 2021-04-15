@@ -28,8 +28,8 @@ export const RegisterForm = ()=> {
 			// appropriately handle the error
 		}
 	}
-	//var regexConst = new RegExp('/\A\+?\d{11}\z/');
 
+	//var regexConst = new RegExp('/\A\+?\d{11}\z/');
 return (
 	<div className="form-container">
 	<form className="suumForm" onSubmit={handleSubmit(onSubmit)}>

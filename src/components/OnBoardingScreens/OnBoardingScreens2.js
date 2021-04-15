@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import ReactDOM from 'react-dom';
+
 import './OnBoardingScreens.scss';
 import logo2 from './logo2.svg'
 import nav2 from './nav2.svg'

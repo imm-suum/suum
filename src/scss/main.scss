@@ -22,6 +22,10 @@ $heading-font: 24px;
 //look at weekly review completed task title
 $subheading-font: 20px;
 
+html {
+  font-family: $font-stack;
+}
+
 
 /*GLOBAL CLASSES FOR BUTTONS*/
 // replaced by Button.scss

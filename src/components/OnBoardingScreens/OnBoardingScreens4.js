@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import ReactDOM from 'react-dom';
 import './OnBoardingScreens.scss';
 import logo4 from './logo4.svg'
 import nav4 from './nav4.svg'

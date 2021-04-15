@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import ReactDOM from 'react-dom';
 import './PastPlantWidget.scss';
 import tree from '../../assets/tree.svg'
 

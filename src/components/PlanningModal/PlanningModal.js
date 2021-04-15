@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import {Form} from '../Form/Form.js';
 
 
-
-
 export const PlanningModal = ()=> {
   const [formOpen, setFormOpen] = useState(true);
 
@@ -11,6 +9,7 @@ export const PlanningModal = ()=> {
     setFormOpen(!formOpen);
   }
 
+  //function to close form when backdrop is closed
   // const closeForm = (e)=> {
   //   if (e.target.id==="modalbackdrop") {
   //     toggleForm();
