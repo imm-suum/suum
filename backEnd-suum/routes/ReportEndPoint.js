@@ -28,18 +28,27 @@ router.get("/week", verify, async (req, res) => {
       //Get habits with the user id provided for the date range provided
       const Userhabits = await Habit.find({ 
         user_id:req.user ,
-        habitCompletionDateTime:  {
+        habitAssignedDateTime:  {
           $gte: startWeek,
           $lte: endWeek
         } 
       });
+
+      //Create new array where habitComplete is true based on the retured user habits in the defined time
+      let completedHabits = Userhabits.filter(function (theHabit) {
+        if (theHabit.habitComplete == true){
+           
+          return theHabit
+        }
+      });
+
       
       let weekObject = {
 
         "weekStart": startWeek,
         "weekEnd": endWeek,
         "numberOfHabits": Userhabits.length,
-        "numberCompleted": "I'm woriking on this lol" ,
+        "numberCompleted": completedHabits.length ,
         "habits": Userhabits
 
       };
