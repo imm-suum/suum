@@ -10,13 +10,15 @@
     display: flex;
     justify-content: left;
     align-items: center;
-
     font-size: 18px;
     padding-left: 20px;
 }
 
 .checkItemText {
-    margin-left: 20px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+	margin-left: 12px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -24,11 +26,18 @@
     -webkit-appearance: none;
     height: 25px;
     width: 25px;
-    border: 2px solid #33C5BC;
+	border: 2px solid $bright-yellow;
     border-radius: 50%;
-
+	cursor: pointer;
+	outline:none;
+	transition: all 300ms;
 }
 
 .checkItem > input:checked {
-    background-color: #33C5BC;
+	border: 2px solid $main-green;
+	background-color: $main-green;
+}
+
+.checkItem > input:hover {
+    border: 2px solid $main-green;
 }

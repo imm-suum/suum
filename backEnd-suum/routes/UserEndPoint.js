@@ -6,8 +6,8 @@ const jwt = require('jsonwebtoken');
 const {registerValidation, loginValidation} = require('../validation');
 const verify = require('./verifyToken');
 
-
-router.get("/getUser", verify, async (req, res) => {
+//  Get user 
+router.get("/", verify, async (req, res) => {
   try {
 
     //Get the user with the user id provided and populate the habits[] with the referenced and full habit objects
@@ -20,6 +20,7 @@ router.get("/getUser", verify, async (req, res) => {
   }
 });
 
+//Edit User details
 router.patch("/edit", verify, async (req, res) => {
 try {
      await User.updateOne(
@@ -27,7 +28,7 @@ try {
       {
         $set: {
           name: req.body.name,
-          email: req.body.email
+          email: req.body.email,
         },
       }
     );
@@ -36,6 +37,32 @@ try {
     res.json({ message: err });
   }
 });
+
+
+//Edit User notification Setting
+router.patch("/setNotif", verify, async (req, res) => {
+  try {
+ 
+    const setNotification = req.body.notifications; 
+
+     await User.updateOne(
+      { _id: req.user },
+      {
+        $set: {
+          notifications:setNotification
+        },
+      }
+    );
+    res.json('Notifications has been Updated');
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
+
+
+
+
 
 router.post('/register', async (req,res) => {
 
@@ -56,11 +83,16 @@ router.post('/register', async (req,res) => {
         name: req.body.name,
         email: req.body.email,
         password: hashPassword,
-        notifications:req.body.notifications
+        notifications: req.body.notifications
     });
     try{
         const savedUser = await user.save();
-        res.send({user: user.id});
+
+        //Create and assign a token
+        const token = jwt.sign({ _id:user._id }, process.env.TOKEN_SECRET);
+        res.cookie('auth-token', token, {httpOnly: true});
+        //res.header('auth-token', token).send(token);
+        res.send('Succesfuly registered ');
     }catch(err){
         res.status(400).send(err);
     }
@@ -84,33 +116,16 @@ router.post('/login', async (req,res) => {
     if(!validPass) res.status(400).send('Invalid Password')
 
     //Create and assign a token
-    const token = jwt.sign({ _id:user._id }, process.env.TOKEN_SECRET);
-    res.header('auth-token', token).send(token);
+    const token = jwt.sign({ _id:user._id }, process.env.TOKEN_SECRET, {expiresIn: 3600000 *4 });
+    res.cookie('auth-token', token, {httpOnly: true});
+    //res.header('auth-token', token).send(token);
+    res.send('Succesfuly Signed In');
+
+    //set JWT to expire at 3600000 *4 which is 4 hours
 
     //If succesful, send string that they are login in
     //res.send('Logged in!')
 });
-
-
-
-router.patch("/setNotif", verify, async (req, res) => {
-    try {
-   
-      const setNotification = req.body.notifications; 
-  
-       await User.updateOne(
-        { _id: req.user },
-        {
-          $set: {
-            notifications:setNotification
-          },
-        }
-      );
-      res.json('Notifications has been Updated');
-    } catch (err) {
-      res.json({ message: err });
-    }
-  });
 
 
 

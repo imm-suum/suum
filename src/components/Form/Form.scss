@@ -17,7 +17,7 @@
 
 .close {
   background-color: rgba(#c1c1c1, 0.5);
-  border-radius: 50%;  
+  border-radius: 50%;
   font-family: $font-stack;
   font-weight:600;
   padding:.2em .5em;
@@ -70,6 +70,7 @@
   width: 100%;
   height: 48px;
   margin: 0;
+  border: 0;
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0px 3px 6px #00000029;
@@ -79,17 +80,19 @@
   position: relative;
   bottom: -90px;
   width: 100%;
+  cursor: pointer;
+  transition: all 300ms;
 }
+
+.bottomBtn:hover {
+  position: relative;
+  bottom: -90px;
+  width: 100%;
+  cursor: pointer;
+  background-color: rgba($bright-yellow, 0.85);
+}
+
 
 #habit1 {
   margin-top: 0px!important;
-}
-
-.helpLink {
-  color: $bright-yellow;
-  text-decoration: underline;
-  font-weight: 200;
-  font-size: 14px;
-
-
 }
