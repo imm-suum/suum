@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Form} from '../Form/Form.js';
+import { useHistory } from "react-router-dom";
 
 
 
@@ -7,8 +8,10 @@ import {Form} from '../Form/Form.js';
 export const PlanningModal = ()=> {
   const [formOpen, setFormOpen] = useState(true);
 
+
   const toggleForm = ()=> {
     setFormOpen(!formOpen);
+
   }
 
   // const closeForm = (e)=> {

@@ -1,8 +1,12 @@
 import React, { useState , useEffect } from 'react';
 import {Modal} from '../Modal/Modal.js';
 import {Form} from '../Form/Form.js';
+import { useHistory } from "react-router-dom";
 
-const CheckInModal = ()=> {
+const CheckInModal = ({todayHabits})=> {
+  
+  const history = useHistory();
+  
   //set open state to false to hide
   const [modalOpen, setModalOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
@@ -38,6 +42,7 @@ const CheckInModal = ()=> {
   useEffect(()=>{
     const timer = setTimeout(()=> {
       setModalOpen(e => !e)
+      history.push("/");
     }, 1500);
     return () => clearTimeout(timer);
   },[]);
@@ -46,7 +51,7 @@ const CheckInModal = ()=> {
     //modalOpen is true therefore show modal
     <div className="checkInModal">
       {modalOpen && (
-        <Modal toggleModal={toggleModal} closeModal={closeModal}/>
+        <Modal toggleModal={toggleModal} closeModal={closeModal} todayHabits={todayHabits} />
       )}
 
 	  {formOpen && (

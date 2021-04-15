@@ -9,7 +9,7 @@ export const HabitCheckItem = ({props, checked, habitName, setHabitState, playAn
 
             //If true show disabled div here
             <div className= "checkItem">
-              <input type="checkbox" disabled checked={checked} name="checkItem" onClick={playAnimation}onChange={() => setHabitState(!checked)}
+              <input type="checkbox" disabled checked={checked} name="checkItem"  onChange={() => setHabitState(!checked)}
               />
               <p className= "checkItemText">{habitName}</p>
             </div>
@@ -18,7 +18,7 @@ export const HabitCheckItem = ({props, checked, habitName, setHabitState, playAn
 
             //If false show disabled div here
             <div className= "checkItem">
-              <input type="checkbox" checked={checked} name="checkItem" onClick={playAnimation}onChange={() => setHabitState(!checked)}
+              <input type="checkbox" checked={checked} name="checkItem" onChange={() => setHabitState(!checked)}
               />
               <p className= "checkItemText">{habitName}</p>
             </div>

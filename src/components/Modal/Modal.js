@@ -3,8 +3,9 @@ import Button from '../Button/Button';
 import { HabitCheckItem } from '../HabitCheckList/HabitCheckItem';
 import './Modal.scss';
 import { PlanningModal } from '../PlanningModal/PlanningModal.js';
+import axios from 'axios';
 
-export const Modal = ({toggleModal, closeModal}) => {
+export const Modal = ({toggleModal, closeModal, todayHabits}) => {
 
   //style object to apply on button
   const btnBottom = {
@@ -21,31 +22,47 @@ export const Modal = ({toggleModal, closeModal}) => {
   const handleClick = ()=> {
     return (
 		<div>
-	  		<PlanningModal/>
+	  		<PlanningModal />
 	  	</div>
     )
   };
 
+
+
   //Track state for each of the 3 Habit Check Items that are used
   //API call
   // response = [{habit1}, {habit2}, {habit3}]
+  console.log(todayHabits, "todayHabits");
 
-  const [ habit1IsChecked, setHabit1 ] = useState(false);
-  const [ habit2IsChecked, setHabit2 ] = useState(false);
-  const [ habit3IsChecked, setHabit3 ] = useState(false);
+  const [ habit1IsChecked, setHabit1 ] = useState();
+  const [ habit2IsChecked, setHabit2 ] = useState();
+  const [ habit3IsChecked, setHabit3 ] = useState();
 
   //array of information
   //ex: name: {response[i].habitName}
   const habits = [
-    {checked:habit1IsChecked , name:"i don't love this for me" , setting: setHabit1},
-    {checked:habit2IsChecked , name:"OOP" , setting: setHabit2},
-    {checked:habit3IsChecked , name:"avocado" , setting: setHabit3}
+    {checked:todayHabits[0].habitComplete , name:todayHabits[0].habitName  , setting: setHabit1},
+    {checked:todayHabits[1].habitComplete , name:todayHabits[1].habitName  , setting: setHabit2},
+    {checked:todayHabits[2].habitComplete , name:todayHabits[2].habitName  , setting: setHabit3}
   ];
 
   const modalContent = habits.map((habit, idx) => {
     return <div className="margin-y black"><HabitCheckItem key={idx} checked={habit.checked} habitName={habit.name} setHabitState={habit.setting}/></div>
 
   })
+
+  async function sendHabits(d) {
+    // Send habit id to complete the habit;
+    console.log(d, "sendHabits Called in check in modal ");
+      const completetHabit = await axios.patch(`/api/habit/complete`, d)
+      .then(res=>{
+        console.log(res);
+      });  
+  }
+
+  { habit1IsChecked ? sendHabits({"_id": todayHabits[0]._id}) : console.log("not update item 1") };
+  { habit2IsChecked ? sendHabits({"_id": todayHabits[1]._id}) : console.log("not update item 2") };
+  { habit3IsChecked ? sendHabits({"_id": todayHabits[2]._id}) : console.log("not update item 3") };
 
   return (
     <aside id="modalbackdrop" className="modalWrapper" onClick={e=> closeModal(e)}>
