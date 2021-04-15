@@ -15,7 +15,7 @@ const UserEndPoint = require("./routes/UserEndPoint");
 const HabitEndpoint = require("./routes/HabitEndpoint");
 const Stash = require("./routes/StashEndPoint");
 const TipsEndPoint = require("./routes/tipsEndPoint");
-const ReportEndPoint = require("./routes/reportEndPoint");
+const ReportEndPoint = require("./routes/ReportEndPoint");
 
 var app = express();
 
