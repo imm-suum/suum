@@ -108,7 +108,7 @@ export const Home = () => {
         <div style={dateTimePadding}>
           <DateTime date={new Date()} />
         </div>
-		  	{todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
+		  	{todayHabits.length >= 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
 				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 			</div>
 		)
@@ -120,7 +120,7 @@ export const Home = () => {
 		<div style={dateTimePadding}>
 		  <DateTime date={new Date()} />
 		</div>
-			{todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
+			{todayHabits.length >= 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
 				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 			</div>
 		)
@@ -138,7 +138,7 @@ export const Home = () => {
           <DateTime date={new Date()} />
         </div>
 		  	
-        {todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
+        {todayHabits.length >= 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
 				<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 
       </div>

@@ -7,7 +7,7 @@ import './HabitTabWidget.scss';
 
 
 
-export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) => {
+export const HabitTabWidget = ({todayHabits, playAnimation, tipOfDay}) => {
 
   //Track state for the Habit Tab Widget component to know what tab has been clicked so far
   const [activeTab, setActiveTab] = useState('tab1');
@@ -19,7 +19,7 @@ export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) =>
   // console.log(tipOfDay);
   //Track state for each of the 3 Habit Check Items that are used
   const [ habit1IsChecked, setHabit1 ] = useState(false);
-  const [ habit2IsChecked, setHabit2 ] = useState(true);
+  const [ habit2IsChecked, setHabit2 ] = useState(false);
   const [ habit3IsChecked, setHabit3 ] = useState(false);
 
   //console.log(todayHabits[2].habitName);
@@ -39,26 +39,13 @@ export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) =>
 
   }, []);
 
-     //console.log(todayHabits.todayHabits);
-    // console.log(tipOfDay);
-    // console.log(returnedHabits[1]);
-
-  //var info = returnedHabits[0].habitName;
-  //console.log(returnedHabits[0].habitName);
-
-  
-  
-
-  // Create and store new stances of the habitCheckItem in here with the
-  //Imporve this section of code to be a map .map((tab, idx)=> { that creates as many habit check items as there are tabs...
-
   //improve statemanagement to have habitIsChecked to be an array of [true, false, true] for each tab
- console.log(todayHabits);
+ console.log(playAnimation);
  
   const content = {
-    tab1: <HabitCheckItem playAnimation={props.playAnimation} setHabitState={setHabit1} checked={habit1IsChecked} habitName= {todayHabits[0].habitName}/>,
-    tab2: <HabitCheckItem playAnimation={props.playAnimation} setHabitState={setHabit2} checked={habit2IsChecked} habitName= {todayHabits[1].habitName}/>,
-    tab3: <HabitCheckItem playAnimation={props.playAnimation} setHabitState={setHabit3} checked={habit3IsChecked} habitName= {todayHabits[2].habitName}/>,
+    tab1: <HabitCheckItem playAnimation={playAnimation} setHabitState={setHabit1} checked={habit1IsChecked} habitName= {todayHabits[0].habitName}/>,
+    tab2: <HabitCheckItem playAnimation={playAnimation} setHabitState={setHabit2} checked={habit2IsChecked} habitName= {todayHabits[1].habitName}/>,
+    tab3: <HabitCheckItem playAnimation={playAnimation} setHabitState={setHabit3} checked={habit3IsChecked} habitName= {todayHabits[2].habitName}/>,
 
     tab4: <NoHabitsWidget/>
   }
