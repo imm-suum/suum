@@ -18,6 +18,9 @@
 	border-radius: 10px;
 	align-items: center;
 	box-shadow: 0 3px 6px #00000029;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .tab:hover,.active{
@@ -63,11 +66,22 @@
 	box-shadow: 0 3px 6px #00000029;
 }
 
+.checkItemText {
+	text-overflow: ellipsis;
+    overflow: hidden;
+	margin-left: 0.7rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .readMoreLink {
 	position: relative;
 	bottom: -80%;
 	padding-left: 1rem;
 	z-index: 90;
 	color: $bright-yellow;
+	transition: all 300ms;
+}
 
+.readMoreLink:hover{
+	color: $main-green;
 }

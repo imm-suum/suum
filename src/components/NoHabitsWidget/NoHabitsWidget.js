@@ -28,14 +28,14 @@ export const NoHabitsWidget= ({tipOfDay}) => {
 				<div className="single_accordion">
 					<div className="tab" onClick={handleToogle}>
 						{/* return content.contentTitle */}
-						<p>{tipOfDay.contentTitle}</p>
+						<p className="checkItemText">{tipOfDay.contentTitle}</p>
 					</div>
 					{/* edit CSS selectors for merge */}
 					<div className="container2 bg-maingreen">
 						<div className={showInfo? 'showContent content' : 'content' }>
 							<div className="textbox">
 								{/* return random tip content in p tag */}
-								<p>{tipOfDay.content}</p>
+								<p className="content">{tipOfDay.content}</p>
 								{/* return tip URL anchor tag href*/}
 								<a href={tipOfDay.contentLink} className="readMoreLink">Read More</a>
 							</div>
