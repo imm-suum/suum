@@ -5,7 +5,7 @@ html,body{
 }
 
 .settings-main{
-  width: 100%;
+	width: 100%;
 	border-radius:10px;
 	background-color: white;
 	box-shadow: 0px 3px 6px #00000029;
@@ -35,12 +35,12 @@ html,body{
 	padding-left: 12px;
 	cursor: pointer;
 	padding-bottom: 1rem;
+	transition: all 300ms;
 }
 
 .edit-button:hover{
 	color: $main-green;
 }
-
 
 .edit{
 	transition: all 0.5 ease-in-out;
@@ -53,13 +53,100 @@ html,body{
 }
 
 .showEdit{
-	width: 388px;
-	height: 60px;
+	width: auto;
+	height: 8rem;
 	background-color: white;
 	border-radius:10px;
 	box-shadow: 0px 3px 6px #00000029;
 	color: black;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-top: 0.4rem;
+	animation: fadeIn 1.4s;
+	-webkit-animation: fadeIn 1.3s;
+	-moz-animation: fadeIn 1.3s;
+	-o-animation: fadeIn 1.3s;
+	-ms-animation: fadeIn 1.3s;
+}
+@keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+input{
+	font-family: inherit;
+}
+
+#phoneNumber{
+	width: auto;
+	margin: 0.4rem;
+	border: 2px solid $main-green;
+	border-radius: 6px;
+}
+
+#phoneNumber:focus{
+	border-radius: 6px;
+	outline: none;
+	border: 2px solid $light-green;
+}
+
+
+#name{
+	width: auto;
+	margin: 0.4rem;
+	border: 2px solid $main-green;
+	border-radius: 6px;
+}
+
+#name:focus{
+	border-radius: 6px;
+	outline: none;
+	border: 2px solid $light-green;
+}
+
+.eSubmit{
+	box-shadow: 0px 3px 6px #00000029;
+	background-color: $light-green;
+	cursor: pointer;
+	margin: 0.2rem;
+	transition: all 300ms;
+	font-weight: bold;
+}
+
+.eSubmit:hover{
+	background-color: $main-green;
+}
+
+.success-message{
+	color: $main-green;
+	font-size: 0.8rem;
+	margin: 0.3rem;
+}
+
+.phoneNumber-error{
+	color: red;
+	font-size: 0.8rem;
+	margin: 0.4;
 }

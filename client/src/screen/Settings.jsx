@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import '../app.css';
 import axios from 'axios';
 
-import SettingCard from '../components/SettingCard/SettingCard.js';
+import {SettingCard} from '../components/SettingCard/SettingCard.js';
 import SettingSocialMedia from '../components/SettingSocialMedia/SettingSocial.js';
 import { MainSettingCardInfo } from '../components/MainSettingCardInfo/MainSettingCardInfo.js';
 
@@ -15,35 +15,20 @@ export const Settings = () => {
 	const [userInfo, setUserInfo] = useState([]);
 
 	useEffect(() => {
-		//apiSettingCall();
-	});
-
-	async function apiSettingCall() {
-		try {
-
-			// fetch data from a url endpoint
-			const data = await axios.get(`/api/user/`)
-				.then(res => {
-					setUserInfo(res.data);
+		
+		async function getSettings() {
+			const getSettings = await axios.get('/api/user')
+				.then(response => {
+					setUserInfo(response.data);
 				});
-			//setHabits(data.json());
-			//const items = await data.json();
-			//console.log(res);
-
-			return data;
-		} catch (error) {
-			console.log("error", error);
-			// appropriately handle the error
 		}
-	}
 
-	async function getSettings() {
-		const getSettings = await axios.get('/api/user')
-			.then(response => {
-				setUserInfo(response.data);
-			});
-	}
-	//getSettings();
+		getSettings();
+		
+	},[]);
+
+
+	
 
 
 console.log(userInfo);
@@ -72,13 +57,13 @@ return (
 
 	<div style={bodyPadding}>
 		<h1 style={settingScreenTitle}>Settings</h1>
-		<MainSettingCardInfo userInfo={userInfo} />
+		{ userInfo && <MainSettingCardInfo userInfo={userInfo} />}
 
 		{/* NOtifications  */}
 
 		{/* SettingCard comonent to call toggle in itself. Accepts label prop to change text. */}
 		{/* API call happens IN SettingCard component. */}
-		<SettingCard />
+		{ userInfo &&<SettingCard userInfo={userInfo} />}
 
 
 		<SettingSocialMedia />

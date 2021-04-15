@@ -47,6 +47,7 @@ export const Home = () => {
 
 		}
 		getHabits();
+		
 
 		anim = lottie.loadAnimation({
 			container: plantAnimationDiv.current,
@@ -87,7 +88,7 @@ export const Home = () => {
 	let weeklyTime = false;
 
 
-	if (currentTime.getHours() > 2 && currentTime.getDay() != 0) {
+	if (currentTime.getHours() > 20 && currentTime.getDay() != 0) {
 		//if night time show checkin process. 20(8pm) && not 0( everyday but sunday)
 		checkInTime = true;
 
@@ -107,7 +108,7 @@ export const Home = () => {
 				<DateTime date={new Date()} />
 			</div>
 
-			{todayHabits.length ? <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} /> : <PlanningModal />}
+			{(todayHabits.length && todayTip.length ) ? <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} /> : <PlanningModal />}
 			<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 
 		</div>

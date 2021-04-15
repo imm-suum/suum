@@ -1,41 +1,65 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 //import ReactDOM from 'react-dom';
 import './SettingCard.scss';
+import axios from 'axios';
 
-class SettingCard extends Component{
-	constructor(){
-		super();
-		this.state = {
-			toggle:false
-		};
+export const SettingCard = ({userInfo}) =>  {
 
-		this.onChangeValue = this.onChangeValue.bind(this);
-	}
+	console.log(userInfo);
+	console.log(userInfo.notifications, "notification setting");
+	const [toggle, setToggle] = useState(false);
 
-	onChangeValue(event){
+	useEffect(() => {
+		setToggle(userInfo.notifications);
+
+	},[userInfo]);
+
+	console.log(toggle, "toggle1");
+
+	useEffect(() => {
+
+		async function updateNotifications() {
+			const updateNotif = await axios.patch('/api/user/setNotif', {
+				"notifications": toggle,
+			})
+				.then(response => {
+
+				});
+		}
+
+		updateNotifications();
+
+	},[toggle]);	
+
+
+
+
+
+	const onChangeValue  = (event) => {
 		console.log(event.target.value);
 
-	if (this.state.toggle === true){
-		this.setState({toggle:false});
+	if (toggle === true){
+		setToggle(false);
 	}else{
-		this.setState({toggle:true});
+		setToggle(true);
 	}
 
 	}
 
-	render(){
+
 		return(
+			
 			<div className="primary-setting-card">
 				<h1 className="setting-card-title">Notifications</h1>
 				<div className="spacing"></div>
 				<label className="switch">
-					<input type="checkbox" value={this.state.toggle} name="toggle" onChange={this.onChangeValue}/>
+					<input type="checkbox" checked={toggle} name="Toggle" onChange={onChangeValue}/>
 					<span className="slider round"></span>
 				</label>
 			</div>
 
 		);
-	}
+
+
 }
 
-export default SettingCard;
