@@ -78,7 +78,7 @@ export const Home = () => {
   if (currentTime.getHours() > 20 && currentTime.getDay() != 0) {
     //if night time show checkin process. 20(8pm) && not 0( everyday but sunday)
     checkInTime = true;
-  } else if (currentTime.getHours() < 9 && currentTime.getDay() === 0) {
+  } else if (currentTime.getHours() > 9 && currentTime.getDay() === 4) {
     //if Sunday Night to show weekly report. 9(9am) && 0 (sunday)
     weeklyTime = true;
   }
