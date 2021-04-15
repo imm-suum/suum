@@ -19,32 +19,42 @@ export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) =>
   // console.log(tipOfDay);
   //Track state for each of the 3 Habit Check Items that are used
   const [ habit1IsChecked, setHabit1 ] = useState(false);
-  const [ habit2IsChecked, setHabit2 ] = useState(true);
+  const [ habit2IsChecked, setHabit2 ] = useState(false);
   const [ habit3IsChecked, setHabit3 ] = useState(false);
 
   //console.log(todayHabits[2].habitName);
+  useEffect(() =>{
+    
+    setHabit1(todayHabits[0].habitComplete);
+    setHabit2(todayHabits[1].habitComplete);
+    setHabit3(todayHabits[2].habitComplete);
+
+  } , []);
+
+
 
   useEffect(() =>{
     //console.log(todayHabits.todayHabits[0]);
-    // async function getHabits() {
-		// 	// fetch data from a url endpoint
-		// 	const getHabit = await axios.get('/api/habit');
-				
-    //   console.log(getHabit, getHabit.data);
-    //   setReturnedHabits(getHabit.data);
-        
-    // }
 
-    // getHabits();
+    
 
-  }, []);
+    async function sendHabits(d) {
+			// Send habit id to complete the habit;
+      console.log(d, "sendHabits Called");
+        const completetHabit = await axios.patch(`/api/habit/complete`, d)
+        .then(res=>{
+          console.log(res);
+        });  
+    }
 
-     //console.log(todayHabits.todayHabits);
-    // console.log(tipOfDay);
-    // console.log(returnedHabits[1]);
 
-  //var info = returnedHabits[0].habitName;
-  //console.log(returnedHabits[0].habitName);
+    { habit1IsChecked ? sendHabits({"_id": todayHabits[0]._id}) : console.log("sad") };
+    { habit2IsChecked ? sendHabits({"_id": todayHabits[1]._id}) : console.log("sad") };
+    { habit3IsChecked ? sendHabits({"_id": todayHabits[2]._id}) : console.log("sad") };
+    
+
+  }, [habit1IsChecked, habit2IsChecked, habit3IsChecked ]);
+
 
   
   
@@ -53,12 +63,12 @@ export const HabitTabWidget = ({props, todayHabits, playAnimation, tipOfDay}) =>
   //Imporve this section of code to be a map .map((tab, idx)=> { that creates as many habit check items as there are tabs...
 
   //improve statemanagement to have habitIsChecked to be an array of [true, false, true] for each tab
- console.log(todayHabits);
+ //console.log(todayHabits);
  
   const content = {
-    tab1: <HabitCheckItem playAnimation={props.playAnimation} setHabitState={setHabit1} checked={habit1IsChecked} habitName= {todayHabits[0].habitName}/>,
-    tab2: <HabitCheckItem playAnimation={props.playAnimation} setHabitState={setHabit2} checked={habit2IsChecked} habitName= {todayHabits[1].habitName}/>,
-    tab3: <HabitCheckItem playAnimation={props.playAnimation} setHabitState={setHabit3} checked={habit3IsChecked} habitName= {todayHabits[2].habitName}/>,
+    tab1: <HabitCheckItem playAnimation={playAnimation} setHabitState={setHabit1} checked={habit1IsChecked} habitName= {todayHabits[0].habitName}/>,
+    tab2: <HabitCheckItem playAnimation={playAnimation} setHabitState={setHabit2} checked={habit2IsChecked} habitName= {todayHabits[1].habitName}/>,
+    tab3: <HabitCheckItem playAnimation={playAnimation} setHabitState={setHabit3} checked={habit3IsChecked} habitName= {todayHabits[2].habitName}/>,
 
     tab4: <NoHabitsWidget/>
   }
