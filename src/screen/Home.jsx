@@ -87,7 +87,7 @@ export const Home = () => {
 	let weeklyTime = false;
 
 
-	if (currentTime.getHours() > 20 && currentTime.getDay() != 0) {
+	if (currentTime.getHours() > 2 && currentTime.getDay() != 0) {
 		//if night time show checkin process. 20(8pm) && not 0( everyday but sunday)
 		checkInTime = true;
 
@@ -100,7 +100,7 @@ export const Home = () => {
 	return (
 		<div>
 
-			{checkInTime ? <CheckInModal /> : null}
+			{checkInTime ? <CheckInModal  todayHabits={todayHabits}/> : null}
 			{weeklyTime ? <WeeklyReviewCard /> : null}
 
 			<div style={dateTimePadding}>

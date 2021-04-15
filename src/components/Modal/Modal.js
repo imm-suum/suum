@@ -4,7 +4,7 @@ import { HabitCheckItem } from '../HabitCheckList/HabitCheckItem';
 import './Modal.scss';
 import { PlanningModal } from '../PlanningModal/PlanningModal.js';
 
-export const Modal = ({toggleModal, closeModal}) => {
+export const Modal = ({toggleModal, closeModal, todayHabits}) => {
 
   //style object to apply on button
   const btnBottom = {
@@ -29,17 +29,18 @@ export const Modal = ({toggleModal, closeModal}) => {
   //Track state for each of the 3 Habit Check Items that are used
   //API call
   // response = [{habit1}, {habit2}, {habit3}]
+  console.log(todayHabits, "todayHabits");
 
-  const [ habit1IsChecked, setHabit1 ] = useState(false);
-  const [ habit2IsChecked, setHabit2 ] = useState(false);
-  const [ habit3IsChecked, setHabit3 ] = useState(false);
+  const [ habit1IsChecked, setHabit1 ] = useState(todayHabits[0].habitComplete );
+  const [ habit2IsChecked, setHabit2 ] = useState(todayHabits[1].habitComplete );
+  const [ habit3IsChecked, setHabit3 ] = useState(todayHabits[2].habitComplete );
 
   //array of information
   //ex: name: {response[i].habitName}
   const habits = [
-    {checked:habit1IsChecked , name:"i don't love this for me" , setting: setHabit1},
-    {checked:habit2IsChecked , name:"OOP" , setting: setHabit2},
-    {checked:habit3IsChecked , name:"avocado" , setting: setHabit3}
+    {checked:habit1IsChecked , name:todayHabits[0].habitName  , setting: setHabit1},
+    {checked:habit2IsChecked , name:todayHabits[1].habitName  , setting: setHabit2},
+    {checked:habit3IsChecked , name:todayHabits[2].habitName  , setting: setHabit3}
   ];
 
   const modalContent = habits.map((habit, idx) => {
