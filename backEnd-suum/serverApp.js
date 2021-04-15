@@ -4,9 +4,11 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var cors = require("cors");
+const cron = require('node-cron');
 const mongoose = require("mongoose");
 require("dotenv/config");
 const bodyParser = require("body-parser"); //handles reading data from forms
+const scheduler = require('./scheduler');
 
 // intialize endpoint routes
 const UserEndPoint = require("./routes/UserEndPoint");
@@ -16,6 +18,14 @@ const TipsEndPoint = require("./routes/tipsEndPoint");
 const ReportEndPoint = require("./routes/reportEndPoint");
 const AppointmentEndPoint = require("./routes/AppointmentEndPoint");
 var app = express();
+
+// Schedule tasks to be run on the server.
+
+cron.schedule('* * * * *', function() {
+  console.log('running a task every minute');
+});
+
+scheduler.start();
 
 //Swagger import
 const swaggerUi = require("swagger-ui-express");
@@ -62,6 +72,8 @@ app.use("/api/appointment", AppointmentEndPoint);
 app.use(function (req, res, next) {
   next(createError(404));
 });
+
+
 
 // error handler
 app.use(function (err, req, res, next) {
