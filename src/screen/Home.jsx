@@ -109,7 +109,7 @@ export const Home = () => {
 				<DateTime date={new Date()} />
 			</div>
 			{todayHabits.length > 0 && <HabitTabWidget todayHabits={todayHabits} playAnimation={playAnimation} tipOfDay={todayTip} />}
-			<button onClick={playAnimation}>Play</button>
+			
 			<div className="plantAnimationDiv" ref={plantAnimationDiv} />
 
 		</div>

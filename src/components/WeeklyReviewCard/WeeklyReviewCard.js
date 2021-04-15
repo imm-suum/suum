@@ -1,42 +1,56 @@
-import React, { Component } from 'react';
-//import ReactDOM from 'react-dom';
-import './WeeklyReviewCard.css';
+import React, { useState, useEffect } from 'react';
+import Button from '../Button/Button';
+import './WeeklyReviewCard.scss';
+import tree from '../../assets/tree.svg';
+import axios from 'axios';
 
-class WeeklyReviewCard extends Component{
-	  constructor(props) {
-	    super(props);
-	    this.state = {isToggled: true};
-	    this.handleClick = this.handleClick.bind(this);
-	  }
+export const WeeklyReviewCard = ()=> {
+  const [isToggled, setIsToggled] =  useState(true);
+  const [cardTitle, setCardTitle] =  useState("This Week's Plant");
+  const [containerContent, setContainerContent] = useState(
+    <img src={tree}></img>
+  );
+  const [btnContainerContent, setBtnContainerContent] = useState("");
 
-	  handleClick() {
-	    this.setState(state => ({
-	      isToggled: !state.isToggled
-	    }));
-	  }
+  //function to set state true to false etcetc;
+  const flipReport= ()=>{
+    setIsToggled(!isToggled);
+    setCardTitle("Completed Tasks");
+    setContainerContent("list of tasks will be here");
+    setBtnContainerContent(<Button color="yellow" size={"lg"} handleClick={closeReport}>Great Job!</Button>);
+  }
 
-	  render() {
-	    return (
-	      <div className="card" onClick={this.handleClick}>
-		  <div className="info">
-			<h1 className="title">
-				{this.state.isToggled ? "This Week's Plant" : ''}
-			</h1>
-			<p className="progress">
-				{this.state.isToggled ? '' : "Completed Tasks"}
-			</p>
-			<div className="bar-container">
-				<div className="bar">
-					<p className="num">14/21</p>
-				</div>
-			</div>
-		  	</div>
-			<button>
-  				Great Job!
-			</button>
-		  </div>
-	    );
-	  }
-	}
+  const closeReport = (e)=> {
+    if (e.target.id = 'greatJobBtn'){
+      console.log('closed')
+    }else{
+      console.log("u dumbo oldhead");
+    }
+  }
 
-export default WeeklyReviewCard;
+  return(
+    <div className="weeklyScreenBg">
+      <div className="reportBg" onClick={flipReport}>
+
+        <div className="reportTitle">
+          <h2>{cardTitle}</h2>
+          <div className="barContainer"> 
+            <div className="bar">
+            <p className="num">14/21</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div className="plantContainer">
+          {containerContent}
+        </div>
+
+        <div className="btnContainer">
+          {btnContainerContent}
+        </div>
+
+      </div>
+    </div>
+  );
+}
