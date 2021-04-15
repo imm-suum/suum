@@ -13,6 +13,22 @@ html {
 	margin:auto;
 }
 
+.desktop{
+	position: absolute;
+	top: 0;
+	background-color: #44B2A5;
+	width: 100%;
+	height: 100%;
+	z-index: 800;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	visibility: hidden;
+	text-align: center;
+}
+
 .extra{
     margin-top: 50px;
 }
@@ -43,4 +59,10 @@ html {
 	background-color: white;
 	box-shadow: 0px 3px 6px #00000029;
 	margin-bottom: 39px;
+}
+
+@media (min-width: 500px) {
+	.desktop {
+		visibility: visible;
+	}
 }
