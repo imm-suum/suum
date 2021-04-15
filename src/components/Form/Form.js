@@ -39,7 +39,7 @@ export const Form = ({ toggleForm }) => {
         });
     }
 
-    // toggleForm();
+    toggleForm();
   }
 
   const handleClick = () => {

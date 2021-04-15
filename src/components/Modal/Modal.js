@@ -34,16 +34,16 @@ export const Modal = ({toggleModal, closeModal, todayHabits}) => {
   // response = [{habit1}, {habit2}, {habit3}]
   console.log(todayHabits, "todayHabits");
 
-  const [ habit1IsChecked, setHabit1 ] = useState(todayHabits[0].habitComplete );
-  const [ habit2IsChecked, setHabit2 ] = useState(todayHabits[1].habitComplete );
-  const [ habit3IsChecked, setHabit3 ] = useState(todayHabits[2].habitComplete );
+  const [ habit1IsChecked, setHabit1 ] = useState();
+  const [ habit2IsChecked, setHabit2 ] = useState();
+  const [ habit3IsChecked, setHabit3 ] = useState();
 
   //array of information
   //ex: name: {response[i].habitName}
   const habits = [
-    {checked:habit1IsChecked , name:todayHabits[0].habitName  , setting: setHabit1},
-    {checked:habit2IsChecked , name:todayHabits[1].habitName  , setting: setHabit2},
-    {checked:habit3IsChecked , name:todayHabits[2].habitName  , setting: setHabit3}
+    {checked:todayHabits[0].habitComplete , name:todayHabits[0].habitName  , setting: setHabit1},
+    {checked:todayHabits[1].habitComplete , name:todayHabits[1].habitName  , setting: setHabit2},
+    {checked:todayHabits[2].habitComplete , name:todayHabits[2].habitName  , setting: setHabit3}
   ];
 
   const modalContent = habits.map((habit, idx) => {

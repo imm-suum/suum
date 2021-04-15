@@ -1,8 +1,12 @@
 import React, { useState , useEffect } from 'react';
 import {Modal} from '../Modal/Modal.js';
 import {Form} from '../Form/Form.js';
+import { useHistory } from "react-router-dom";
 
 const CheckInModal = ({todayHabits})=> {
+  
+  const history = useHistory();
+  
   //set open state to false to hide
   const [modalOpen, setModalOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
@@ -36,11 +40,11 @@ const CheckInModal = ({todayHabits})=> {
 
   //popup effect. show modal after 1.5 seconds
   useEffect(()=>{
-    setModalOpen(!modalOpen);
-    // const timer = setTimeout(()=> {
-    //   setModalOpen(e => !e)
-    // }, 1500);
-    // return () => clearTimeout(timer);
+    const timer = setTimeout(()=> {
+      setModalOpen(e => !e)
+      history.push("/");
+    }, 1500);
+    return () => clearTimeout(timer);
   },[]);
 
   return (
