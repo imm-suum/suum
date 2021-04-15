@@ -23,10 +23,6 @@ var app = express();
 
 scheduler.start();
 
-//Swagger import
-const swaggerUi = require("swagger-ui-express");
-swaggerDocument = require("./swagger");
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
@@ -38,8 +34,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.json());
-
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const port = process.env.PORT || 5000;
 
@@ -55,8 +49,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
-
-
 
 mongoose.connect(
   process.env.DB_CONNECTION,
@@ -91,6 +83,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
 
 module.exports = app;
