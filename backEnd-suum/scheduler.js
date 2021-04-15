@@ -11,7 +11,7 @@ const schedulerFactory = function () {
           console.log(
             "Running Send Notifications Worker for " + moment().format()
           );
-          notificationsWorker.run();
+          //notificationsWorker.run();
         },
         null,
         true,
