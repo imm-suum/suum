@@ -98,7 +98,7 @@ export const Home = () => {
 	console.log(currentTime.getDay());
 
 	//if night time show checkin process.
-	if (currentTime.getHours() > 20 && currentTime.getDay()!= 0) {
+	if (currentTime.getHours() >= 20 && currentTime.getDay() != 0) {
 	// show checkinModal => Planning Modal
 	//     //show weeklyReviewCard componentONly.
 	//     //on close... load homescreen with habitTabWidget?????
@@ -113,7 +113,7 @@ export const Home = () => {
 			</div>
 		)
 
-	}else if (currentTime.getHours() > 12 && currentTime.getDay() === 3) {
+	}else if (currentTime.getHours() >= 20 && currentTime.getDay() === 3) {
 		return (
 			<div>
 			<WeeklyReviewCard/>
