@@ -72,7 +72,7 @@ export const MainSettingCardInfo = () => {
 	}
 
 	const handleSubmit = (e) => {
-	
+
 		console.log(newUserData, "new data");
 
 		e.preventDefault();
@@ -122,7 +122,7 @@ export const MainSettingCardInfo = () => {
 				/>
 				{submitted && !newUserData.phoneNumber && <span id='phoneNumber-error'>Please enter a phoneNumber</span>}
 
-				<input type="submit" value="Submit" />
+				<input className="eSubmit" type="submit" value="Submit" />
 				{submitted && <span class='success-message'>Success! Thank you for registering</span>}
 
 
@@ -132,4 +132,3 @@ export const MainSettingCardInfo = () => {
 		</div>
 	);
 }
-
