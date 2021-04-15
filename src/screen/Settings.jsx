@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import '../app.css';
 import axios from 'axios';
 
-import SettingCard from '../components/SettingCard/SettingCard.js';
+import {SettingCard} from '../components/SettingCard/SettingCard.js';
 import SettingSocialMedia from '../components/SettingSocialMedia/SettingSocial.js';
 import { MainSettingCardInfo } from '../components/MainSettingCardInfo/MainSettingCardInfo.js';
 
@@ -63,7 +63,7 @@ return (
 
 		{/* SettingCard comonent to call toggle in itself. Accepts label prop to change text. */}
 		{/* API call happens IN SettingCard component. */}
-		<SettingCard />
+		{ userInfo &&<SettingCard userInfo={userInfo} />}
 
 
 		<SettingSocialMedia />
