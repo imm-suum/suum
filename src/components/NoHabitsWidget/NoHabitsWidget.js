@@ -28,7 +28,7 @@ export const NoHabitsWidget= (tipOfDay) => {
 				<div className="single_accordion">
 					<div className="tab" onClick={handleToogle}>
 						{/* return content.contentTitle */}
-						<p>Click here for some tips on mindfulness!</p>
+						<p>Click for daily wellness tips!</p>
 					</div>
 					{/* edit CSS selectors for merge */}
 					<div className="container2 bg-maingreen">
@@ -46,5 +46,3 @@ export const NoHabitsWidget= (tipOfDay) => {
 		</div>
 	)
 }
-
-
