@@ -32,11 +32,32 @@ export const WeeklyReviewCard = ()=> {
 
   console.log(myCompletedHabits);
 
+  //define the ternary operator
+  let newContentArray=[];
+  let newContent;
+  {myCompletedHabits.length > 0 ?
+
+    myCompletedHabits.map((item,idx)=>{
+        newContent = <div className="myCompletedHabit">
+          <div className="completeIcon" ><div></div></div>
+          <p>{myCompletedHabits[idx].habitName}</p>
+          </div>
+        
+        newContentArray.push(newContent);
+    })
+    
+    :
+
+    <p>LOADING.....</p>
+  }
+
+
+
   //function to set state true to false etcetc;
   const flipReport= ()=>{
     setIsToggled(!isToggled);
     setCardTitle("Completed Tasks");
-    setContainerContent("list of tasks will be here");
+    setContainerContent(newContentArray);
     setBtnContainerContent(<Button color="yellow" size={"lg"} handleClick={closeReport}>Great Job!</Button>);
   }
 
@@ -48,10 +69,6 @@ export const WeeklyReviewCard = ()=> {
       console.log("u dumbo oldhead");
     }
   }
-
-  const habitTagClick= ()=>{
-		console.log("tag clicked");
-	}
 
 
   return(
@@ -71,19 +88,7 @@ export const WeeklyReviewCard = ()=> {
         </div>
 
         <div className="plantContainer">
-          {myCompletedHabits.length > 0 ?
-
-            myCompletedHabits.map((item,idx)=>{
-                return <div className="myCompletedHabit">
-                  <div className="completeIcon" ><div></div></div>
-                  <p>{myCompletedHabits[idx].habitName}</p>
-                  </div>
-            })
-            
-            :
-
-            <p>LOADING.....</p>
-          }
+          {containerContent}
         </div>
 
         <div className="btnContainer">
