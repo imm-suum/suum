@@ -1,0 +1,45 @@
+@import '../../scss/main.scss';
+
+.listItem {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   align-items: center;
+   background: white;
+   width: fit-content;
+   height:48px;
+   margin-right: 0;
+   margin-bottom: 30px;
+   padding-right: 4px;
+   padding-left:25px;
+   border-radius: 10px 24px 24px 10px;
+   box-shadow: 0 3px 6px #00000029;
+   text-align: center;
+   cursor: pointer;
+}
+
+.list-item-label {
+	color: $black;
+	font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight:600;
+    margin-right: 10px;
+}
+
+.button {
+    width:40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: $light-green;
+    border:none;
+	transition: all 350ms;
+}
+
+.button:hover {
+    background-color:$main-green;
+	transform: scale(0.90);
+}
+
+button:focus {
+    outline: none;
+}
