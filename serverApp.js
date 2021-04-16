@@ -11,6 +11,7 @@ const bodyParser = require("body-parser"); //handles reading data from forms
 const scheduler = require("./scheduler");
 
 // intialize endpoint routes
+const LoginEndPoint = require("./routes/LoginEndPoint");
 const UserEndPoint = require("./routes/UserEndPoint");
 const HabitEndpoint = require("./routes/HabitEndpoint");
 const Stash = require("./routes/StashEndPoint");
@@ -65,6 +66,7 @@ app.use("/api/tips", TipsEndPoint);
 
 app.use("/api/report", ReportEndPoint);
 
+app.use("api/login", LoginEndPoint);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
