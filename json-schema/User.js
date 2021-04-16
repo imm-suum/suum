@@ -97,7 +97,7 @@ userSchema.statics.sendNotifications = function (callback) {
         to: `+ ${user.phoneNumber}`,
         from: process.env.TWILIO_PHONE_NUMBER,
         /* eslint-disable max-len */
-        body: `Hi ${user.name}. Good Morning, Just a reminder that you have a suum habit coming up. www.suumwebsiteHerokuLinkhere.com `,
+        body: `Hi ${user.name}! Good Morning, Are you ready to start your day? Review your habits for today here: https://suum.herokuapp.com/ `,
         /* eslint-enable max-len */
       };
 
@@ -137,7 +137,7 @@ userSchema.statics.sendNotifications = function (callback) {
         to: `+ ${user.phoneNumber}`,
         from: process.env.TWILIO_PHONE_NUMBER,
         /* eslint-disable max-len */
-        body: `Hi ${user.name}. Good Afternoon Just a reminder that you have a suum habit coming up. www.suumwebsiteHerokuLinkhere.com `,
+        body: `Hi ${user.name}. How are you doing? If you finished any of your habits, remember sure to mark them here https://suum.herokuapp.com/ `,
         /* eslint-enable max-len */
       };
 
