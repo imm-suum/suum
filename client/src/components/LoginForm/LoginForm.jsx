@@ -25,7 +25,7 @@ async function apiCall(d) {
 		.then(res=>{
 			//redirect('/');
 			//res.send();
-			history.push("/");
+			history.push("/home");
 		});
 		//setHabits(data.json());
 		//res.redirect('/');

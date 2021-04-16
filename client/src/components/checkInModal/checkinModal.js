@@ -42,7 +42,7 @@ const CheckInModal = ({todayHabits})=> {
   useEffect(()=>{
     const timer = setTimeout(()=> {
       setModalOpen(e => !e)
-      history.push("/");
+      history.push("/home");
     }, 1500);
     return () => clearTimeout(timer);
   },[]);

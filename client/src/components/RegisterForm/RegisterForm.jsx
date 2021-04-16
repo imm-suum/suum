@@ -20,7 +20,7 @@ export const RegisterForm = ()=> {
 			// fetch data from a url endpoint
 			const registerCall = await axios.post(`/api/user/register`, d )
 			.then(res=>{
-				history.push("/");
+				history.push("/home");
 			});
 			return registerCall;
 		} catch(error) {

@@ -9,6 +9,7 @@ import DateTime from "../components/DateTime/DateTime.jsx";
 import CheckInModal from "../components/checkInModal/checkinModal";
 import { WeeklyReviewCard } from "../components/WeeklyReviewCard/WeeklyReviewCard.js";
 import { PlanningModal } from "../components/PlanningModal/PlanningModal.js";
+import { withRouter } from "react-router";
 
 //A Class that holds all components for Habit Nursery Screen
 
@@ -19,7 +20,7 @@ import { PlanningModal } from "../components/PlanningModal/PlanningModal.js";
 ///habitTab1 is checked && dispalay component
 //
 
-export const Home = () => {
+function Home () {
   let anim;
 
   const currentTime = new Date();
@@ -78,7 +79,7 @@ export const Home = () => {
   if (currentTime.getHours() > 20 && currentTime.getDay() != 0) {
     //if night time show checkin process. 20(8pm) && not 0( everyday but sunday)
     checkInTime = true;
-  } else if (currentTime.getHours() < 9 && currentTime.getDay() === 0) {
+  } else if (currentTime.getHours() > 9 && currentTime.getDay() === 0) {
     //if Sunday Night to show weekly report. 9(9am) && 0 (sunday)
     weeklyTime = true;
   }
@@ -105,3 +106,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default withRouter(Home);
