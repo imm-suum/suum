@@ -1,25 +1,25 @@
-@import '../../scss/main.scss';
+@use '../../scss/main.scss' as *;
 
-
-.OnBoardingContainer{
+.OnBoardingContainer {
 	height: 812px;
-	width: 375px;
+	width: 100%;
 	background-color: $main-green;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
+	position: fixed;
 	z-index: 600;
+	margin: auto;
 }
 
 .next {
 	border-radius: 15px;
-    box-shadow: 0 3px 6px #00000029;
-    height: 48px;
-    width: 328px;
-    padding: 15px 64px;
-    border: none;
+  box-shadow: 0 3px 6px #00000029;
+  height: 48px;
+  width: 328px;
+  padding: 15px 64px;
+  border: none;
 	margin-top: 0.5rem;
 	margin-bottom: 1.2rem;
 	background-color: $bright-yellow;
@@ -31,7 +31,7 @@
 	z-index: 600;
 }
 
-.next:hover{
+.next:hover {
 	background-color: $light-green;
 	transform: scale(0.95);
 	z-index: 600;

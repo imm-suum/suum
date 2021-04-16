@@ -1,25 +1,25 @@
 @use '../../scss/main.scss' as *;
 
 .no-border {
-  border: none;
+	border: none;
 }
 
 .bg-white {
-  background-color: $white;
+	background-color: $white;
 }
 
 .bg-lightgreen {
-  background-color: $light-green;
+	background-color: $light-green;
 }
 
 .circle {
-  width: 60px;
-  height: 60px;
-  border-radius: calc(60px/2);
-  border: none;
-  margin: 0.5rem 2rem;
+	width: 60px;
+	height: 60px;
+	border-radius: calc(60px/2);
+	border: none;
+	margin: 0.5rem 2rem;
 }
 
 .habitTabIdx {
-  margin-left: 1rem;
+	margin-left: 1rem;
 }

@@ -69,11 +69,11 @@ h1{
 	width: 80%;
 	height: 2.5rem;
 	margin: 12px;
-  	background-color: $main-green;
-  	color: white;
-  	border: none;
-  	border-radius: 4px;
-  	cursor: pointer;
+	background-color: $main-green;
+	color: $white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 .submit:hover{
@@ -81,9 +81,9 @@ h1{
 }
 
 input[type=submit]{
-    font-family: 'Montserrat', sans-serif;
-		outline: none;
-		border:none;
+	font-family: 'Montserrat', sans-serif;
+	outline: none;
+	border:none;
 }
 
 .notifContainer {
@@ -102,7 +102,6 @@ input[type=submit]{
 }
 
 .notifContainer > input:checked {
-	content: '✔';
 	color: $white;
 	border: 1px solid $main-green;
 	background-color: $main-green;
@@ -119,29 +118,17 @@ input[type=submit]{
 
 .num{
 	color: $main-green;
-	font-size: 0.85rem;
+	font-size: 0.80rem;
 	margin-top: 0;
 }
 
 @media all and (min-width: 480px) {
-    .Login {
-      padding: 60px 0;
-    }
+	.Login {
+		padding: 60px 0;
+	}
 
-    .Login form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
-  }
-
-
-@media all and (min-width: 480px) {
-    .Login {
-      padding: 60px 0;
-    }
-
-    .Login form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
-  }
+	.Login form {
+		margin: 0 auto;
+		max-width: 320px;
+	}
+}

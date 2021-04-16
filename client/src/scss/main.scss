@@ -22,39 +22,15 @@ $heading-font: 24px;
 //look at weekly review completed task title
 $subheading-font: 20px;
 
+html {
+  font-family: $font-stack;
+}
+
 
 /*GLOBAL CLASSES FOR BUTTONS*/
-.long-button {
-    border-radius: 15px;
-    box-shadow: 0 3px 6px #00000029;
-    height: 48px;
-    width: 328px;
-    padding: 15px 64px;
-    border: none;
-    margin: auto;
-}
-
-.sm-button {
-    border-radius: 15px;
-    height: 36px;
-    width: 105px;
-    padding: 9px 32px;
-    border: none;
-    margin: 1rem;
-}
-
-.circle-btn {
-    width: 60px;
-    height: 60px;
-    border-radius: calc(60px/2);
-    border: none;
-    margin: 1rem;
-    background-color: white;
-}
-
+// replaced by Button.scss
 
 /*COLOR CLASS*/
-
 .main-green {
     background-color: $main-green;
 }
@@ -96,7 +72,7 @@ body {
     border-radius: 20px;
   }
 
-//   SCREEN RELATED SCSS
+//   Home SCREEN RELATED SCSS
 .plantAnimationDiv {
     width: 100%;
     height: auto;

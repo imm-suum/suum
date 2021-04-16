@@ -4,11 +4,11 @@
 	font-family: 'Montserrat', sans-serif;
 }
 
-h1{
+.RegisterTitle {
 	font-size: 1.2rem;
 }
 
-.suumForm{
+.suumForm {
 	position: absolute;
 	top: 25%;
 	width:85%;
@@ -36,7 +36,7 @@ h1{
 	border:#00000029 none;
 }
 
-.form-container{
+.form-container {
 	position: absolute;
 	background-color: $bg-yellow;
 	width: 100%;
@@ -44,61 +44,61 @@ h1{
 	z-index: 600;
 }
 
-.email{
+.email {
 	width: 80%;
 	height: 2rem;
 	padding: 12px;
 	margin: 12px;
 }
 
-.error{
+.error {
 	color: red;
 	font-size: 0.85rem;
 	margin-bottom: 0.8rem;
 }
 
-.num{
+.num {
 	color: $main-green;
 	font-size: 0.80rem;
 }
 
-.name{
+.name {
 	width: 80%;
 	height: 2rem;
 	padding: 12px;
 	margin: 12px;
 }
 
-.tel{
+.tel {
 	width: 80%;
 	height: 2rem;
 	padding: 12px;
 	margin: 12px;
 }
 
-.password{
+.password {
 	width: 80%;
 	height: 2rem;
 	padding: 12px;
 	margin: 12px;
 }
 
-.submit{
+.submit {
 	width: 80%;
 	height: 2.5rem;
 	margin: 12px;
-  	background-color: $main-green;
-  	color: white;
-  	border: none;
-  	border-radius: 4px;
-  	cursor: pointer;
+  background-color: $main-green;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.submit:hover{
+.submit:hover {
 	background-color: $light-green;
 }
 
-input[type=submit]{
+input[type=submit] {
     font-family: 'Montserrat', sans-serif;
 		outline: none;
 		border:none;
@@ -120,8 +120,6 @@ input[type=submit]{
 }
 
 .notifContainer > input:checked {
-	content: '✔';
-	color: $white;
 	border: 1px solid $main-green;
 	background-color: $main-green;
 }
@@ -130,25 +128,3 @@ input[type=submit]{
 	outline:none;
 }
 
-@media all and (min-width: 480px) {
-    .Login {
-      padding: 60px 0;
-    }
-
-    .Login form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
-  }
-
-
-@media all and (min-width: 480px) {
-    .Login {
-      padding: 60px 0;
-    }
-
-    .Login form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
-  }

@@ -3,8 +3,6 @@ import {Form} from '../Form/Form.js';
 import { useHistory } from "react-router-dom";
 
 
-
-
 export const PlanningModal = ()=> {
   const [formOpen, setFormOpen] = useState(true);
 
@@ -14,6 +12,7 @@ export const PlanningModal = ()=> {
 
   }
 
+  //function to close form when backdrop is closed
   // const closeForm = (e)=> {
   //   if (e.target.id==="modalbackdrop") {
   //     toggleForm();

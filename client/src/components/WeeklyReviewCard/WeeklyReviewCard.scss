@@ -1,3 +1,5 @@
+@use '../../scss/main.scss' as *;
+
 .weeklyScreenBg {
 	position: absolute;
 	top:0;
@@ -12,7 +14,7 @@
 	background-color: rgba(50,50,50,0.5);
 }
 
-.reportBg{
+.reportBg {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -22,7 +24,7 @@
 	padding: 2rem;
 	padding-bottom: 0!important;
 	border-radius: 10px;
-	background-color: white;
+	background-color: $white;
 	box-shadow: 0px 3px 6px #00000029;
 	cursor: pointer;
 }
@@ -36,7 +38,7 @@
 	margin: 1rem 0 2rem 0;
 }
 
-.info{
+.info {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -44,50 +46,44 @@
 	margin-top: 20px;
 }
 
-p, h1{
-	padding: 0px;
-	margin: 0px;
-	color: #323232;
-	font-weight: bold;
-}
-
-.greatJob{
+.greatJob {
 	width: 100%;
 	height: 48px;
 	border-radius: 10px;
 	border: none;
-	color: white;
+	color: $white;
 	font-weight: bolder;
-	background-color: #FDCA6E;
+	background-color: $bright-yellow;
 	margin-top: 460px;
 }
 
-.num{
-	margin-top: 30px;
-	margin-left: 50px;
+#num {
+	font-size: .8rem;
+	margin-top: 2.5rem;
+	margin-left: 100%;
 	color: #FDCA6E;
 }
 
-.barContainer{
+.barContainer {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	width: 85px;
 	height: 11px;
-	background-color: white;
-	border: 1px solid #FDCA6E;
+	background-color: $white;
+	border: 1px solid $bright-yellow;
 	border-radius: 10px;
 	margin-top: 14px;
 }
 
-.bar{
+.bar {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 8px;
 	width: 43px;
 	height: 11px;
-	background-color: #FDCA6E;
+	background-color: $bright-yellow;
 	border-radius: 10px;
 }
 
