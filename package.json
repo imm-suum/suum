@@ -3,9 +3,11 @@
    "version": "0.0.0",
    "private": true,
    "scripts": {
-      "dev": "node serverApp.js",
-      "start": "concurrently \"node serverApp.js \" \" cd ./client && react-scripts start\" ",
-      "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+      "start": "node serverApp.js",
+      "build": "cd client && npm run build",
+      "instal-client": "cd client && npm install",
+      "dev": "concurrently \"nodemon ./bin/www\" \" cd ./client && npm start\" ",
+      "heroku-postbuild": "npm run install-client && npm run build"
    },
    "dependencies": {
       "@hapi/joi": "^17.1.1",
