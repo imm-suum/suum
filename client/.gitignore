@@ -28,11 +28,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 backEnd-suum/.env
-<<<<<<< HEAD
-src/app.js
-src/app.css
-=======
-
->>>>>>> 503f54710f5dda06134561619d66700546940552
 
 backEnd-suum/.env
