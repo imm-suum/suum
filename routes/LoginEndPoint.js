@@ -8,7 +8,7 @@ const verify = require("./verifyToken");
 
 //  Get user
 router.get("/", verify, async (req, res) => {
-  res.send("You're logged in.")
+  res.send("You're logged in.");
 });
 
 
