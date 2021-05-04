@@ -36,7 +36,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "..", "client", "build")));
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.use(bodyParser.json());
 
@@ -47,7 +47,7 @@ if (process.env.NODE_ENV === "production") {
   // set static folder
   // app.use(express.static("client/build"));
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname,"..","client", 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, "client", 'build', 'index.html'));
   });
 }
 
