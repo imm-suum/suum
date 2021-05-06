@@ -6,9 +6,10 @@ import App from './app.js';
 
   ReactDOM.render(
     <React.StrictMode>
-<div class="phoneWrapper">
+{/* <div id="phoneWrapper"> */}
       <App />
-</div>
+      {/* <iframe id="iframes" src="https://suum-app.herokuapp.com/" style={{width:"100%",height:"100%"}} /> */}
+{/* </div> */}
     </React.StrictMode>,
     document.getElementById('root')
   );
