@@ -3,8 +3,10 @@ import { useForm } from 'react-hook-form';
 import '../Button/Button.scss';
 import './Form.scss';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 export const Form = ({ toggleForm }) => {
+  const history = useHistory();
 
   // type FormValues = {
   //   habit1: string;
@@ -15,6 +17,7 @@ export const Form = ({ toggleForm }) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
+    
     console.log(data);
 
     var i;
@@ -40,6 +43,10 @@ export const Form = ({ toggleForm }) => {
     }
 
     toggleForm();
+    //history.push("/home");
+    window.location.reload();
+    
+
   }
 
   const handleClick = () => {
@@ -55,7 +62,7 @@ export const Form = ({ toggleForm }) => {
 
             <input className="inputBg margin-y" id="habit1" placeholder="take a 5min walk" {...register("habit1")} />
 
-            <input className="inputBg margin-y" id="habit2" placeholder="take a 5min walk" {...register("habit2")} />
+            <input className="inputBg margin-y" id="habit2" placeholder="Drink 3 Glasses of water" {...register("habit2")} />
 
             <input className="inputBg margin-y" id="habit3" placeholder="take a 5min walk" {...register("habit3")} />
 
@@ -63,7 +70,7 @@ export const Form = ({ toggleForm }) => {
 				<a href="" className="helpLink">Need help finding a habit?</a>
 				*/}
 
-            <input class="btn btn-lg btn-yellow bottomBtn" type="submit" value="Let's Go!" />
+            <input className="btn btn-lg btn-yellow bottomBtn" type="submit" value="Let's Go!" />
           </form>
         </div>
       </div>
