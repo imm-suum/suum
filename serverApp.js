@@ -42,14 +42,7 @@ app.use(bodyParser.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// serve static assets if in production
-if (process.env.NODE_ENV === "production") {
-  // set static folder
-  // app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", 'build', 'index.html'));
-  });
-}
+
 
 const port = process.env.PORT || 5000;
 
@@ -91,6 +84,15 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+// serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  // set static folder
+  // app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", 'build', 'index.html'));
+  });
+}
 
 
 module.exports = app;
