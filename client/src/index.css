@@ -10,9 +10,37 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-  #phoneWrapper { 
 
-    width: 400px; 
-    height: 100vh;
-    
+    #phoneWrapper {
+      position: relative;
+      border: 5px black solid;
+      border-radius: 36px;
+      margin: auto;
+      width: 375px;
+      height: 812px;
+      overflow: hidden;
+      z-index: 2;
+      pointer-events: unset!important;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    #iframes{
+      outline: none;
+      border:none;
+      width: 375px;
+      height: 812px;
+      position: relative;
+      top:0;
+      left: 0px;
+      bottom: 0;
+      right: 0;
+      z-index: 0;
     }

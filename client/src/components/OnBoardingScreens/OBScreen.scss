@@ -1,8 +1,10 @@
 @use '../../scss/main.scss' as *;
 
 .OnBoardingContainer {
-	height: 812px;
-	width: 100%;
+	// height: 812px;
+	// width: 100%;
+	width: 375px;
+      height: 812px;
 	background-color: $main-green;
 	display: flex;
 	flex-direction: column;
