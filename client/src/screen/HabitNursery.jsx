@@ -18,7 +18,7 @@ export const HabitNursery = ()=>{
 		async function getStash() {
 
 			// fetch data from a url endpoint
-			const getMyStash = await axios.get(`/api/stash`)
+			const getMyStash = await axios.get(`https://suum-app.herokuapp.com/api/stash`)
 				.then(response => {
 					setStashHabits(response.data);
 					setLoading(false);

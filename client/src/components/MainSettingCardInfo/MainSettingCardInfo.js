@@ -17,7 +17,7 @@ export const MainSettingCardInfo = () => {
 
 	useEffect(() => {
 		async function getSettings() {
-			const getSettings = await axios.get('/api/user')
+			const getSettings = await axios.get('https://suum-app.herokuapp.com/api/user')
 				.then(response => {
 					setUserData(response.data);
 					setNewUserData(response.data);
@@ -31,7 +31,7 @@ export const MainSettingCardInfo = () => {
 	useEffect(() => {
 
 		async function updateSettings() {
-			const editUser = await axios.patch('/api/user/edit', {
+			const editUser = await axios.patch('https://suum-app.herokuapp.com/api/user/edit', {
 				"name": newUserData.name,
 				"phoneNumber": newUserData.phoneNumber,
 			})
