@@ -74,6 +74,15 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 
+// serve static assets if in production
+// if (process.env.NODE_ENV === "production") {
+//   // set static folder
+  //app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", 'build', 'index.html'));
+  });
+//}
+
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
@@ -85,14 +94,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-// serve static assets if in production
-if (process.env.NODE_ENV === "production") {
-  // set static folder
-  // app.use(express.static("client/build"));
-  app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", 'build', 'index.html'));
-  });
-}
+
 
 
 module.exports = app;
