@@ -17,7 +17,7 @@ export const Settings = () => {
 	useEffect(() => {
 		
 		async function getSettings() {
-			const getSettings = await axios.get('https://suum-app.herokuapp.com/api/user')
+			const getSettings = await axios.get('/api/user')
 				.then(response => {
 					setUserInfo(response.data);
 				});

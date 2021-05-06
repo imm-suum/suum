@@ -36,7 +36,7 @@ export const Form = ({ toggleForm }) => {
     async function sendNewHabits(data) {
       // Send habit id to complete the habit;
 
-      const newtHabit = await axios.post(`https://suum-app.herokuapp.com/api/habit`, data)
+      const newtHabit = await axios.post(`/api/habit`, data)
         .then(res => {
           console.log(res);
         });

@@ -19,7 +19,7 @@ export const SettingCard = ({userInfo}) =>  {
 	useEffect(() => {
 
 		async function updateNotifications() {
-			const updateNotif = await axios.patch('https://suum-app.herokuapp.com/api/user/setNotif', {
+			const updateNotif = await axios.patch('/api/user/setNotif', {
 				"notifications": toggle,
 			})
 				.then(response => {

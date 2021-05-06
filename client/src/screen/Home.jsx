@@ -32,10 +32,10 @@ function Home () {
   useEffect(() => {
     async function getHabits() {
       // fetch data from a url endpoint
-      const getHabit = await axios.get("https://suum-app.herokuapp.com/api/habit").then((response) => {
+      const getHabit = await axios.get("/api/habit").then((response) => {
         setHabits(response.data);
       });
-      const getTipofDay = await axios.get("https://suum-app.herokuapp.com/api/tips").then((response) => {
+      const getTipofDay = await axios.get("/api/tips").then((response) => {
         setTodayTip(response.data);
       });
     }
