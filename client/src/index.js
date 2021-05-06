@@ -9,7 +9,7 @@ ReactDOM.render(
   <React.StrictMode>
     <div id="phoneWrapper">
       {/* <App /> */}
-      <iframe id="iframes" src="https://suum-app-iframe.herokuapp.com/" sandbox="allow-same-origin allow-popups"/>
+      <iframe id="iframes" src="https://suum-app-iframe.herokuapp.com/" sandbox="allow-same-origin allow-popups allow-scripts allow-forms"/>
     </div>
   </React.StrictMode>,
   document.getElementById('root')
