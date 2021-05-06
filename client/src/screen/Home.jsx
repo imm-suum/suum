@@ -70,7 +70,7 @@ function Home () {
     paddingTop: "2rem",
   };
 
-  console.log(currentTime.getDay());
+  //console.log(currentTime.getDay());
 
   //tracking the modals below
   let checkInTime = false;

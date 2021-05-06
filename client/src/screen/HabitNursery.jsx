@@ -58,7 +58,7 @@ export const HabitNursery = ()=>{
 					})
 					:
 					
-					<p>Loading</p>
+					<p>You dont have any Stashed Items yet</p>
 				
 					}
 
