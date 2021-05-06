@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import iPhoneXFrame from './assets/iPhoneXFrame.png'
 import App from './app.js';
 
 
