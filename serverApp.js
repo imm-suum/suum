@@ -36,20 +36,13 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "client", "build")));
+
 
 app.use(bodyParser.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// serve static assets if in production
-if (process.env.NODE_ENV === "production") {
-  // set static folder
-  // app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", 'build', 'index.html'));
-  });
-}
+
 
 const port = process.env.PORT || 5000;
 
@@ -75,7 +68,20 @@ app.use("/api/tips", TipsEndPoint);
 
 app.use("/api/report", ReportEndPoint);
 
-app.use("api/login", LoginEndPoint);
+app.use("/api/login", LoginEndPoint);
+
+app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(express.static("public"));
+
+// serve static assets if in production
+// if (process.env.NODE_ENV === "production") {
+//   // set static folder
+  //app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", 'build', 'index.html'));
+  });
+//}
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -91,6 +97,8 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+
 
 
 module.exports = app;
