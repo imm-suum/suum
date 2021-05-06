@@ -67,9 +67,7 @@ function App (){
 				{/* The hamburger Menu will now appear above all the pages in the app because its always rendered on the app*/}
 				<HamburgerMenu/>
 
-				<div className="desktop">
-					<p className="msg">Please Access suum on a Mobile Device! (500px Width Maximum)</p>
-				</div>
+			
 
 				
 
