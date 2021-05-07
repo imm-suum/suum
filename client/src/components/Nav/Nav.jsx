@@ -26,7 +26,7 @@ const Nav = (props) => {
     }
 
     return (
-        <ul className={navClasses}>
+        <ul className='nav-right'>
           <Link to='/home'>
           <li className="nav-li"><ListItem name= "Home" /></li>
           </Link>
